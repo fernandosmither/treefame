@@ -1,13 +1,417 @@
 ---
 import Layout from '../layouts/Layout.astro'
+import BadgePill from '../components/BadgePill.astro'
+import leaderboard from '../data/leaderboard.json'
+
+const { stats, hackers, teams, global_activity } = leaderboard;
+
+// Format numbers
+function fmt(n: number): string {
+  if (n >= 1_000_000) return (n / 1_000_000).toFixed(1) + "M";
+  if (n >= 1_000) return (n / 1_000).toFixed(1) + "k";
+  return n.toLocaleString();
+}
+
+// Build SVG path for the hackathon pulse chart
+const maxCommits = Math.max(...global_activity.map(a => a.commits));
+const chartW = 900;
+const chartH = 200;
+const padding = 40;
+const plotW = chartW - padding * 2;
+const plotH = chartH - 40;
+
+function buildAreaPath(data: typeof global_activity, key: "commits"): string {
+  const points = data.map((d, i) => {
+    const x = padding + (i / (data.length - 1)) * plotW;
+    const y = chartH - 20 - (d[key] / maxCommits) * plotH;
+    return { x, y };
+  });
+  const line = points.map((p, i) => (i === 0 ? `M ${p.x},${p.y}` : `L ${p.x},${p.y}`)).join(" ");
+  const area = `${line} L ${points[points.length - 1].x},${chartH - 20} L ${points[0].x},${chartH - 20} Z`;
+  return area;
+}
+
+function buildLinePath(data: typeof global_activity, key: "commits"): string {
+  return data.map((d, i) => {
+    const x = padding + (i / (data.length - 1)) * plotW;
+    const y = chartH - 20 - (d[key] / maxCommits) * plotH;
+    return (i === 0 ? `M` : `L`) + ` ${x},${y}`;
+  }).join(" ");
+}
+
+// Parse peak hour
+const peakHourDate = stats.peak_hour ? new Date(stats.peak_hour) : null;
+const peakHourLabel = peakHourDate
+  ? peakHourDate.toLocaleString("en-US", { weekday: "short", hour: "numeric", hour12: true })
+  : "N/A";
+
+// Badge distribution sorted
+const badgeDist = Object.entries(stats.badge_distribution).sort((a, b) => b[1] - a[1]);
+
+// Badge metadata
+const badgeMeta: Record<string, { name: string; emoji: string }> = {
+  all_nighter_1: { name: "All-Nighter I", emoji: "\u{1F319}" },
+  all_nighter_2: { name: "All-Nighter II", emoji: "\u{1F311}" },
+  speed_demon: { name: "Speed Demon", emoji: "\u26A1" },
+  code_cannon: { name: "Code Cannon", emoji: "\u{1F4A5}" },
+  one_person_army: { name: "One-Person Army", emoji: "\u{1F9B8}" },
+  first_blood: { name: "First Blood", emoji: "\u{1F947}" },
+  deadline_warrior: { name: "Deadline Warrior", emoji: "\u23F0" },
+  bug_squasher: { name: "Bug Squasher", emoji: "\u{1F41B}" },
+  feature_factory: { name: "Feature Factory", emoji: "\u{1F3ED}" },
+  polyglot: { name: "Polyglot", emoji: "\u{1F5E3}\uFE0F" },
+  full_stack: { name: "Full Stack", emoji: "\u{1F95E}" },
+  devops_hero: { name: "DevOps Hero", emoji: "\u{1F433}" },
+  docs_hero: { name: "Docs Hero", emoji: "\u{1F4D6}" },
+  vibe_coder: { name: "Vibe Coder", emoji: "\u2728" },
+  git_guru: { name: "Git Guru", emoji: "\u{1F9D9}" },
+  yolo_deployer: { name: "YOLO Deployer", emoji: "\u{1F680}" },
+};
+
+const maxBadgeCount = badgeDist.length > 0 ? badgeDist[0][1] : 1;
+
+// Time labels for the chart x-axis
+const timeLabels = [
+  { idx: 0, label: "Fri 6PM" },
+  { idx: Math.floor(global_activity.length * 0.15), label: "Sat 12AM" },
+  { idx: Math.floor(global_activity.length * 0.37), label: "Sat 12PM" },
+  { idx: Math.floor(global_activity.length * 0.62), label: "Sun 12AM" },
+  { idx: Math.floor(global_activity.length * 0.85), label: "Sun 8AM" },
+  { idx: global_activity.length - 1, label: "Sun 11AM" },
+];
+
+// Role color mapping
+const roleColors: Record<string, string> = {
+  "Frontend": "text-sky-400",
+  "Backend": "text-emerald-400",
+  "Full Stack": "text-amber-400",
+  "AI/ML": "text-purple-400",
+  "Mobile": "text-pink-400",
+  "DevOps": "text-cyan-400",
+  "Generalist": "text-zinc-400",
+};
 ---
 
 <Layout title="TreeFame — TreeHacks 2026 Hall of Fame">
-  <main class="flex items-center justify-center min-h-screen">
-    <div class="text-center">
-      <h1 class="text-5xl font-bold text-amber-400 mb-4">TreeFame</h1>
-      <p class="text-xl text-zinc-400">TreeHacks 2026 Hall of Fame</p>
-      <p class="text-zinc-500 mt-2">Coming soon...</p>
-    </div>
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+    <!-- Hero -->
+    <section class="pt-16 pb-12 text-center">
+      <div class="animate-fade-up">
+        <img src="/logo.svg" alt="" class="h-24 w-24 mx-auto mb-6" />
+      </div>
+      <h1 class="font-display font-black text-5xl sm:text-6xl lg:text-7xl tracking-tight animate-fade-up stagger-1">
+        <span class="text-shimmer">TreeFame</span>
+      </h1>
+      <p class="mt-4 text-lg sm:text-xl text-zinc-400 font-body max-w-2xl mx-auto animate-fade-up stagger-2">
+        TreeHacks 2026 Hall of Fame — Every commit, every all-nighter, every line of code, immortalized.
+      </p>
+      <div class="mt-6 flex items-center justify-center gap-2 text-sm text-zinc-500 animate-fade-up stagger-3">
+        <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        Built from {fmt(stats.total_commits)} real commits across {teams.length} projects
+      </div>
+    </section>
+
+    <!-- Stats cards -->
+    <section class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-16">
+      {[
+        { label: "Hackers", value: fmt(stats.total_hackers), icon: "\u{1F9D1}\u200D\u{1F4BB}", accent: "gold" },
+        { label: "Commits", value: fmt(stats.total_commits), icon: "\u{1F4E6}", accent: "emerald" },
+        { label: "Lines Added", value: "+" + fmt(stats.total_lines_added), icon: "\u{1F4C8}", accent: "emerald" },
+        { label: "Peak Hour", value: peakHourLabel, icon: "\u{1F525}", accent: "rose" },
+      ].map((card, i) => (
+        <div class={`card-glow rounded-xl border border-white/[0.06] bg-surface-2/80 backdrop-blur-sm p-5 animate-fade-up stagger-${i + 1}`}>
+          <div class="text-2xl mb-2">{card.icon}</div>
+          <div class={`font-display font-bold text-2xl sm:text-3xl ${card.accent === "gold" ? "text-gold-400" : card.accent === "emerald" ? "text-emerald-400" : "text-rose-400"}`}>
+            {card.value}
+          </div>
+          <div class="text-sm text-zinc-500 mt-1">{card.label}</div>
+        </div>
+      ))}
+    </section>
+
+    <!-- Hackathon Pulse Chart -->
+    <section class="mb-16 animate-fade-up stagger-5">
+      <h2 class="font-display font-bold text-xl sm:text-2xl mb-6 text-zinc-200">
+        Hackathon Pulse
+        <span class="text-sm font-body font-normal text-zinc-500 ml-2">Commits per hour over 41 hours</span>
+      </h2>
+      <div class="rounded-xl border border-white/[0.06] bg-surface-2/60 backdrop-blur-sm p-4 sm:p-6 overflow-x-auto">
+        <svg viewBox={`0 0 ${chartW} ${chartH}`} class="w-full min-w-[600px]" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="pulseGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.3" />
+              <stop offset="100%" stop-color="#fbbf24" stop-opacity="0" />
+            </linearGradient>
+          </defs>
+          {/* Grid lines */}
+          {[0.25, 0.5, 0.75, 1].map(pct => {
+            const y = chartH - 20 - pct * plotH;
+            return (
+              <g>
+                <line x1={padding} x2={chartW - padding} y1={y} y2={y} stroke="white" stroke-opacity="0.05" />
+                <text x={padding - 8} y={y + 4} text-anchor="end" fill="#71717a" font-size="10" font-family="var(--font-mono)">
+                  {Math.round(maxCommits * pct)}
+                </text>
+              </g>
+            );
+          })}
+          {/* X-axis labels */}
+          {timeLabels.map(({ idx, label }) => {
+            const x = padding + (idx / (global_activity.length - 1)) * plotW;
+            return (
+              <text x={x} y={chartH - 4} text-anchor="middle" fill="#71717a" font-size="10" font-family="var(--font-mono)">
+                {label}
+              </text>
+            );
+          })}
+          {/* Area fill */}
+          <path d={buildAreaPath(global_activity, "commits")} fill="url(#pulseGrad)" />
+          {/* Line */}
+          <path d={buildLinePath(global_activity, "commits")} fill="none" stroke="#fbbf24" stroke-width="2" stroke-linejoin="round" />
+          {/* Peak dot */}
+          {(() => {
+            const peakIdx = global_activity.findIndex(a => a.commits === maxCommits);
+            if (peakIdx >= 0) {
+              const px = padding + (peakIdx / (global_activity.length - 1)) * plotW;
+              const py = chartH - 20 - (global_activity[peakIdx].commits / maxCommits) * plotH;
+              return (
+                <g>
+                  <circle cx={px} cy={py} r="5" fill="#fbbf24" />
+                  <circle cx={px} cy={py} r="8" fill="none" stroke="#fbbf24" stroke-opacity="0.3" stroke-width="2" />
+                </g>
+              );
+            }
+          })()}
+        </svg>
+      </div>
+    </section>
+
+    <!-- Badge Distribution -->
+    <section class="mb-16 animate-fade-up stagger-6">
+      <h2 class="font-display font-bold text-xl sm:text-2xl mb-6 text-zinc-200">
+        Badges Earned
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+        {badgeDist.map(([id, count]) => {
+          const meta = badgeMeta[id] || { name: id, emoji: "\u{1F3C6}" };
+          const pct = (count / maxBadgeCount) * 100;
+          return (
+            <div class="flex items-center gap-3 px-4 py-3 rounded-lg bg-surface-2/60 border border-white/[0.04]">
+              <span class="text-xl flex-shrink-0">{meta.emoji}</span>
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center justify-between mb-1">
+                  <span class="text-sm font-medium text-zinc-300 truncate">{meta.name}</span>
+                  <span class="text-xs font-mono text-zinc-500 ml-2">{count}</span>
+                </div>
+                <div class="h-1.5 rounded-full bg-white/[0.06] overflow-hidden">
+                  <div class="h-full rounded-full bg-gradient-to-r from-gold-500/60 to-gold-400/80" style={`width: ${pct}%`}></div>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+
+    <!-- Language Stats -->
+    <section class="mb-16 animate-fade-up stagger-7">
+      <h2 class="font-display font-bold text-xl sm:text-2xl mb-6 text-zinc-200">
+        Languages
+      </h2>
+      <div class="flex flex-wrap gap-2">
+        {stats.language_stats.map((lang, i) => {
+          const maxLines = stats.language_stats[0].lines;
+          const opacity = 0.4 + (lang.lines / maxLines) * 0.6;
+          return (
+            <div class="px-3 py-1.5 rounded-lg bg-surface-3 border border-white/[0.06] text-sm" style={`opacity: ${opacity}`}>
+              <span class="font-medium text-zinc-200">{lang.language}</span>
+              <span class="text-zinc-500 ml-1.5 font-mono text-xs">{fmt(lang.lines)}</span>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+
+    <!-- Leaderboard Table -->
+    <section class="mb-16">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="font-display font-bold text-xl sm:text-2xl text-zinc-200">
+          Leaderboard
+        </h2>
+        <div class="relative">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search hackers..."
+            class="bg-surface-3 border border-white/[0.08] rounded-lg px-4 py-2 text-sm text-zinc-200 placeholder-zinc-600 w-48 sm:w-64 focus:outline-none focus:ring-1 focus:ring-gold-500/50 focus:border-gold-500/30"
+          />
+        </div>
+      </div>
+
+      <div class="rounded-xl border border-white/[0.06] bg-surface-2/40 backdrop-blur-sm overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm" id="leaderboard-table">
+            <thead>
+              <tr class="border-b border-white/[0.06] text-zinc-500">
+                <th class="px-4 py-3 text-left font-medium w-12 cursor-pointer hover:text-zinc-300 select-none" data-sort="rank">#</th>
+                <th class="px-4 py-3 text-left font-medium cursor-pointer hover:text-zinc-300 select-none" data-sort="name">Hacker</th>
+                <th class="px-4 py-3 text-left font-medium cursor-pointer hover:text-zinc-300 select-none hidden sm:table-cell" data-sort="project">Project</th>
+                <th class="px-4 py-3 text-left font-medium cursor-pointer hover:text-zinc-300 select-none hidden md:table-cell" data-sort="role">Role</th>
+                <th class="px-4 py-3 text-right font-medium cursor-pointer hover:text-zinc-300 select-none" data-sort="commits">Commits</th>
+                <th class="px-4 py-3 text-right font-medium cursor-pointer hover:text-zinc-300 select-none hidden sm:table-cell" data-sort="lines">Lines +/-</th>
+                <th class="px-4 py-3 text-left font-medium hidden lg:table-cell">Badges</th>
+              </tr>
+            </thead>
+            <tbody>
+              {hackers.map((hacker, i) => {
+                const rank = i + 1;
+                const proj = hacker.projects[0];
+                const role = proj?.role || "Generalist";
+                const roleColor = roleColors[role] || "text-zinc-400";
+                return (
+                  <tr
+                    class="border-b border-white/[0.03] table-row-hover"
+                    data-name={hacker.name.toLowerCase()}
+                    data-project={proj?.name?.toLowerCase() || ""}
+                    data-commits={hacker.stats.total_commits}
+                    data-lines={hacker.stats.total_lines_added}
+                    data-rank={rank}
+                  >
+                    <td class="px-4 py-3">
+                      {rank <= 3 ? (
+                        <span class={`font-display font-bold ${rank === 1 ? "text-gold-400" : rank === 2 ? "text-zinc-300" : "text-amber-700"}`}>
+                          {rank === 1 ? "\u{1F947}" : rank === 2 ? "\u{1F948}" : "\u{1F949}"}
+                        </span>
+                      ) : (
+                        <span class="font-mono text-zinc-600">{rank}</span>
+                      )}
+                    </td>
+                    <td class="px-4 py-3">
+                      <a href={`/hacker/${encodeURIComponent(hacker.id)}`} class="font-medium text-zinc-200 hover:text-gold-400 transition-colors">
+                        {hacker.name}
+                      </a>
+                    </td>
+                    <td class="px-4 py-3 hidden sm:table-cell">
+                      {proj ? (
+                        <a href={`/team/${encodeURIComponent(proj.name?.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "") || "")}`} class="text-zinc-400 hover:text-zinc-200 transition-colors">
+                          {proj.name}
+                        </a>
+                      ) : (
+                        <span class="text-zinc-600">-</span>
+                      )}
+                    </td>
+                    <td class={`px-4 py-3 hidden md:table-cell text-xs font-medium ${roleColor}`}>
+                      {role}
+                    </td>
+                    <td class="px-4 py-3 text-right font-mono text-zinc-300">
+                      {hacker.stats.total_commits}
+                    </td>
+                    <td class="px-4 py-3 text-right hidden sm:table-cell">
+                      <span class="font-mono text-emerald-400/80">+{fmt(hacker.stats.total_lines_added)}</span>
+                      <span class="text-zinc-600 mx-0.5">/</span>
+                      <span class="font-mono text-rose-400/60">-{fmt(hacker.stats.total_lines_removed)}</span>
+                    </td>
+                    <td class="px-4 py-3 hidden lg:table-cell">
+                      <div class="flex flex-wrap gap-1 max-w-xs">
+                        {hacker.badges.slice(0, 4).map(badge => (
+                          <BadgePill id={badge.id} emoji={badge.emoji} name={badge.name} description={badge.description} size="sm" />
+                        ))}
+                        {hacker.badges.length > 4 && (
+                          <span class="text-xs text-zinc-500 px-1">+{hacker.badges.length - 4}</span>
+                        )}
+                      </div>
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/[0.06] pt-8 pb-12 text-center">
+      <p class="text-sm text-zinc-600">
+        Built from public git history of TreeHacks 2026 hackathon projects.
+        Data sourced from Devpost galleries and public GitHub repositories.
+      </p>
+      <div class="mt-3 flex items-center justify-center gap-4 text-xs text-zinc-600">
+        <a href="https://treefail.fdosmith.dev" class="hover:text-red-400 transition-colors">TreeFail</a>
+        <span>|</span>
+        <span>TreeHacks 2026</span>
+      </div>
+    </footer>
   </main>
 </Layout>
+
+<script>
+  // Search
+  const searchInput = document.getElementById("search-input") as HTMLInputElement;
+  const tableBody = document.querySelector("#leaderboard-table tbody") as HTMLTableSectionElement;
+  const rows = Array.from(tableBody.querySelectorAll("tr"));
+
+  searchInput?.addEventListener("input", () => {
+    const q = searchInput.value.toLowerCase().trim();
+    rows.forEach(row => {
+      const name = row.getAttribute("data-name") || "";
+      const project = row.getAttribute("data-project") || "";
+      const match = !q || name.includes(q) || project.includes(q);
+      (row as HTMLElement).style.display = match ? "" : "none";
+    });
+  });
+
+  // Column sorting
+  const headers = document.querySelectorAll("th[data-sort]");
+  let currentSort = "rank";
+  let ascending = true;
+
+  headers.forEach(th => {
+    th.addEventListener("click", () => {
+      const sortKey = (th as HTMLElement).dataset.sort!;
+      if (currentSort === sortKey) {
+        ascending = !ascending;
+      } else {
+        currentSort = sortKey;
+        ascending = sortKey === "name" || sortKey === "project" || sortKey === "role";
+      }
+
+      const sorted = [...rows].sort((a, b) => {
+        let av: string | number, bv: string | number;
+        switch (sortKey) {
+          case "rank":
+            av = parseInt(a.getAttribute("data-rank")!);
+            bv = parseInt(b.getAttribute("data-rank")!);
+            break;
+          case "name":
+            av = a.getAttribute("data-name")!;
+            bv = b.getAttribute("data-name")!;
+            break;
+          case "project":
+            av = a.getAttribute("data-project")!;
+            bv = b.getAttribute("data-project")!;
+            break;
+          case "commits":
+            av = parseInt(a.getAttribute("data-commits")!);
+            bv = parseInt(b.getAttribute("data-commits")!);
+            break;
+          case "lines":
+            av = parseInt(a.getAttribute("data-lines")!);
+            bv = parseInt(b.getAttribute("data-lines")!);
+            break;
+          default:
+            av = a.getAttribute("data-name")!;
+            bv = b.getAttribute("data-name")!;
+        }
+        if (typeof av === "number" && typeof bv === "number") {
+          return ascending ? av - bv : bv - av;
+        }
+        return ascending
+          ? String(av).localeCompare(String(bv))
+          : String(bv).localeCompare(String(av));
+      });
+
+      sorted.forEach(row => tableBody.appendChild(row));
+    });
+  });
+</script>

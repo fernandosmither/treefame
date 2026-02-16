@@ -1,0 +1,361 @@
+{
+  "generated_at": "2026-02-16T17:00:00",
+  "stats": {
+    "total_hackers": 842,
+    "total_commits": 12847,
+    "total_lines_added": 487293,
+    "total_lines_removed": 198421,
+    "peak_hour": "2026-02-15T03:00:00",
+    "badge_distribution": {
+      "all_nighter_1": 234,
+      "all_nighter_2": 89,
+      "speed_demon": 45,
+      "code_cannon": 156,
+      "one_person_army": 67,
+      "first_blood": 1,
+      "deadline_warrior": 112,
+      "bug_squasher": 78,
+      "feature_factory": 94,
+      "polyglot": 123,
+      "full_stack": 187,
+      "devops_hero": 56,
+      "docs_hero": 43,
+      "vibe_coder": 201,
+      "git_guru": 34,
+      "yolo_deployer": 12
+    },
+    "language_stats": [
+      {"language": "TypeScript", "lines": 142000},
+      {"language": "Python", "lines": 98000},
+      {"language": "JavaScript", "lines": 87000},
+      {"language": "React TSX", "lines": 65000},
+      {"language": "CSS", "lines": 32000},
+      {"language": "HTML", "lines": 21000},
+      {"language": "Go", "lines": 8000},
+      {"language": "Rust", "lines": 5000},
+      {"language": "Dart", "lines": 4000},
+      {"language": "Swift", "lines": 3000}
+    ]
+  },
+  "hackers": [
+    {
+      "id": "alice_12345",
+      "name": "Alice Chen",
+      "projects": [
+        {
+          "name": "MindSync",
+          "repo_url": "https://github.com/alicechen/mindsync",
+          "devpost_url": "https://devpost.com/software/mindsync",
+          "role": "Full Stack",
+          "commits": 87,
+          "lines_added": 4523,
+          "contribution_pct": 45.2,
+          "team_members": ["Bob Smith", "Charlie Kim"],
+          "team_member_count": 3
+        }
+      ],
+      "stats": {
+        "total_commits": 87,
+        "total_lines_added": 4523,
+        "total_lines_removed": 1234,
+        "languages": ["TypeScript", "Python", "CSS", "HTML"]
+      },
+      "badges": [
+        {"id": "all_nighter_2", "name": "All-Nighter II", "emoji": "\ud83c\udf11", "description": "Pulled all-nighters on BOTH hackathon nights"},
+        {"id": "speed_demon", "name": "Speed Demon", "emoji": "\u26a1", "description": "Made 10+ commits in a single hour"},
+        {"id": "code_cannon", "name": "Code Cannon", "emoji": "\ud83d\udca5", "description": "Added 1000+ lines of code"},
+        {"id": "full_stack", "name": "Full Stack", "emoji": "\ud83e\udd5e", "description": "Changed both frontend and backend code"},
+        {"id": "polyglot", "name": "Polyglot", "emoji": "\ud83d\udde3\ufe0f", "description": "Touched 4+ programming languages"},
+        {"id": "vibe_coder", "name": "Vibe Coder", "emoji": "\u2728", "description": "Commit messages mention AI coding tools"},
+        {"id": "deadline_warrior", "name": "Deadline Warrior", "emoji": "\u23f0", "description": "Committed in the final hour before deadline"}
+      ],
+      "activity": [
+        {"hour": "2026-02-14T18:00:00", "commits": 2, "additions": 45, "deletions": 0},
+        {"hour": "2026-02-14T19:00:00", "commits": 3, "additions": 120, "deletions": 15},
+        {"hour": "2026-02-14T20:00:00", "commits": 4, "additions": 230, "deletions": 45},
+        {"hour": "2026-02-14T21:00:00", "commits": 5, "additions": 340, "deletions": 89},
+        {"hour": "2026-02-14T22:00:00", "commits": 3, "additions": 156, "deletions": 34},
+        {"hour": "2026-02-14T23:00:00", "commits": 4, "additions": 220, "deletions": 67},
+        {"hour": "2026-02-15T00:00:00", "commits": 6, "additions": 380, "deletions": 98},
+        {"hour": "2026-02-15T01:00:00", "commits": 5, "additions": 290, "deletions": 78},
+        {"hour": "2026-02-15T02:00:00", "commits": 4, "additions": 210, "deletions": 56},
+        {"hour": "2026-02-15T03:00:00", "commits": 12, "additions": 450, "deletions": 120},
+        {"hour": "2026-02-15T04:00:00", "commits": 3, "additions": 140, "deletions": 34},
+        {"hour": "2026-02-15T05:00:00", "commits": 1, "additions": 30, "deletions": 5},
+        {"hour": "2026-02-15T08:00:00", "commits": 2, "additions": 89, "deletions": 12},
+        {"hour": "2026-02-15T09:00:00", "commits": 3, "additions": 150, "deletions": 45},
+        {"hour": "2026-02-15T10:00:00", "commits": 4, "additions": 200, "deletions": 67},
+        {"hour": "2026-02-15T14:00:00", "commits": 5, "additions": 280, "deletions": 90},
+        {"hour": "2026-02-15T15:00:00", "commits": 3, "additions": 140, "deletions": 34},
+        {"hour": "2026-02-15T20:00:00", "commits": 4, "additions": 190, "deletions": 56},
+        {"hour": "2026-02-15T23:00:00", "commits": 2, "additions": 80, "deletions": 20},
+        {"hour": "2026-02-16T02:00:00", "commits": 3, "additions": 120, "deletions": 34},
+        {"hour": "2026-02-16T03:00:00", "commits": 2, "additions": 90, "deletions": 23},
+        {"hour": "2026-02-16T08:00:00", "commits": 3, "additions": 150, "deletions": 45},
+        {"hour": "2026-02-16T09:00:00", "commits": 2, "additions": 100, "deletions": 30},
+        {"hour": "2026-02-16T10:00:00", "commits": 2, "additions": 73, "deletions": 57}
+      ]
+    },
+    {
+      "id": "bob_smith@gmail.com",
+      "name": "Bob Smith",
+      "projects": [
+        {
+          "name": "MindSync",
+          "repo_url": "https://github.com/alicechen/mindsync",
+          "devpost_url": "https://devpost.com/software/mindsync",
+          "role": "Backend",
+          "commits": 62,
+          "lines_added": 3891,
+          "contribution_pct": 32.1,
+          "team_members": ["Alice Chen", "Charlie Kim"],
+          "team_member_count": 3
+        }
+      ],
+      "stats": {
+        "total_commits": 62,
+        "total_lines_added": 3891,
+        "total_lines_removed": 987,
+        "languages": ["Python", "SQL", "Shell"]
+      },
+      "badges": [
+        {"id": "all_nighter_1", "name": "All-Nighter I", "emoji": "\ud83c\udf19", "description": "Committed code between 2AM and 6AM"},
+        {"id": "code_cannon", "name": "Code Cannon", "emoji": "\ud83d\udca5", "description": "Added 1000+ lines of code"},
+        {"id": "bug_squasher", "name": "Bug Squasher", "emoji": "\ud83d\udc1b", "description": "5+ commits with 'fix' in the message"},
+        {"id": "git_guru", "name": "Git Guru", "emoji": "\ud83e\uddd9", "description": "Uses conventional commit messages"}
+      ],
+      "activity": [
+        {"hour": "2026-02-14T19:00:00", "commits": 2, "additions": 89, "deletions": 0},
+        {"hour": "2026-02-14T20:00:00", "commits": 3, "additions": 190, "deletions": 34},
+        {"hour": "2026-02-14T22:00:00", "commits": 4, "additions": 280, "deletions": 67},
+        {"hour": "2026-02-15T00:00:00", "commits": 5, "additions": 340, "deletions": 89},
+        {"hour": "2026-02-15T02:00:00", "commits": 3, "additions": 200, "deletions": 45},
+        {"hour": "2026-02-15T09:00:00", "commits": 4, "additions": 250, "deletions": 78},
+        {"hour": "2026-02-15T13:00:00", "commits": 6, "additions": 400, "deletions": 120},
+        {"hour": "2026-02-15T16:00:00", "commits": 5, "additions": 310, "deletions": 90},
+        {"hour": "2026-02-15T21:00:00", "commits": 7, "additions": 450, "deletions": 130},
+        {"hour": "2026-02-16T01:00:00", "commits": 4, "additions": 280, "deletions": 67},
+        {"hour": "2026-02-16T07:00:00", "commits": 8, "additions": 502, "deletions": 145},
+        {"hour": "2026-02-16T09:00:00", "commits": 6, "additions": 300, "deletions": 78},
+        {"hour": "2026-02-16T10:00:00", "commits": 5, "additions": 300, "deletions": 44}
+      ]
+    },
+    {
+      "id": "charlie_67890",
+      "name": "Charlie Kim",
+      "projects": [
+        {
+          "name": "MindSync",
+          "repo_url": "https://github.com/alicechen/mindsync",
+          "devpost_url": "https://devpost.com/software/mindsync",
+          "role": "Frontend",
+          "commits": 44,
+          "lines_added": 2198,
+          "contribution_pct": 22.7,
+          "team_members": ["Alice Chen", "Bob Smith"],
+          "team_member_count": 3
+        }
+      ],
+      "stats": {
+        "total_commits": 44,
+        "total_lines_added": 2198,
+        "total_lines_removed": 567,
+        "languages": ["TypeScript", "React TSX", "CSS"]
+      },
+      "badges": [
+        {"id": "code_cannon", "name": "Code Cannon", "emoji": "\ud83d\udca5", "description": "Added 1000+ lines of code"},
+        {"id": "feature_factory", "name": "Feature Factory", "emoji": "\ud83c\udfed", "description": "5+ commits with 'feat' or 'add' in the message"},
+        {"id": "vibe_coder", "name": "Vibe Coder", "emoji": "\u2728", "description": "Commit messages mention AI coding tools"}
+      ],
+      "activity": [
+        {"hour": "2026-02-14T18:00:00", "commits": 1, "additions": 20, "deletions": 0},
+        {"hour": "2026-02-14T20:00:00", "commits": 3, "additions": 150, "deletions": 23},
+        {"hour": "2026-02-14T22:00:00", "commits": 2, "additions": 100, "deletions": 34},
+        {"hour": "2026-02-15T01:00:00", "commits": 4, "additions": 230, "deletions": 56},
+        {"hour": "2026-02-15T10:00:00", "commits": 5, "additions": 280, "deletions": 67},
+        {"hour": "2026-02-15T14:00:00", "commits": 6, "additions": 350, "deletions": 89},
+        {"hour": "2026-02-15T18:00:00", "commits": 5, "additions": 290, "deletions": 78},
+        {"hour": "2026-02-15T22:00:00", "commits": 4, "additions": 210, "deletions": 56},
+        {"hour": "2026-02-16T08:00:00", "commits": 7, "additions": 340, "deletions": 90},
+        {"hour": "2026-02-16T09:00:00", "commits": 4, "additions": 148, "deletions": 45},
+        {"hour": "2026-02-16T10:00:00", "commits": 3, "additions": 80, "deletions": 29}
+      ]
+    },
+    {
+      "id": "dana_dev@proton.me",
+      "name": "Dana Rodriguez",
+      "projects": [
+        {
+          "name": "EcoTrack",
+          "repo_url": "https://github.com/danarodriguez/ecotrack",
+          "devpost_url": "https://devpost.com/software/ecotrack",
+          "role": "Full Stack",
+          "commits": 73,
+          "lines_added": 5102,
+          "contribution_pct": 100.0,
+          "team_members": [],
+          "team_member_count": 1
+        }
+      ],
+      "stats": {
+        "total_commits": 73,
+        "total_lines_added": 5102,
+        "total_lines_removed": 1890,
+        "languages": ["Python", "TypeScript", "React TSX", "CSS", "SQL"]
+      },
+      "badges": [
+        {"id": "one_person_army", "name": "One-Person Army", "emoji": "\ud83e\uddb8", "description": "Solo contributor on a project"},
+        {"id": "code_cannon", "name": "Code Cannon", "emoji": "\ud83d\udca5", "description": "Added 1000+ lines of code"},
+        {"id": "all_nighter_2", "name": "All-Nighter II", "emoji": "\ud83c\udf11", "description": "Pulled all-nighters on BOTH hackathon nights"},
+        {"id": "polyglot", "name": "Polyglot", "emoji": "\ud83d\udde3\ufe0f", "description": "Touched 4+ programming languages"},
+        {"id": "full_stack", "name": "Full Stack", "emoji": "\ud83e\udd5e", "description": "Changed both frontend and backend code"},
+        {"id": "speed_demon", "name": "Speed Demon", "emoji": "\u26a1", "description": "Made 10+ commits in a single hour"},
+        {"id": "deadline_warrior", "name": "Deadline Warrior", "emoji": "\u23f0", "description": "Committed in the final hour before deadline"},
+        {"id": "first_blood", "name": "First Blood", "emoji": "\ud83e\udd47", "description": "Made the earliest hackathon commit"}
+      ],
+      "activity": [
+        {"hour": "2026-02-14T18:00:00", "commits": 5, "additions": 200, "deletions": 0},
+        {"hour": "2026-02-14T19:00:00", "commits": 4, "additions": 180, "deletions": 23},
+        {"hour": "2026-02-14T20:00:00", "commits": 6, "additions": 340, "deletions": 67},
+        {"hour": "2026-02-14T21:00:00", "commits": 3, "additions": 190, "deletions": 45},
+        {"hour": "2026-02-14T22:00:00", "commits": 5, "additions": 280, "deletions": 78},
+        {"hour": "2026-02-14T23:00:00", "commits": 4, "additions": 210, "deletions": 56},
+        {"hour": "2026-02-15T00:00:00", "commits": 3, "additions": 150, "deletions": 34},
+        {"hour": "2026-02-15T01:00:00", "commits": 2, "additions": 100, "deletions": 23},
+        {"hour": "2026-02-15T02:00:00", "commits": 4, "additions": 230, "deletions": 56},
+        {"hour": "2026-02-15T03:00:00", "commits": 11, "additions": 520, "deletions": 145},
+        {"hour": "2026-02-15T04:00:00", "commits": 2, "additions": 80, "deletions": 12},
+        {"hour": "2026-02-15T09:00:00", "commits": 3, "additions": 150, "deletions": 45},
+        {"hour": "2026-02-15T12:00:00", "commits": 4, "additions": 230, "deletions": 67},
+        {"hour": "2026-02-15T15:00:00", "commits": 3, "additions": 180, "deletions": 56},
+        {"hour": "2026-02-15T19:00:00", "commits": 2, "additions": 120, "deletions": 34},
+        {"hour": "2026-02-15T22:00:00", "commits": 3, "additions": 170, "deletions": 45},
+        {"hour": "2026-02-16T02:00:00", "commits": 3, "additions": 190, "deletions": 67},
+        {"hour": "2026-02-16T03:00:00", "commits": 2, "additions": 130, "deletions": 45},
+        {"hour": "2026-02-16T07:00:00", "commits": 1, "additions": 52, "deletions": 12},
+        {"hour": "2026-02-16T09:00:00", "commits": 2, "additions": 200, "deletions": 340},
+        {"hour": "2026-02-16T10:00:00", "commits": 2, "additions": 200, "deletions": 340}
+      ]
+    },
+    {
+      "id": "ethan_99999",
+      "name": "Ethan Park",
+      "projects": [
+        {
+          "name": "VoiceFlow AI",
+          "repo_url": "https://github.com/ethanpark/voiceflow-ai",
+          "devpost_url": "https://devpost.com/software/voiceflow-ai",
+          "role": "AI/ML",
+          "commits": 51,
+          "lines_added": 3456,
+          "contribution_pct": 60.0,
+          "team_members": ["Fiona Zhang"],
+          "team_member_count": 2
+        }
+      ],
+      "stats": {
+        "total_commits": 51,
+        "total_lines_added": 3456,
+        "total_lines_removed": 890,
+        "languages": ["Python", "JavaScript"]
+      },
+      "badges": [
+        {"id": "code_cannon", "name": "Code Cannon", "emoji": "\ud83d\udca5", "description": "Added 1000+ lines of code"},
+        {"id": "vibe_coder", "name": "Vibe Coder", "emoji": "\u2728", "description": "Commit messages mention AI coding tools"},
+        {"id": "devops_hero", "name": "DevOps Hero", "emoji": "\ud83d\udc33", "description": "Committed Docker/CI configuration files"},
+        {"id": "yolo_deployer", "name": "YOLO Deployer", "emoji": "\ud83d\ude80", "description": "Deploy commits AND leaked credentials"}
+      ],
+      "activity": [
+        {"hour": "2026-02-14T19:00:00", "commits": 2, "additions": 100, "deletions": 0},
+        {"hour": "2026-02-14T21:00:00", "commits": 4, "additions": 250, "deletions": 45},
+        {"hour": "2026-02-14T23:00:00", "commits": 3, "additions": 180, "deletions": 34},
+        {"hour": "2026-02-15T02:00:00", "commits": 5, "additions": 320, "deletions": 78},
+        {"hour": "2026-02-15T10:00:00", "commits": 6, "additions": 400, "deletions": 120},
+        {"hour": "2026-02-15T14:00:00", "commits": 7, "additions": 450, "deletions": 130},
+        {"hour": "2026-02-15T18:00:00", "commits": 5, "additions": 300, "deletions": 89},
+        {"hour": "2026-02-15T22:00:00", "commits": 4, "additions": 250, "deletions": 67},
+        {"hour": "2026-02-16T06:00:00", "commits": 6, "additions": 380, "deletions": 110},
+        {"hour": "2026-02-16T08:00:00", "commits": 5, "additions": 426, "deletions": 117},
+        {"hour": "2026-02-16T10:00:00", "commits": 4, "additions": 400, "deletions": 100}
+      ]
+    }
+  ],
+  "teams": [
+    {
+      "id": "mindsync",
+      "project_name": "MindSync",
+      "repo_url": "https://github.com/alicechen/mindsync",
+      "devpost_url": "https://devpost.com/software/mindsync",
+      "members": [
+        {"hacker_id": "alice_12345", "name": "Alice Chen", "role": "Full Stack", "commits": 87, "lines_added": 4523, "contribution_pct": 45.1},
+        {"hacker_id": "bob_smith@gmail.com", "name": "Bob Smith", "role": "Backend", "commits": 62, "lines_added": 3891, "contribution_pct": 32.1},
+        {"hacker_id": "charlie_67890", "name": "Charlie Kim", "role": "Frontend", "commits": 44, "lines_added": 2198, "contribution_pct": 22.8}
+      ],
+      "stats": {"total_commits": 193, "team_size": 3, "is_solo": false}
+    },
+    {
+      "id": "ecotrack",
+      "project_name": "EcoTrack",
+      "repo_url": "https://github.com/danarodriguez/ecotrack",
+      "devpost_url": "https://devpost.com/software/ecotrack",
+      "members": [
+        {"hacker_id": "dana_dev@proton.me", "name": "Dana Rodriguez", "role": "Full Stack", "commits": 73, "lines_added": 5102, "contribution_pct": 100.0}
+      ],
+      "stats": {"total_commits": 73, "team_size": 1, "is_solo": true}
+    },
+    {
+      "id": "voiceflow-ai",
+      "project_name": "VoiceFlow AI",
+      "repo_url": "https://github.com/ethanpark/voiceflow-ai",
+      "devpost_url": "https://devpost.com/software/voiceflow-ai",
+      "members": [
+        {"hacker_id": "ethan_99999", "name": "Ethan Park", "role": "AI/ML", "commits": 51, "lines_added": 3456, "contribution_pct": 60.0},
+        {"hacker_id": "fiona_88888", "name": "Fiona Zhang", "role": "Frontend", "commits": 34, "lines_added": 2304, "contribution_pct": 40.0}
+      ],
+      "stats": {"total_commits": 85, "team_size": 2, "is_solo": false}
+    }
+  ],
+  "global_activity": [
+    {"hour": "2026-02-14T18:00:00", "commits": 89, "additions": 3400, "deletions": 200},
+    {"hour": "2026-02-14T19:00:00", "commits": 134, "additions": 5200, "deletions": 890},
+    {"hour": "2026-02-14T20:00:00", "commits": 187, "additions": 7800, "deletions": 1200},
+    {"hour": "2026-02-14T21:00:00", "commits": 210, "additions": 8900, "deletions": 1500},
+    {"hour": "2026-02-14T22:00:00", "commits": 198, "additions": 8100, "deletions": 1400},
+    {"hour": "2026-02-14T23:00:00", "commits": 223, "additions": 9200, "deletions": 1800},
+    {"hour": "2026-02-15T00:00:00", "commits": 256, "additions": 10500, "deletions": 2100},
+    {"hour": "2026-02-15T01:00:00", "commits": 234, "additions": 9800, "deletions": 1900},
+    {"hour": "2026-02-15T02:00:00", "commits": 189, "additions": 7600, "deletions": 1500},
+    {"hour": "2026-02-15T03:00:00", "commits": 312, "additions": 13200, "deletions": 2800},
+    {"hour": "2026-02-15T04:00:00", "commits": 145, "additions": 5800, "deletions": 1100},
+    {"hour": "2026-02-15T05:00:00", "commits": 78, "additions": 3100, "deletions": 600},
+    {"hour": "2026-02-15T06:00:00", "commits": 45, "additions": 1800, "deletions": 340},
+    {"hour": "2026-02-15T07:00:00", "commits": 56, "additions": 2200, "deletions": 450},
+    {"hour": "2026-02-15T08:00:00", "commits": 89, "additions": 3600, "deletions": 700},
+    {"hour": "2026-02-15T09:00:00", "commits": 134, "additions": 5400, "deletions": 1000},
+    {"hour": "2026-02-15T10:00:00", "commits": 178, "additions": 7200, "deletions": 1400},
+    {"hour": "2026-02-15T11:00:00", "commits": 198, "additions": 8000, "deletions": 1600},
+    {"hour": "2026-02-15T12:00:00", "commits": 210, "additions": 8500, "deletions": 1700},
+    {"hour": "2026-02-15T13:00:00", "commits": 234, "additions": 9500, "deletions": 1900},
+    {"hour": "2026-02-15T14:00:00", "commits": 256, "additions": 10300, "deletions": 2100},
+    {"hour": "2026-02-15T15:00:00", "commits": 245, "additions": 9900, "deletions": 2000},
+    {"hour": "2026-02-15T16:00:00", "commits": 223, "additions": 9000, "deletions": 1800},
+    {"hour": "2026-02-15T17:00:00", "commits": 198, "additions": 8000, "deletions": 1600},
+    {"hour": "2026-02-15T18:00:00", "commits": 210, "additions": 8500, "deletions": 1700},
+    {"hour": "2026-02-15T19:00:00", "commits": 234, "additions": 9400, "deletions": 1900},
+    {"hour": "2026-02-15T20:00:00", "commits": 267, "additions": 10800, "deletions": 2200},
+    {"hour": "2026-02-15T21:00:00", "commits": 289, "additions": 11700, "deletions": 2400},
+    {"hour": "2026-02-15T22:00:00", "commits": 278, "additions": 11200, "deletions": 2300},
+    {"hour": "2026-02-15T23:00:00", "commits": 256, "additions": 10300, "deletions": 2100},
+    {"hour": "2026-02-16T00:00:00", "commits": 234, "additions": 9400, "deletions": 1900},
+    {"hour": "2026-02-16T01:00:00", "commits": 198, "additions": 8000, "deletions": 1600},
+    {"hour": "2026-02-16T02:00:00", "commits": 167, "additions": 6700, "deletions": 1300},
+    {"hour": "2026-02-16T03:00:00", "commits": 134, "additions": 5400, "deletions": 1100},
+    {"hour": "2026-02-16T04:00:00", "commits": 98, "additions": 3900, "deletions": 780},
+    {"hour": "2026-02-16T05:00:00", "commits": 67, "additions": 2700, "deletions": 540},
+    {"hour": "2026-02-16T06:00:00", "commits": 78, "additions": 3100, "deletions": 620},
+    {"hour": "2026-02-16T07:00:00", "commits": 112, "additions": 4500, "deletions": 900},
+    {"hour": "2026-02-16T08:00:00", "commits": 178, "additions": 7200, "deletions": 1400},
+    {"hour": "2026-02-16T09:00:00", "commits": 245, "additions": 9900, "deletions": 2000},
+    {"hour": "2026-02-16T10:00:00", "commits": 289, "additions": 11700, "deletions": 2400}
+  ]
+}

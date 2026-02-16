@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css'
 import PostHog from '../components/posthog.astro'
+import Nav from '../components/Nav.astro'
 
 interface Props {
   title: string;
@@ -19,6 +20,11 @@ const { title, description = "TreeFame — TreeHacks 2026 Hall of Fame. Hacker l
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
 
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
     <!-- Open Graph -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
@@ -28,7 +34,16 @@ const { title, description = "TreeFame — TreeHacks 2026 Hall of Fame. Hacker l
     <title>{title}</title>
     <PostHog />
   </head>
-  <body class="bg-zinc-950 text-zinc-100 min-h-screen antialiased">
-    <slot />
+  <body class="bg-surface-0 text-zinc-100 min-h-screen antialiased font-body noise-overlay">
+    <!-- Ambient background glow -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+      <div class="absolute top-[-20%] left-[10%] w-[600px] h-[600px] bg-gold-500/[0.03] rounded-full blur-[120px]"></div>
+      <div class="absolute bottom-[-10%] right-[5%] w-[500px] h-[500px] bg-emerald-500/[0.02] rounded-full blur-[100px]"></div>
+    </div>
+
+    <div class="relative z-10">
+      <Nav />
+      <slot />
+    </div>
   </body>
 </html>

@@ -1,0 +1,51 @@
+---
+interface Props {
+  id: string;
+  emoji: string;
+  name: string;
+  description?: string;
+  size?: "sm" | "md" | "lg";
+}
+
+const { id, emoji, name, description, size = "sm" } = Astro.props;
+
+// Badge color mapping
+const colorMap: Record<string, string> = {
+  all_nighter_1: "from-indigo-500/20 to-purple-500/20 border-indigo-400/30 text-indigo-300",
+  all_nighter_2: "from-purple-500/20 to-fuchsia-500/20 border-purple-400/30 text-purple-300",
+  speed_demon: "from-yellow-500/20 to-orange-500/20 border-yellow-400/30 text-yellow-300",
+  code_cannon: "from-red-500/20 to-orange-500/20 border-red-400/30 text-red-300",
+  one_person_army: "from-cyan-500/20 to-blue-500/20 border-cyan-400/30 text-cyan-300",
+  first_blood: "from-gold-500/20 to-amber-500/20 border-gold-400/30 text-gold-300",
+  deadline_warrior: "from-rose-500/20 to-pink-500/20 border-rose-400/30 text-rose-300",
+  bug_squasher: "from-lime-500/20 to-green-500/20 border-lime-400/30 text-lime-300",
+  feature_factory: "from-blue-500/20 to-indigo-500/20 border-blue-400/30 text-blue-300",
+  polyglot: "from-violet-500/20 to-purple-500/20 border-violet-400/30 text-violet-300",
+  full_stack: "from-amber-500/20 to-yellow-500/20 border-amber-400/30 text-amber-300",
+  devops_hero: "from-sky-500/20 to-cyan-500/20 border-sky-400/30 text-sky-300",
+  docs_hero: "from-emerald-500/20 to-teal-500/20 border-emerald-400/30 text-emerald-300",
+  vibe_coder: "from-pink-500/20 to-rose-500/20 border-pink-400/30 text-pink-300",
+  git_guru: "from-teal-500/20 to-emerald-500/20 border-teal-400/30 text-teal-300",
+  yolo_deployer: "from-orange-500/20 to-red-500/20 border-orange-400/30 text-orange-300",
+};
+
+const colors = colorMap[id] || "from-zinc-500/20 to-zinc-500/20 border-zinc-400/30 text-zinc-300";
+
+const sizeClasses = {
+  sm: "text-xs px-2 py-0.5 gap-1",
+  md: "text-sm px-3 py-1 gap-1.5",
+  lg: "text-base px-4 py-2 gap-2",
+};
+---
+
+<span
+  class:list={[
+    "inline-flex items-center rounded-full border bg-gradient-to-r font-medium whitespace-nowrap",
+    colors,
+    sizeClasses[size],
+  ]}
+  title={description}
+>
+  <span>{emoji}</span>
+  <span>{name}</span>
+</span>

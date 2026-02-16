@@ -1,0 +1,253 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import BadgePill from '../../components/BadgePill.astro'
+import leaderboard from '../../data/leaderboard.json'
+
+export function getStaticPaths() {
+  return leaderboard.teams.map(t => ({
+    params: { id: t.id },
+    props: { team: t },
+  }));
+}
+
+const { team } = Astro.props;
+
+function fmt(n: number): string {
+  if (n >= 1_000_000) return (n / 1_000_000).toFixed(1) + "M";
+  if (n >= 1_000) return (n / 1_000).toFixed(1) + "k";
+  return n.toLocaleString();
+}
+
+// Member colors for chart
+const memberColors = ["#fbbf24", "#34d399", "#818cf8", "#fb7185", "#38bdf8", "#f472b6"];
+
+const roleColors: Record<string, string> = {
+  "Frontend": "text-sky-400",
+  "Backend": "text-emerald-400",
+  "Full Stack": "text-amber-400",
+  "AI/ML": "text-purple-400",
+  "Mobile": "text-pink-400",
+  "DevOps": "text-cyan-400",
+  "Generalist": "text-zinc-400",
+};
+
+// Role distribution for visualization
+const roleCounts: Record<string, number> = {};
+team.members.forEach(m => {
+  roleCounts[m.role] = (roleCounts[m.role] || 0) + 1;
+});
+const totalMembers = team.members.length;
+
+// Build contribution pie-like bar
+const totalCommits = team.stats.total_commits || 1;
+
+// Per-member commit timeline
+// Gather each member's activity from the main hacker data
+const hackathonHours: string[] = [];
+const start = new Date("2026-02-14T18:00:00");
+for (let i = 0; i <= 40; i++) {
+  const d = new Date(start.getTime() + i * 3600000);
+  hackathonHours.push(d.toISOString().replace(":00:00.000Z", ":00:00"));
+}
+
+const memberTimelines = team.members.map((member, idx) => {
+  const hacker = leaderboard.hackers.find(h => h.id === member.hacker_id);
+  const activityMap: Record<string, number> = {};
+  if (hacker) {
+    for (const a of hacker.activity) {
+      activityMap[a.hour] = a.commits;
+    }
+  }
+
+  let cum = 0;
+  const data = hackathonHours.map(hour => {
+    if (activityMap[hour]) cum += activityMap[hour];
+    return cum;
+  });
+
+  return {
+    name: member.name,
+    color: memberColors[idx % memberColors.length],
+    data,
+    total: cum,
+  };
+});
+
+const maxTimeline = Math.max(...memberTimelines.map(m => m.total), 1);
+const tW = 700;
+const tH = 160;
+const tPad = 30;
+const tPlotW = tW - tPad * 2;
+const tPlotH = tH - 30;
+---
+
+<Layout title={`${team.project_name} — TreeFame`}>
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+    <!-- Back link -->
+    <div class="pt-6 pb-2">
+      <a href="/" class="text-sm text-zinc-500 hover:text-zinc-300 transition-colors">
+        &larr; Back to leaderboard
+      </a>
+    </div>
+
+    <!-- Team header -->
+    <section class="pt-4 pb-10 animate-fade-up">
+      <h1 class="font-display font-bold text-3xl sm:text-4xl text-zinc-100 tracking-tight">
+        {team.project_name}
+      </h1>
+      <div class="mt-3 flex flex-wrap items-center gap-4 text-sm text-zinc-400">
+        {team.stats.is_solo && (
+          <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-medium">
+            Solo Project
+          </span>
+        )}
+        <span>{team.stats.team_size} member{team.stats.team_size !== 1 ? "s" : ""}</span>
+        <span class="text-zinc-600">|</span>
+        <span class="font-mono">{team.stats.total_commits} commits</span>
+        {team.repo_url && (
+          <>
+            <span class="text-zinc-600">|</span>
+            <a href={team.repo_url} target="_blank" class="hover:text-zinc-200 transition-colors">GitHub</a>
+          </>
+        )}
+        {team.devpost_url && (
+          <>
+            <span class="text-zinc-600">|</span>
+            <a href={team.devpost_url} target="_blank" class="hover:text-zinc-200 transition-colors">Devpost</a>
+          </>
+        )}
+      </div>
+    </section>
+
+    <!-- Contribution bar -->
+    <section class="mb-10 animate-fade-up stagger-1">
+      <h2 class="font-display font-bold text-lg mb-4 text-zinc-200">Contributions</h2>
+      <div class="h-4 rounded-full overflow-hidden flex bg-surface-3">
+        {team.members.map((m, i) => {
+          const pct = m.contribution_pct;
+          return (
+            <div
+              class="h-full first:rounded-l-full last:rounded-r-full transition-all"
+              style={`width: ${pct}%; background-color: ${memberColors[i % memberColors.length]}`}
+              title={`${m.name}: ${pct}%`}
+            />
+          );
+        })}
+      </div>
+      <div class="flex flex-wrap gap-3 mt-3">
+        {team.members.map((m, i) => (
+          <div class="flex items-center gap-1.5 text-xs text-zinc-400">
+            <div class="w-2.5 h-2.5 rounded-full" style={`background-color: ${memberColors[i % memberColors.length]}`}></div>
+            <span>{m.name}</span>
+            <span class="text-zinc-600">{m.contribution_pct}%</span>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Member commit timeline -->
+    {memberTimelines.length > 1 && (
+      <section class="mb-10 animate-fade-up stagger-2">
+        <h2 class="font-display font-bold text-lg mb-4 text-zinc-200">Commit Timeline</h2>
+        <div class="rounded-xl bg-surface-2/60 border border-white/[0.06] p-4 overflow-x-auto">
+          <svg viewBox={`0 0 ${tW} ${tH}`} class="w-full min-w-[400px]" preserveAspectRatio="none">
+            {[0.25, 0.5, 0.75, 1].map(pct => {
+              const y = tH - 15 - pct * tPlotH;
+              return <line x1={tPad} x2={tW - tPad} y1={y} y2={y} stroke="white" stroke-opacity="0.04" />;
+            })}
+            {memberTimelines.map(mt => {
+              const path = mt.data.map((val, i) => {
+                const x = tPad + (i / (mt.data.length - 1)) * tPlotW;
+                const y = tH - 15 - (val / maxTimeline) * tPlotH;
+                return `${i === 0 ? "M" : "L"} ${x},${y}`;
+              }).join(" ");
+              return <path d={path} fill="none" stroke={mt.color} stroke-width="2" />;
+            })}
+            <text x={tPad} y={tH - 2} fill="#52525b" font-size="9" font-family="var(--font-mono)">Fri 6PM</text>
+            <text x={tW - tPad} y={tH - 2} text-anchor="end" fill="#52525b" font-size="9" font-family="var(--font-mono)">Sun 11AM</text>
+            {/* Legend */}
+            {memberTimelines.map((mt, i) => (
+              <g>
+                <circle cx={tW - 180 + i * 90} cy={10} r="4" fill={mt.color} />
+                <text x={tW - 172 + i * 90} y={14} fill="#a1a1aa" font-size="9">{mt.name.split(" ")[0]}</text>
+              </g>
+            ))}
+          </svg>
+        </div>
+      </section>
+    )}
+
+    <!-- Members grid -->
+    <section class="mb-10 animate-fade-up stagger-3">
+      <h2 class="font-display font-bold text-lg mb-4 text-zinc-200">Team Members</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        {team.members.map((member, i) => {
+          const hacker = leaderboard.hackers.find(h => h.id === member.hacker_id);
+          const roleColor = roleColors[member.role] || "text-zinc-400";
+          return (
+            <div class="card-glow rounded-xl bg-surface-2/60 border border-white/[0.06] p-5">
+              <div class="flex items-center gap-3 mb-3">
+                <div
+                  class="w-10 h-10 rounded-xl flex items-center justify-center font-display font-bold text-sm"
+                  style={`background-color: ${memberColors[i % memberColors.length]}20; color: ${memberColors[i % memberColors.length]}`}
+                >
+                  {member.name.split(" ").map(n => n[0]).join("").slice(0, 2)}
+                </div>
+                <div>
+                  <a href={`/hacker/${encodeURIComponent(member.hacker_id)}`} class="font-medium text-zinc-200 hover:text-gold-400 transition-colors">
+                    {member.name}
+                  </a>
+                  <div class={`text-xs font-medium ${roleColor}`}>{member.role}</div>
+                </div>
+              </div>
+              <div class="grid grid-cols-3 gap-2 text-center">
+                <div>
+                  <div class="font-mono text-sm text-zinc-200">{member.commits}</div>
+                  <div class="text-[10px] text-zinc-600">commits</div>
+                </div>
+                <div>
+                  <div class="font-mono text-sm text-emerald-400/80">+{fmt(member.lines_added)}</div>
+                  <div class="text-[10px] text-zinc-600">added</div>
+                </div>
+                <div>
+                  <div class="font-mono text-sm text-zinc-300">{member.contribution_pct}%</div>
+                  <div class="text-[10px] text-zinc-600">share</div>
+                </div>
+              </div>
+              {/* Show badges if available */}
+              {hacker && hacker.badges.length > 0 && (
+                <div class="mt-3 pt-3 border-t border-white/[0.04] flex flex-wrap gap-1">
+                  {hacker.badges.slice(0, 3).map(badge => (
+                    <BadgePill id={badge.id} emoji={badge.emoji} name={badge.name} size="sm" />
+                  ))}
+                  {hacker.badges.length > 3 && (
+                    <span class="text-xs text-zinc-500 px-1 self-center">+{hacker.badges.length - 3}</span>
+                  )}
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </section>
+
+    <!-- Role distribution -->
+    {Object.keys(roleCounts).length > 1 && (
+      <section class="mb-10 animate-fade-up stagger-4">
+        <h2 class="font-display font-bold text-lg mb-4 text-zinc-200">Role Distribution</h2>
+        <div class="flex flex-wrap gap-3">
+          {Object.entries(roleCounts).map(([role, count]) => {
+            const rc = roleColors[role] || "text-zinc-400";
+            const pct = Math.round((count / totalMembers) * 100);
+            return (
+              <div class="flex items-center gap-2 px-4 py-2 rounded-lg bg-surface-2/60 border border-white/[0.06]">
+                <span class={`font-medium text-sm ${rc}`}>{role}</span>
+                <span class="text-xs text-zinc-500">{count} ({pct}%)</span>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+    )}
+  </main>
+</Layout>

@@ -1,0 +1,327 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import BadgePill from '../../components/BadgePill.astro'
+import leaderboard from '../../data/leaderboard.json'
+
+export function getStaticPaths() {
+  return leaderboard.hackers.map(h => ({
+    params: { id: h.id },
+    props: { hacker: h },
+  }));
+}
+
+const { hacker } = Astro.props;
+const rank = leaderboard.hackers.findIndex(h => h.id === hacker.id) + 1;
+
+function fmt(n: number): string {
+  if (n >= 1_000_000) return (n / 1_000_000).toFixed(1) + "M";
+  if (n >= 1_000) return (n / 1_000).toFixed(1) + "k";
+  return n.toLocaleString();
+}
+
+// Activity heatmap: 48 cells (hackathon hours)
+// Generate all 41 hours from Fri 6PM to Sun 11AM
+const hackathonHours: string[] = [];
+const start = new Date("2026-02-14T18:00:00");
+for (let i = 0; i <= 40; i++) {
+  const d = new Date(start.getTime() + i * 3600000);
+  hackathonHours.push(d.toISOString().replace(":00:00.000Z", ":00:00"));
+}
+
+const activityMap: Record<string, { commits: number; additions: number; deletions: number }> = {};
+for (const a of hacker.activity) {
+  activityMap[a.hour] = a;
+}
+
+const maxHourCommits = Math.max(...hacker.activity.map(a => a.commits), 1);
+
+// Cumulative commit chart
+let cumCommits = 0;
+const cumulativeData = hackathonHours.map(hour => {
+  const a = activityMap[hour];
+  if (a) cumCommits += a.commits;
+  return { hour, total: cumCommits };
+});
+const maxCumCommits = cumulativeData[cumulativeData.length - 1].total || 1;
+
+// Cumulative LoC chart
+let cumAdd = 0;
+let cumDel = 0;
+const cumulativeLoC = hackathonHours.map(hour => {
+  const a = activityMap[hour];
+  if (a) {
+    cumAdd += a.additions;
+    cumDel += a.deletions;
+  }
+  return { hour, additions: cumAdd, deletions: cumDel };
+});
+const maxLoC = Math.max(cumulativeLoC[cumulativeLoC.length - 1].additions, cumulativeLoC[cumulativeLoC.length - 1].deletions, 1);
+
+// Build SVG paths for charts
+const cW = 700;
+const cH = 140;
+const cPad = 30;
+const cPlotW = cW - cPad * 2;
+const cPlotH = cH - 30;
+
+function buildPath(data: { x: number; y: number }[]): string {
+  return data.map((p, i) => `${i === 0 ? "M" : "L"} ${p.x},${p.y}`).join(" ");
+}
+
+function buildAreaFromPath(data: { x: number; y: number }[]): string {
+  const line = buildPath(data);
+  return `${line} L ${data[data.length - 1].x},${cH - 15} L ${data[0].x},${cH - 15} Z`;
+}
+
+const commitPoints = cumulativeData.map((d, i) => ({
+  x: cPad + (i / (cumulativeData.length - 1)) * cPlotW,
+  y: cH - 15 - (d.total / maxCumCommits) * cPlotH,
+}));
+
+const addPoints = cumulativeLoC.map((d, i) => ({
+  x: cPad + (i / (cumulativeLoC.length - 1)) * cPlotW,
+  y: cH - 15 - (d.additions / maxLoC) * cPlotH,
+}));
+
+const delPoints = cumulativeLoC.map((d, i) => ({
+  x: cPad + (i / (cumulativeLoC.length - 1)) * cPlotW,
+  y: cH - 15 - (d.deletions / maxLoC) * cPlotH,
+}));
+
+const roleColors: Record<string, string> = {
+  "Frontend": "text-sky-400 bg-sky-400/10 border-sky-400/20",
+  "Backend": "text-emerald-400 bg-emerald-400/10 border-emerald-400/20",
+  "Full Stack": "text-amber-400 bg-amber-400/10 border-amber-400/20",
+  "AI/ML": "text-purple-400 bg-purple-400/10 border-purple-400/20",
+  "Mobile": "text-pink-400 bg-pink-400/10 border-pink-400/20",
+  "DevOps": "text-cyan-400 bg-cyan-400/10 border-cyan-400/20",
+  "Generalist": "text-zinc-400 bg-zinc-400/10 border-zinc-400/20",
+};
+---
+
+<Layout title={`${hacker.name} — TreeFame`}>
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+    <!-- Back link -->
+    <div class="pt-6 pb-2">
+      <a href="/" class="text-sm text-zinc-500 hover:text-zinc-300 transition-colors">
+        &larr; Back to leaderboard
+      </a>
+    </div>
+
+    <!-- Profile header -->
+    <section class="pt-4 pb-10 animate-fade-up">
+      <div class="flex items-start gap-6">
+        <!-- Avatar placeholder (initials) -->
+        <div class="flex-shrink-0 w-20 h-20 rounded-2xl bg-gradient-to-br from-gold-500/20 to-gold-700/20 border border-gold-500/20 flex items-center justify-center">
+          <span class="font-display font-bold text-3xl text-gold-400">
+            {hacker.name.split(" ").map(n => n[0]).join("").slice(0, 2)}
+          </span>
+        </div>
+        <div class="flex-1 min-w-0">
+          <h1 class="font-display font-bold text-3xl sm:text-4xl text-zinc-100 tracking-tight">
+            {hacker.name}
+          </h1>
+          <div class="mt-2 flex flex-wrap items-center gap-3">
+            <span class="font-mono text-gold-400 text-sm">#{rank}</span>
+            {hacker.projects.map(proj => {
+              const rc = roleColors[proj.role] || roleColors["Generalist"];
+              return (
+                <span class={`inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium border ${rc}`}>
+                  {proj.role}
+                </span>
+              );
+            })}
+          </div>
+          <div class="mt-3 flex flex-wrap gap-x-6 gap-y-1 text-sm text-zinc-400">
+            {hacker.projects.map(proj => (
+              <span>
+                <a href={`/team/${proj.name?.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "")}`} class="hover:text-zinc-200 transition-colors">
+                  {proj.name}
+                </a>
+                {proj.team_members.length > 0 && (
+                  <span class="text-zinc-600 ml-1">
+                    with {proj.team_members.join(", ")}
+                  </span>
+                )}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats row -->
+    <section class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-10 animate-fade-up stagger-1">
+      {[
+        { label: "Commits", value: hacker.stats.total_commits.toString(), color: "text-gold-400" },
+        { label: "Lines Added", value: "+" + fmt(hacker.stats.total_lines_added), color: "text-emerald-400" },
+        { label: "Lines Removed", value: "-" + fmt(hacker.stats.total_lines_removed), color: "text-rose-400" },
+        { label: "Languages", value: hacker.stats.languages.length.toString(), color: "text-violet-400" },
+      ].map(stat => (
+        <div class="rounded-xl bg-surface-2/80 border border-white/[0.06] p-4">
+          <div class={`font-display font-bold text-2xl ${stat.color}`}>{stat.value}</div>
+          <div class="text-xs text-zinc-500 mt-1">{stat.label}</div>
+        </div>
+      ))}
+    </section>
+
+    <!-- Badges showcase -->
+    {hacker.badges.length > 0 && (
+      <section class="mb-10 animate-fade-up stagger-2">
+        <h2 class="font-display font-bold text-lg mb-4 text-zinc-200">Badges</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+          {hacker.badges.map(badge => (
+            <div class="flex items-center gap-3 px-4 py-3 rounded-xl bg-surface-2/60 border border-white/[0.06]">
+              <span class="text-2xl">{badge.emoji}</span>
+              <div>
+                <div class="font-medium text-sm text-zinc-200">{badge.name}</div>
+                <div class="text-xs text-zinc-500">{badge.description}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <!-- Activity Heatmap -->
+    <section class="mb-10 animate-fade-up stagger-3">
+      <h2 class="font-display font-bold text-lg mb-4 text-zinc-200">
+        Activity Heatmap
+        <span class="text-xs font-body font-normal text-zinc-500 ml-2">41 hackathon hours</span>
+      </h2>
+      <div class="rounded-xl bg-surface-2/60 border border-white/[0.06] p-4 overflow-x-auto">
+        <div class="flex gap-1 min-w-[500px]" role="img" aria-label="Activity heatmap showing commits per hour">
+          {hackathonHours.map((hour, i) => {
+            const a = activityMap[hour];
+            const commits = a?.commits || 0;
+            const intensity = commits / maxHourCommits;
+            const bg = commits === 0
+              ? "bg-white/[0.03]"
+              : intensity > 0.75
+                ? "bg-gold-400"
+                : intensity > 0.5
+                  ? "bg-gold-500/70"
+                  : intensity > 0.25
+                    ? "bg-gold-600/50"
+                    : "bg-gold-700/30";
+            const d = new Date(start.getTime() + i * 3600000);
+            const label = d.toLocaleString("en-US", { weekday: "short", hour: "numeric", hour12: true });
+            return (
+              <div
+                class={`flex-1 h-8 rounded-sm ${bg} transition-colors`}
+                title={`${label}: ${commits} commit${commits !== 1 ? "s" : ""}`}
+              />
+            );
+          })}
+        </div>
+        <div class="flex justify-between mt-2 text-[10px] text-zinc-600 font-mono min-w-[500px]">
+          <span>Fri 6PM</span>
+          <span>Sat 12AM</span>
+          <span>Sat 12PM</span>
+          <span>Sun 12AM</span>
+          <span>Sun 11AM</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Commit velocity chart -->
+    <section class="mb-10 animate-fade-up stagger-4">
+      <h2 class="font-display font-bold text-lg mb-4 text-zinc-200">Commit Velocity</h2>
+      <div class="rounded-xl bg-surface-2/60 border border-white/[0.06] p-4 overflow-x-auto">
+        <svg viewBox={`0 0 ${cW} ${cH}`} class="w-full min-w-[400px]" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="commitGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.2" />
+              <stop offset="100%" stop-color="#fbbf24" stop-opacity="0" />
+            </linearGradient>
+          </defs>
+          {[0.25, 0.5, 0.75, 1].map(pct => {
+            const y = cH - 15 - pct * cPlotH;
+            return <line x1={cPad} x2={cW - cPad} y1={y} y2={y} stroke="white" stroke-opacity="0.04" />;
+          })}
+          <path d={buildAreaFromPath(commitPoints)} fill="url(#commitGrad)" />
+          <path d={buildPath(commitPoints)} fill="none" stroke="#fbbf24" stroke-width="2" />
+          <text x={cPad} y={cH - 2} fill="#52525b" font-size="9" font-family="var(--font-mono)">Fri 6PM</text>
+          <text x={cW - cPad} y={cH - 2} text-anchor="end" fill="#52525b" font-size="9" font-family="var(--font-mono)">Sun 11AM</text>
+          <text x={cPad - 4} y={cH - 15 - cPlotH + 4} text-anchor="end" fill="#52525b" font-size="9" font-family="var(--font-mono)">{maxCumCommits}</text>
+        </svg>
+      </div>
+    </section>
+
+    <!-- LoC Growth chart -->
+    <section class="mb-10 animate-fade-up stagger-5">
+      <h2 class="font-display font-bold text-lg mb-4 text-zinc-200">Lines of Code</h2>
+      <div class="rounded-xl bg-surface-2/60 border border-white/[0.06] p-4 overflow-x-auto">
+        <svg viewBox={`0 0 ${cW} ${cH}`} class="w-full min-w-[400px]" preserveAspectRatio="none">
+          {[0.25, 0.5, 0.75, 1].map(pct => {
+            const y = cH - 15 - pct * cPlotH;
+            return <line x1={cPad} x2={cW - cPad} y1={y} y2={y} stroke="white" stroke-opacity="0.04" />;
+          })}
+          <path d={buildPath(addPoints)} fill="none" stroke="#34d399" stroke-width="2" />
+          <path d={buildPath(delPoints)} fill="none" stroke="#fb7185" stroke-width="1.5" stroke-dasharray="4,3" />
+          <text x={cPad} y={cH - 2} fill="#52525b" font-size="9" font-family="var(--font-mono)">Fri 6PM</text>
+          <text x={cW - cPad} y={cH - 2} text-anchor="end" fill="#52525b" font-size="9" font-family="var(--font-mono)">Sun 11AM</text>
+          {/* Legend */}
+          <circle cx={cW - 140} cy={10} r="4" fill="#34d399" />
+          <text x={cW - 132} y={14} fill="#a1a1aa" font-size="9">Additions</text>
+          <circle cx={cW - 70} cy={10} r="4" fill="#fb7185" />
+          <text x={cW - 62} y={14} fill="#a1a1aa" font-size="9">Deletions</text>
+        </svg>
+      </div>
+    </section>
+
+    <!-- Languages -->
+    <section class="mb-10 animate-fade-up stagger-6">
+      <h2 class="font-display font-bold text-lg mb-4 text-zinc-200">Languages</h2>
+      <div class="flex flex-wrap gap-2">
+        {hacker.stats.languages.map(lang => (
+          <span class="px-3 py-1.5 rounded-lg bg-surface-3 border border-white/[0.06] text-sm font-medium text-zinc-300">
+            {lang}
+          </span>
+        ))}
+      </div>
+    </section>
+
+    <!-- Projects / Teams -->
+    <section class="mb-10 animate-fade-up stagger-7">
+      <h2 class="font-display font-bold text-lg mb-4 text-zinc-200">Projects</h2>
+      {hacker.projects.map(proj => (
+        <div class="rounded-xl bg-surface-2/60 border border-white/[0.06] p-5">
+          <div class="flex items-center justify-between mb-3">
+            <div>
+              <a href={`/team/${proj.name?.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "")}`} class="font-display font-bold text-zinc-200 hover:text-gold-400 transition-colors">
+                {proj.name}
+              </a>
+              <span class="text-xs text-zinc-500 ml-2">{proj.contribution_pct}% contribution</span>
+            </div>
+            <div class="flex gap-2">
+              {proj.repo_url && (
+                <a href={proj.repo_url} target="_blank" class="text-xs text-zinc-500 hover:text-zinc-300 transition-colors">
+                  GitHub
+                </a>
+              )}
+              {proj.devpost_url && (
+                <a href={proj.devpost_url} target="_blank" class="text-xs text-zinc-500 hover:text-zinc-300 transition-colors">
+                  Devpost
+                </a>
+              )}
+            </div>
+          </div>
+          <div class="flex items-center gap-4 text-sm text-zinc-400">
+            <span class="font-mono">{proj.commits} commits</span>
+            <span class="font-mono text-emerald-400/70">+{fmt(proj.lines_added)}</span>
+            <span class="text-zinc-600">|</span>
+            <span>{proj.team_member_count} member{proj.team_member_count !== 1 ? "s" : ""}</span>
+          </div>
+          {proj.team_members.length > 0 && (
+            <div class="mt-3 flex flex-wrap gap-2">
+              {proj.team_members.map(name => (
+                <span class="text-xs text-zinc-500 bg-surface-3 px-2 py-1 rounded">{name}</span>
+              ))}
+            </div>
+          )}
+        </div>
+      ))}
+    </section>
+  </main>
+</Layout>

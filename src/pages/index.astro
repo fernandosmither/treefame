@@ -287,13 +287,13 @@ const roleColors: Record<string, string> = {
                       )}
                     </td>
                     <td class="px-4 py-3">
-                      <a href={`/hacker/${encodeURIComponent(hacker.id)}`} class="font-medium text-zinc-200 hover:text-gold-400 transition-colors">
+                      <a href={`/hacker/${hacker.id}`} class="font-medium text-zinc-200 hover:text-gold-400 transition-colors">
                         {hacker.name}
                       </a>
                     </td>
                     <td class="px-4 py-3 hidden sm:table-cell">
                       {proj ? (
-                        <a href={`/team/${encodeURIComponent(proj.name?.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "") || "")}`} class="text-zinc-400 hover:text-zinc-200 transition-colors">
+                        <a href={`/team/${proj.name?.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "") || ""}`} class="text-zinc-400 hover:text-zinc-200 transition-colors">
                           {proj.name}
                         </a>
                       ) : (

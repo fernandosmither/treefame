@@ -1,0 +1,203 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <!-- Gold gradient for crown and accents -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD700"/>
+      <stop offset="50%" stop-color="#FFC107"/>
+      <stop offset="100%" stop-color="#FF8F00"/>
+    </linearGradient>
+    <!-- Trunk gradient -->
+    <linearGradient id="trunkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8D6E63"/>
+      <stop offset="100%" stop-color="#5D4037"/>
+    </linearGradient>
+    <!-- Canopy gradient (rich green) -->
+    <radialGradient id="canopyGrad" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#66BB6A"/>
+      <stop offset="60%" stop-color="#43A047"/>
+      <stop offset="100%" stop-color="#2E7D32"/>
+    </radialGradient>
+    <!-- Canopy highlight -->
+    <radialGradient id="canopyHighlight" cx="40%" cy="30%" r="40%">
+      <stop offset="0%" stop-color="#A5D6A7" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#66BB6A" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Star sparkle glow -->
+    <filter id="starGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <!-- Crown glow -->
+    <filter id="crownGlow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <!-- Sparkle animation -->
+    <style>
+      @keyframes twinkle1 { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+      @keyframes twinkle2 { 0%,100% { opacity: 0.3; } 50% { opacity: 1; } }
+      @keyframes twinkle3 { 0%,100% { opacity: 0.7; } 50% { opacity: 0.2; } }
+      .star1 { animation: twinkle1 2s ease-in-out infinite; }
+      .star2 { animation: twinkle2 2.5s ease-in-out infinite; }
+      .star3 { animation: twinkle3 1.8s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <!-- ============ LAUREL WREATHS (framing the tree) ============ -->
+  <!-- Left laurel -->
+  <g opacity="0.8">
+    <path d="M100,310 Q75,280 85,250 Q70,260 65,240 Q55,255 50,230 Q40,248 38,220 Q28,240 30,210 Q20,225 25,195 Q18,210 22,180 Q15,195 20,165 Q15,178 22,150"
+          fill="none" stroke="#43A047" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Left leaves -->
+    <ellipse cx="85" cy="250" rx="12" ry="6" fill="#66BB6A" transform="rotate(-30,85,250)"/>
+    <ellipse cx="65" cy="240" rx="12" ry="6" fill="#66BB6A" transform="rotate(-40,65,240)"/>
+    <ellipse cx="50" cy="230" rx="12" ry="6" fill="#66BB6A" transform="rotate(-35,50,230)"/>
+    <ellipse cx="38" cy="220" rx="12" ry="6" fill="#66BB6A" transform="rotate(-45,38,220)"/>
+    <ellipse cx="30" cy="210" rx="12" ry="6" fill="#66BB6A" transform="rotate(-40,30,210)"/>
+    <ellipse cx="25" cy="195" rx="11" ry="5.5" fill="#66BB6A" transform="rotate(-50,25,195)"/>
+    <ellipse cx="22" cy="180" rx="11" ry="5.5" fill="#66BB6A" transform="rotate(-55,22,180)"/>
+    <ellipse cx="22" cy="165" rx="10" ry="5" fill="#66BB6A" transform="rotate(-60,22,165)"/>
+    <ellipse cx="22" cy="150" rx="10" ry="5" fill="#66BB6A" transform="rotate(-65,22,150)"/>
+  </g>
+
+  <!-- Right laurel (mirrored) -->
+  <g opacity="0.8">
+    <path d="M300,310 Q325,280 315,250 Q330,260 335,240 Q345,255 350,230 Q360,248 362,220 Q372,240 370,210 Q380,225 375,195 Q382,210 378,180 Q385,195 380,165 Q385,178 378,150"
+          fill="none" stroke="#43A047" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Right leaves -->
+    <ellipse cx="315" cy="250" rx="12" ry="6" fill="#66BB6A" transform="rotate(30,315,250)"/>
+    <ellipse cx="335" cy="240" rx="12" ry="6" fill="#66BB6A" transform="rotate(40,335,240)"/>
+    <ellipse cx="350" cy="230" rx="12" ry="6" fill="#66BB6A" transform="rotate(35,350,230)"/>
+    <ellipse cx="362" cy="220" rx="12" ry="6" fill="#66BB6A" transform="rotate(45,362,220)"/>
+    <ellipse cx="370" cy="210" rx="12" ry="6" fill="#66BB6A" transform="rotate(40,370,210)"/>
+    <ellipse cx="375" cy="195" rx="11" ry="5.5" fill="#66BB6A" transform="rotate(50,375,195)"/>
+    <ellipse cx="378" cy="180" rx="11" ry="5.5" fill="#66BB6A" transform="rotate(55,378,180)"/>
+    <ellipse cx="378" cy="165" rx="10" ry="5" fill="#66BB6A" transform="rotate(60,378,165)"/>
+    <ellipse cx="378" cy="150" rx="10" ry="5" fill="#66BB6A" transform="rotate(65,378,150)"/>
+  </g>
+
+  <!-- ============ TREE TRUNK ============ -->
+  <!-- Main trunk -->
+  <path d="M185,340 L185,230 Q185,220 190,215 L190,340 Z" fill="url(#trunkGrad)"/>
+  <path d="M210,340 L210,230 Q215,220 215,215 L215,340 Z" fill="url(#trunkGrad)"/>
+  <rect x="185" y="230" width="30" height="110" rx="3" fill="url(#trunkGrad)"/>
+
+  <!-- Trunk texture lines -->
+  <line x1="195" y1="250" x2="195" y2="335" stroke="#4E342E" stroke-width="0.8" opacity="0.4"/>
+  <line x1="205" y1="245" x2="205" y2="330" stroke="#4E342E" stroke-width="0.8" opacity="0.3"/>
+
+  <!-- Roots -->
+  <path d="M185,335 Q170,340 155,345 Q150,346 152,342 Q165,335 185,330" fill="url(#trunkGrad)"/>
+  <path d="M215,335 Q230,340 245,345 Q250,346 248,342 Q235,335 215,330" fill="url(#trunkGrad)"/>
+  <path d="M192,338 Q180,345 170,352 Q167,354 170,350 Q178,342 192,335" fill="url(#trunkGrad)"/>
+  <path d="M208,338 Q220,345 230,352 Q233,354 230,350 Q222,342 208,335" fill="url(#trunkGrad)"/>
+
+  <!-- Small branches visible from trunk -->
+  <path d="M185,260 Q165,248 150,255" fill="none" stroke="#6D4C41" stroke-width="4" stroke-linecap="round"/>
+  <path d="M215,255 Q235,243 250,250" fill="none" stroke="#6D4C41" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- ============ TREE CANOPY ============ -->
+  <!-- Main canopy shape (lush, full, layered) -->
+  <!-- Bottom canopy layer -->
+  <ellipse cx="200" cy="210" rx="95" ry="55" fill="url(#canopyGrad)"/>
+  <!-- Middle canopy bumps -->
+  <ellipse cx="155" cy="195" rx="52" ry="48" fill="url(#canopyGrad)"/>
+  <ellipse cx="245" cy="195" rx="52" ry="48" fill="url(#canopyGrad)"/>
+  <!-- Top canopy -->
+  <ellipse cx="200" cy="170" rx="72" ry="55" fill="url(#canopyGrad)"/>
+  <!-- Upper bumps -->
+  <ellipse cx="170" cy="155" rx="40" ry="35" fill="url(#canopyGrad)"/>
+  <ellipse cx="230" cy="155" rx="40" ry="35" fill="url(#canopyGrad)"/>
+  <!-- Crown area -->
+  <ellipse cx="200" cy="138" rx="50" ry="38" fill="url(#canopyGrad)"/>
+  <!-- Top tuft -->
+  <ellipse cx="200" cy="118" rx="30" ry="22" fill="url(#canopyGrad)"/>
+
+  <!-- Canopy highlight overlay -->
+  <ellipse cx="185" cy="165" rx="65" ry="50" fill="url(#canopyHighlight)"/>
+
+  <!-- Canopy depth: darker bottom edges -->
+  <ellipse cx="200" cy="235" rx="80" ry="20" fill="#1B5E20" opacity="0.2"/>
+
+  <!-- ============ GOLDEN CROWN ============ -->
+  <g filter="url(#crownGlow)">
+    <!-- Crown base band -->
+    <rect x="172" y="98" width="56" height="12" rx="3" fill="url(#goldGrad)"/>
+    <!-- Crown points -->
+    <polygon points="172,98 165,72 180,88" fill="url(#goldGrad)"/>
+    <polygon points="200,98 193,62 207,62" fill="url(#goldGrad)"/>
+    <polygon points="228,98 235,72 220,88" fill="url(#goldGrad)"/>
+    <!-- Crown intermediate points -->
+    <polygon points="186,98 182,78 192,88" fill="url(#goldGrad)"/>
+    <polygon points="214,98 218,78 208,88" fill="url(#goldGrad)"/>
+    <!-- Jewels on crown -->
+    <circle cx="200" cy="68" r="4" fill="#E53935" opacity="0.9"/>
+    <circle cx="167" cy="78" r="3" fill="#1E88E5" opacity="0.9"/>
+    <circle cx="233" cy="78" r="3" fill="#1E88E5" opacity="0.9"/>
+    <!-- Crown band detail -->
+    <rect x="174" y="101" width="52" height="3" rx="1" fill="#FF8F00" opacity="0.5"/>
+    <!-- Small gems on band -->
+    <circle cx="185" cy="104" r="2" fill="#FFD700"/>
+    <circle cx="200" cy="104" r="2" fill="#FFD700"/>
+    <circle cx="215" cy="104" r="2" fill="#FFD700"/>
+  </g>
+
+  <!-- ============ STARS / SPARKLES ============ -->
+  <!-- Star shape helper: 4-pointed stars -->
+  <!-- Star 1 - top left -->
+  <g class="star1" filter="url(#starGlow)">
+    <polygon points="80,120 84,128 92,130 84,132 80,140 76,132 68,130 76,128" fill="#FFD700"/>
+  </g>
+  <!-- Star 2 - top right -->
+  <g class="star2" filter="url(#starGlow)">
+    <polygon points="320,115 323,121 330,123 323,125 320,131 317,125 310,123 317,121" fill="#FFC107"/>
+  </g>
+  <!-- Star 3 - left side -->
+  <g class="star3" filter="url(#starGlow)">
+    <polygon points="70,180 73,186 80,188 73,190 70,196 67,190 60,188 67,186" fill="#FFD700"/>
+  </g>
+  <!-- Star 4 - right side -->
+  <g class="star1" filter="url(#starGlow)">
+    <polygon points="335,175 338,181 345,183 338,185 335,191 332,185 325,183 332,181" fill="#FFC107"/>
+  </g>
+  <!-- Star 5 - above crown left -->
+  <g class="star2" filter="url(#starGlow)">
+    <polygon points="150,75 152,79 156,80 152,81 150,85 148,81 144,80 148,79" fill="#FFD700"/>
+  </g>
+  <!-- Star 6 - above crown right -->
+  <g class="star3" filter="url(#starGlow)">
+    <polygon points="250,70 252,74 256,75 252,76 250,80 248,76 244,75 248,74" fill="#FFD700"/>
+  </g>
+  <!-- Star 7 - top center -->
+  <g class="star1" filter="url(#starGlow)">
+    <polygon points="200,40 203,48 212,50 203,52 200,60 197,52 188,50 197,48" fill="#FFD700"/>
+  </g>
+  <!-- Small accent stars (tiny dots) -->
+  <circle cx="110" cy="100" r="2" fill="#FFD700" class="star3" opacity="0.8"/>
+  <circle cx="290" cy="95" r="2" fill="#FFD700" class="star1" opacity="0.8"/>
+  <circle cx="55" cy="155" r="1.5" fill="#FFC107" class="star2" opacity="0.7"/>
+  <circle cx="345" cy="150" r="1.5" fill="#FFC107" class="star3" opacity="0.7"/>
+  <circle cx="130" cy="60" r="1.5" fill="#FFD700" class="star1" opacity="0.6"/>
+  <circle cx="270" cy="55" r="1.5" fill="#FFD700" class="star2" opacity="0.6"/>
+
+  <!-- ============ TROPHY ACCENT (small, at base) ============ -->
+  <g transform="translate(200,360)" opacity="0.7">
+    <!-- Trophy cup -->
+    <path d="M-12,-8 L-10,-18 L10,-18 L12,-8 Q8,-2 0,0 Q-8,-2 -12,-8 Z" fill="url(#goldGrad)"/>
+    <!-- Trophy handles -->
+    <path d="M-10,-16 Q-18,-14 -16,-8 Q-14,-4 -10,-6" fill="none" stroke="url(#goldGrad)" stroke-width="2" stroke-linecap="round"/>
+    <path d="M10,-16 Q18,-14 16,-8 Q14,-4 10,-6" fill="none" stroke="url(#goldGrad)" stroke-width="2" stroke-linecap="round"/>
+    <!-- Trophy base -->
+    <rect x="-4" y="0" width="8" height="4" rx="1" fill="url(#goldGrad)"/>
+    <rect x="-8" y="4" width="16" height="3" rx="1" fill="url(#goldGrad)"/>
+  </g>
+
+  <!-- ============ TEXT (optional branding) ============ -->
+  <text x="200" y="393" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-weight="800" font-size="10" fill="#A5D6A7" letter-spacing="4" opacity="0.6">TREEFAME</text>
+</svg>

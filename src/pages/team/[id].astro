@@ -149,8 +149,8 @@ const tPlotH = tH - 30;
     {memberTimelines.length > 1 && (
       <section class="mb-10 animate-fade-up stagger-2">
         <h2 class="font-display font-bold text-lg mb-4 text-zinc-200">Commit Timeline</h2>
-        <div class="rounded-xl bg-surface-2/60 border border-white/[0.06] p-4 overflow-x-auto">
-          <svg viewBox={`0 0 ${tW} ${tH}`} class="w-full min-w-[400px]" preserveAspectRatio="none">
+        <div class="rounded-xl bg-surface-2/60 border border-white/[0.06] p-4 overflow-x-auto relative" id="timeline-container">
+          <svg viewBox={`0 0 ${tW} ${tH}`} class="w-full min-w-[400px]" preserveAspectRatio="none" id="timeline-chart">
             {[0.25, 0.5, 0.75, 1].map(pct => {
               const y = tH - 15 - pct * tPlotH;
               return <line x1={tPad} x2={tW - tPad} y1={y} y2={y} stroke="white" stroke-opacity="0.04" />;
@@ -172,7 +172,36 @@ const tPlotH = tH - 30;
                 <text x={tW - 172 + i * 90} y={14} fill="#a1a1aa" font-size="9">{mt.name.split(" ")[0]}</text>
               </g>
             ))}
+            {/* Hover dots per member */}
+            {memberTimelines.map((mt, mi) => (
+              <circle class={`timeline-dot timeline-dot-${mi}`} cx="0" cy="0" r="4" fill={mt.color} opacity="0" />
+            ))}
+            {/* Vertical hover line */}
+            <line id="timeline-vline" x1="0" y1="0" x2="0" y2={tH - 15} stroke="white" stroke-opacity="0" stroke-width="1" stroke-dasharray="3,3" />
+            {/* Invisible hover columns */}
+            {hackathonHours.map((_hour, i) => {
+              const colW = tPlotW / hackathonHours.length;
+              const x = tPad + (i / (hackathonHours.length - 1)) * tPlotW - colW / 2;
+              const pointX = tPad + (i / (hackathonHours.length - 1)) * tPlotW;
+              const memberVals = memberTimelines.map(mt => mt.data[i]);
+              return (
+                <rect
+                  class="timeline-col"
+                  x={x} y={0} width={colW} height={tH - 15}
+                  fill="transparent"
+                  data-idx={i}
+                  data-px={pointX}
+                  data-vals={JSON.stringify(memberVals)}
+                  data-names={JSON.stringify(memberTimelines.map(mt => mt.name.split(" ")[0]))}
+                  data-colors={JSON.stringify(memberTimelines.map(mt => mt.color))}
+                />
+              );
+            })}
           </svg>
+          <div id="timeline-tooltip" class="absolute pointer-events-none opacity-0 transition-opacity duration-150 bg-surface-0/95 border border-white/10 rounded-lg px-3 py-2 text-xs shadow-xl z-20 backdrop-blur-sm" style="top:0;left:0;">
+            <div id="timeline-tooltip-time" class="font-medium text-zinc-200 mb-1"></div>
+            <div id="timeline-tooltip-members"></div>
+          </div>
         </div>
       </section>
     )}
@@ -251,3 +280,85 @@ const tPlotH = tH - 30;
     )}
   </main>
 </Layout>
+
+<script>
+  // Timeline chart hover
+  const timelineContainer = document.getElementById("timeline-container");
+  const timelineTooltip = document.getElementById("timeline-tooltip");
+  const timelineVline = document.getElementById("timeline-vline");
+  const tH = 160;
+
+  if (timelineContainer) {
+    const start = new Date("2026-02-14T18:00:00");
+
+    document.querySelectorAll(".timeline-col").forEach(col => {
+      col.addEventListener("mouseenter", (e) => {
+        const el = e.target as SVGRectElement;
+        const idx = parseInt(el.dataset.idx!);
+        const px = parseFloat(el.dataset.px!);
+        const vals: number[] = JSON.parse(el.dataset.vals!);
+        const names: string[] = JSON.parse(el.dataset.names!);
+        const colors: string[] = JSON.parse(el.dataset.colors!);
+
+        // Format time
+        const d = new Date(start.getTime() + idx * 3600000);
+        const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+        const h = d.getHours();
+        const ampm = h >= 12 ? "PM" : "AM";
+        const h12 = h % 12 || 12;
+        document.getElementById("timeline-tooltip-time")!.textContent = `${days[d.getDay()]} ${h12}${ampm}`;
+
+        // Build member values
+        const membersDiv = document.getElementById("timeline-tooltip-members")!;
+        membersDiv.innerHTML = names.map((name, mi) =>
+          `<div style="color:${colors[mi]}"><span class="font-mono">${vals[mi]}</span> <span class="text-zinc-500">${name}</span></div>`
+        ).join("");
+
+        // Show vertical line
+        timelineVline!.setAttribute("x1", px.toString());
+        timelineVline!.setAttribute("x2", px.toString());
+        timelineVline!.setAttribute("stroke-opacity", "0.15");
+
+        // Show dots on each member's line
+        names.forEach((_, mi) => {
+          const dot = document.querySelector(`.timeline-dot-${mi}`) as SVGCircleElement;
+          if (dot) {
+            const maxTimeline = Math.max(...vals, 1);
+            dot.setAttribute("cx", px.toString());
+            // Calculate y position: same formula as the path
+            const plotH = tH - 30;
+            // Get max from the data attribute via a different approach
+            const allVals = document.querySelectorAll(".timeline-col");
+            let globalMax = 1;
+            allVals.forEach(c => {
+              const v: number[] = JSON.parse((c as SVGRectElement).dataset.vals!);
+              globalMax = Math.max(globalMax, ...v);
+            });
+            const y = tH - 15 - (vals[mi] / globalMax) * plotH;
+            dot.setAttribute("cy", y.toString());
+            dot.setAttribute("opacity", "1");
+          }
+        });
+
+        // Position tooltip
+        const containerRect = timelineContainer!.getBoundingClientRect();
+        const colRect = el.getBoundingClientRect();
+        const cx = colRect.left + colRect.width / 2 - containerRect.left;
+        const tooltipW = timelineTooltip!.offsetWidth;
+        let left = cx - tooltipW / 2;
+        left = Math.max(8, Math.min(left, containerRect.width - tooltipW - 8));
+        timelineTooltip!.style.left = left + "px";
+        timelineTooltip!.style.top = "8px";
+        timelineTooltip!.style.opacity = "1";
+      });
+
+      col.addEventListener("mouseleave", () => {
+        timelineTooltip!.style.opacity = "0";
+        timelineVline!.setAttribute("stroke-opacity", "0");
+        document.querySelectorAll("[class*='timeline-dot-']").forEach(dot => {
+          (dot as SVGCircleElement).setAttribute("opacity", "0");
+        });
+      });
+    });
+  }
+</script>

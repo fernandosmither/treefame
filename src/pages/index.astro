@@ -70,15 +70,27 @@ const badgeMeta: Record<string, { name: string; emoji: string }> = {
 
 const maxBadgeCount = badgeDist.length > 0 ? badgeDist[0][1] : 1;
 
-// Time labels for the chart x-axis
-const timeLabels = [
-  { idx: 0, label: "Fri 6PM" },
-  { idx: Math.floor(global_activity.length * 0.15), label: "Sat 12AM" },
-  { idx: Math.floor(global_activity.length * 0.37), label: "Sat 12PM" },
-  { idx: Math.floor(global_activity.length * 0.62), label: "Sun 12AM" },
-  { idx: Math.floor(global_activity.length * 0.85), label: "Sun 8AM" },
-  { idx: global_activity.length - 1, label: "Sun 11AM" },
-];
+// Time labels for the chart x-axis — dynamic based on actual data
+const timeLabels: { idx: number; label: string }[] = [];
+const ga = global_activity;
+if (ga.length > 0) {
+  // Always label first and last
+  const fmtLabel = (iso: string) => {
+    const d = new Date(iso);
+    const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    const h = d.getHours();
+    const ampm = h >= 12 ? "PM" : "AM";
+    const h12 = h % 12 || 12;
+    return `${days[d.getDay()]} ${h12}${ampm}`;
+  };
+  timeLabels.push({ idx: 0, label: fmtLabel(ga[0].hour) });
+  // Add evenly spaced labels
+  const step = Math.max(1, Math.floor(ga.length / 5));
+  for (let i = step; i < ga.length - 1; i += step) {
+    timeLabels.push({ idx: i, label: fmtLabel(ga[i].hour) });
+  }
+  timeLabels.push({ idx: ga.length - 1, label: fmtLabel(ga[ga.length - 1].hour) });
+}
 
 // Role color mapping
 const roleColors: Record<string, string> = {
@@ -135,8 +147,8 @@ const roleColors: Record<string, string> = {
         Hackathon Pulse
         <span class="text-sm font-body font-normal text-zinc-500 ml-2">Commits per hour over 41 hours</span>
       </h2>
-      <div class="rounded-xl border border-white/[0.06] bg-surface-2/60 backdrop-blur-sm p-4 sm:p-6 overflow-x-auto">
-        <svg viewBox={`0 0 ${chartW} ${chartH}`} class="w-full min-w-[600px]" preserveAspectRatio="none">
+      <div class="rounded-xl border border-white/[0.06] bg-surface-2/60 backdrop-blur-sm p-4 sm:p-6 overflow-x-auto relative" id="pulse-chart-container">
+        <svg viewBox={`0 0 ${chartW} ${chartH}`} class="w-full min-w-[600px]" preserveAspectRatio="none" id="pulse-chart">
           <defs>
             <linearGradient id="pulseGrad" x1="0" y1="0" x2="0" y2="1">
               <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.3" />
@@ -182,7 +194,43 @@ const roleColors: Record<string, string> = {
               );
             }
           })()}
+          {/* Hover dots (hidden by default, shown on hover) */}
+          {global_activity.map((d, i) => {
+            const x = padding + (i / (global_activity.length - 1)) * plotW;
+            const y = chartH - 20 - (d.commits / maxCommits) * plotH;
+            return (
+              <circle class="pulse-dot" cx={x} cy={y} r="4" fill="#fbbf24" opacity="0" data-idx={i} />
+            );
+          })}
+          {/* Invisible hover columns */}
+          {global_activity.map((d, i) => {
+            const colW = plotW / global_activity.length;
+            const x = padding + (i / (global_activity.length - 1)) * plotW - colW / 2;
+            return (
+              <rect
+                class="pulse-hover-col"
+                x={x}
+                y={0}
+                width={colW}
+                height={chartH - 20}
+                fill="transparent"
+                data-idx={i}
+                data-hour={d.hour}
+                data-commits={d.commits}
+                data-additions={d.additions}
+                data-deletions={d.deletions}
+              />
+            );
+          })}
         </svg>
+        {/* Tooltip */}
+        <div id="pulse-tooltip" class="absolute pointer-events-none opacity-0 transition-opacity duration-150 bg-surface-0/95 border border-white/10 rounded-lg px-3 py-2 text-xs shadow-xl z-20 backdrop-blur-sm" style="top:0;left:0;">
+          <div id="pulse-tooltip-time" class="font-medium text-zinc-200 mb-1"></div>
+          <div class="flex items-center gap-3">
+            <span><span class="text-gold-400 font-mono" id="pulse-tooltip-commits"></span> <span class="text-zinc-500">commits</span></span>
+            <span><span class="text-emerald-400 font-mono" id="pulse-tooltip-adds"></span> <span class="text-zinc-500">added</span></span>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -412,6 +460,64 @@ const roleColors: Record<string, string> = {
       });
 
       sorted.forEach(row => tableBody.appendChild(row));
+    });
+  });
+
+  // Pulse chart hover
+  const pulseContainer = document.getElementById("pulse-chart-container");
+  const pulseTooltip = document.getElementById("pulse-tooltip");
+  const tooltipTime = document.getElementById("pulse-tooltip-time");
+  const tooltipCommits = document.getElementById("pulse-tooltip-commits");
+  const tooltipAdds = document.getElementById("pulse-tooltip-adds");
+  const pulseDots = document.querySelectorAll(".pulse-dot");
+
+  function fmtNum(n: number): string {
+    if (n >= 1_000_000) return (n / 1_000_000).toFixed(1) + "M";
+    if (n >= 1_000) return (n / 1_000).toFixed(1) + "k";
+    return n.toLocaleString();
+  }
+
+  document.querySelectorAll(".pulse-hover-col").forEach(col => {
+    col.addEventListener("mouseenter", (e) => {
+      const el = e.target as SVGRectElement;
+      const idx = el.dataset.idx!;
+      const hour = el.dataset.hour!;
+      const commits = el.dataset.commits!;
+      const additions = el.dataset.additions!;
+
+      // Format time
+      const d = new Date(hour);
+      const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+      const h = d.getHours();
+      const ampm = h >= 12 ? "PM" : "AM";
+      const h12 = h % 12 || 12;
+      tooltipTime!.textContent = `${days[d.getDay()]} ${d.getMonth() + 1}/${d.getDate()} ${h12}${ampm}`;
+      tooltipCommits!.textContent = commits;
+      tooltipAdds!.textContent = "+" + fmtNum(parseInt(additions));
+
+      // Show dot
+      pulseDots.forEach(dot => (dot as SVGCircleElement).setAttribute("opacity", "0"));
+      const dot = document.querySelector(`.pulse-dot[data-idx="${idx}"]`) as SVGCircleElement;
+      if (dot) dot.setAttribute("opacity", "1");
+
+      // Position tooltip
+      const svg = document.getElementById("pulse-chart")!;
+      const svgRect = svg.getBoundingClientRect();
+      const containerRect = pulseContainer!.getBoundingClientRect();
+      const colRect = el.getBoundingClientRect();
+      const cx = colRect.left + colRect.width / 2 - containerRect.left;
+      const tooltipEl = pulseTooltip!;
+      tooltipEl.style.opacity = "1";
+      const tooltipW = tooltipEl.offsetWidth;
+      let left = cx - tooltipW / 2;
+      left = Math.max(8, Math.min(left, containerRect.width - tooltipW - 8));
+      tooltipEl.style.left = left + "px";
+      tooltipEl.style.top = "8px";
+    });
+
+    col.addEventListener("mouseleave", () => {
+      pulseTooltip!.style.opacity = "0";
+      pulseDots.forEach(dot => (dot as SVGCircleElement).setAttribute("opacity", "0"));
     });
   });
 </script>

@@ -189,11 +189,12 @@ const roleColors: Record<string, string> = {
         Activity Heatmap
         <span class="text-xs font-body font-normal text-zinc-500 ml-2">41 hackathon hours</span>
       </h2>
-      <div class="rounded-xl bg-surface-2/60 border border-white/[0.06] p-4 overflow-x-auto">
+      <div class="rounded-xl bg-surface-2/60 border border-white/[0.06] p-4 overflow-x-auto relative" id="heatmap-container">
         <div class="flex gap-1 min-w-[500px]" role="img" aria-label="Activity heatmap showing commits per hour">
           {hackathonHours.map((hour, i) => {
             const a = activityMap[hour];
             const commits = a?.commits || 0;
+            const additions = a?.additions || 0;
             const intensity = commits / maxHourCommits;
             const bg = commits === 0
               ? "bg-white/[0.03]"
@@ -205,11 +206,14 @@ const roleColors: Record<string, string> = {
                     ? "bg-gold-600/50"
                     : "bg-gold-700/30";
             const d = new Date(start.getTime() + i * 3600000);
-            const label = d.toLocaleString("en-US", { weekday: "short", hour: "numeric", hour12: true });
             return (
               <div
-                class={`flex-1 h-8 rounded-sm ${bg} transition-colors`}
-                title={`${label}: ${commits} commit${commits !== 1 ? "s" : ""}`}
+                class={`heatmap-cell flex-1 h-8 rounded-sm ${bg} transition-colors cursor-pointer hover:ring-1 hover:ring-gold-400/40`}
+                data-hour={hour}
+                data-commits={commits}
+                data-additions={additions}
+                data-day={d.getDay()}
+                data-h={d.getHours()}
               />
             );
           })}
@@ -221,14 +225,18 @@ const roleColors: Record<string, string> = {
           <span>Sun 12AM</span>
           <span>Sun 11AM</span>
         </div>
+        <div id="heatmap-tooltip" class="absolute pointer-events-none opacity-0 transition-opacity duration-150 bg-surface-0/95 border border-white/10 rounded-lg px-3 py-2 text-xs shadow-xl z-20 backdrop-blur-sm" style="top:0;left:0;">
+          <div id="heatmap-tooltip-time" class="font-medium text-zinc-200 mb-1"></div>
+          <div><span class="text-gold-400 font-mono" id="heatmap-tooltip-commits"></span> <span class="text-zinc-500">commits</span> <span class="text-emerald-400 font-mono ml-2" id="heatmap-tooltip-adds"></span> <span class="text-zinc-500">added</span></div>
+        </div>
       </div>
     </section>
 
     <!-- Commit velocity chart -->
     <section class="mb-10 animate-fade-up stagger-4">
       <h2 class="font-display font-bold text-lg mb-4 text-zinc-200">Commit Velocity</h2>
-      <div class="rounded-xl bg-surface-2/60 border border-white/[0.06] p-4 overflow-x-auto">
-        <svg viewBox={`0 0 ${cW} ${cH}`} class="w-full min-w-[400px]" preserveAspectRatio="none">
+      <div class="rounded-xl bg-surface-2/60 border border-white/[0.06] p-4 overflow-x-auto relative" id="velocity-container">
+        <svg viewBox={`0 0 ${cW} ${cH}`} class="w-full min-w-[400px]" preserveAspectRatio="none" id="velocity-chart">
           <defs>
             <linearGradient id="commitGrad" x1="0" y1="0" x2="0" y2="1">
               <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.2" />
@@ -244,15 +252,40 @@ const roleColors: Record<string, string> = {
           <text x={cPad} y={cH - 2} fill="#52525b" font-size="9" font-family="var(--font-mono)">Fri 6PM</text>
           <text x={cW - cPad} y={cH - 2} text-anchor="end" fill="#52525b" font-size="9" font-family="var(--font-mono)">Sun 11AM</text>
           <text x={cPad - 4} y={cH - 15 - cPlotH + 4} text-anchor="end" fill="#52525b" font-size="9" font-family="var(--font-mono)">{maxCumCommits}</text>
+          {/* Hover dot */}
+          <circle id="velocity-dot" cx="0" cy="0" r="4" fill="#fbbf24" opacity="0" />
+          {/* Hover columns */}
+          {cumulativeData.map((d, i) => {
+            const colW = cPlotW / cumulativeData.length;
+            const x = cPad + (i / (cumulativeData.length - 1)) * cPlotW - colW / 2;
+            const a = activityMap[d.hour];
+            return (
+              <rect
+                class="velocity-col"
+                x={x} y={0} width={colW} height={cH - 15}
+                fill="transparent"
+                data-idx={i}
+                data-hour={d.hour}
+                data-total={d.total}
+                data-hourly={a?.commits || 0}
+                data-px={commitPoints[i].x}
+                data-py={commitPoints[i].y}
+              />
+            );
+          })}
         </svg>
+        <div id="velocity-tooltip" class="absolute pointer-events-none opacity-0 transition-opacity duration-150 bg-surface-0/95 border border-white/10 rounded-lg px-3 py-2 text-xs shadow-xl z-20 backdrop-blur-sm" style="top:0;left:0;">
+          <div id="velocity-tooltip-time" class="font-medium text-zinc-200 mb-1"></div>
+          <div><span class="text-gold-400 font-mono" id="velocity-tooltip-total"></span> <span class="text-zinc-500">cumulative</span> <span class="text-zinc-600 mx-1">|</span> <span class="text-zinc-300 font-mono" id="velocity-tooltip-hourly"></span> <span class="text-zinc-500">this hour</span></div>
+        </div>
       </div>
     </section>
 
     <!-- LoC Growth chart -->
     <section class="mb-10 animate-fade-up stagger-5">
       <h2 class="font-display font-bold text-lg mb-4 text-zinc-200">Lines of Code</h2>
-      <div class="rounded-xl bg-surface-2/60 border border-white/[0.06] p-4 overflow-x-auto">
-        <svg viewBox={`0 0 ${cW} ${cH}`} class="w-full min-w-[400px]" preserveAspectRatio="none">
+      <div class="rounded-xl bg-surface-2/60 border border-white/[0.06] p-4 overflow-x-auto relative" id="loc-container">
+        <svg viewBox={`0 0 ${cW} ${cH}`} class="w-full min-w-[400px]" preserveAspectRatio="none" id="loc-chart">
           {[0.25, 0.5, 0.75, 1].map(pct => {
             const y = cH - 15 - pct * cPlotH;
             return <line x1={cPad} x2={cW - cPad} y1={y} y2={y} stroke="white" stroke-opacity="0.04" />;
@@ -266,7 +299,34 @@ const roleColors: Record<string, string> = {
           <text x={cW - 132} y={14} fill="#a1a1aa" font-size="9">Additions</text>
           <circle cx={cW - 70} cy={10} r="4" fill="#fb7185" />
           <text x={cW - 62} y={14} fill="#a1a1aa" font-size="9">Deletions</text>
+          {/* Hover dots */}
+          <circle id="loc-dot-add" cx="0" cy="0" r="4" fill="#34d399" opacity="0" />
+          <circle id="loc-dot-del" cx="0" cy="0" r="4" fill="#fb7185" opacity="0" />
+          {/* Hover columns */}
+          {cumulativeLoC.map((d, i) => {
+            const colW = cPlotW / cumulativeLoC.length;
+            const x = cPad + (i / (cumulativeLoC.length - 1)) * cPlotW - colW / 2;
+            return (
+              <rect
+                class="loc-col"
+                x={x} y={0} width={colW} height={cH - 15}
+                fill="transparent"
+                data-idx={i}
+                data-hour={d.hour}
+                data-adds={d.additions}
+                data-dels={d.deletions}
+                data-add-px={addPoints[i].x}
+                data-add-py={addPoints[i].y}
+                data-del-px={delPoints[i].x}
+                data-del-py={delPoints[i].y}
+              />
+            );
+          })}
         </svg>
+        <div id="loc-tooltip" class="absolute pointer-events-none opacity-0 transition-opacity duration-150 bg-surface-0/95 border border-white/10 rounded-lg px-3 py-2 text-xs shadow-xl z-20 backdrop-blur-sm" style="top:0;left:0;">
+          <div id="loc-tooltip-time" class="font-medium text-zinc-200 mb-1"></div>
+          <div><span class="text-emerald-400 font-mono" id="loc-tooltip-adds"></span> <span class="text-zinc-500">added</span> <span class="text-zinc-600 mx-1">|</span> <span class="text-rose-400 font-mono" id="loc-tooltip-dels"></span> <span class="text-zinc-500">deleted</span></div>
+        </div>
       </div>
     </section>
 
@@ -325,3 +385,99 @@ const roleColors: Record<string, string> = {
     </section>
   </main>
 </Layout>
+
+<script>
+  function fmtNum(n: number): string {
+    if (n >= 1_000_000) return (n / 1_000_000).toFixed(1) + "M";
+    if (n >= 1_000) return (n / 1_000).toFixed(1) + "k";
+    return n.toLocaleString();
+  }
+
+  function fmtHour(iso: string): string {
+    const d = new Date(iso);
+    const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    const h = d.getHours();
+    const ampm = h >= 12 ? "PM" : "AM";
+    const h12 = h % 12 || 12;
+    return `${days[d.getDay()]} ${d.getMonth() + 1}/${d.getDate()} ${h12}${ampm}`;
+  }
+
+  function positionTooltip(container: HTMLElement, tooltip: HTMLElement, colEl: Element) {
+    const containerRect = container.getBoundingClientRect();
+    const colRect = colEl.getBoundingClientRect();
+    const cx = colRect.left + colRect.width / 2 - containerRect.left;
+    const tooltipW = tooltip.offsetWidth;
+    let left = cx - tooltipW / 2;
+    left = Math.max(8, Math.min(left, containerRect.width - tooltipW - 8));
+    tooltip.style.left = left + "px";
+    tooltip.style.top = "8px";
+    tooltip.style.opacity = "1";
+  }
+
+  // Heatmap hover
+  const heatmapContainer = document.getElementById("heatmap-container");
+  const heatmapTooltip = document.getElementById("heatmap-tooltip");
+  document.querySelectorAll(".heatmap-cell").forEach(cell => {
+    cell.addEventListener("mouseenter", (e) => {
+      const el = e.target as HTMLElement;
+      const h = parseInt(el.dataset.h!);
+      const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+      const ampm = h >= 12 ? "PM" : "AM";
+      const h12 = h % 12 || 12;
+      document.getElementById("heatmap-tooltip-time")!.textContent = `${dayNames[parseInt(el.dataset.day!)]} ${h12}${ampm}`;
+      document.getElementById("heatmap-tooltip-commits")!.textContent = el.dataset.commits!;
+      document.getElementById("heatmap-tooltip-adds")!.textContent = "+" + fmtNum(parseInt(el.dataset.additions!));
+      positionTooltip(heatmapContainer!, heatmapTooltip!, el);
+    });
+    cell.addEventListener("mouseleave", () => {
+      heatmapTooltip!.style.opacity = "0";
+    });
+  });
+
+  // Velocity chart hover
+  const velocityContainer = document.getElementById("velocity-container");
+  const velocityTooltip = document.getElementById("velocity-tooltip");
+  const velocityDot = document.getElementById("velocity-dot");
+  document.querySelectorAll(".velocity-col").forEach(col => {
+    col.addEventListener("mouseenter", (e) => {
+      const el = e.target as SVGRectElement;
+      document.getElementById("velocity-tooltip-time")!.textContent = fmtHour(el.dataset.hour!);
+      document.getElementById("velocity-tooltip-total")!.textContent = el.dataset.total!;
+      document.getElementById("velocity-tooltip-hourly")!.textContent = el.dataset.hourly!;
+      velocityDot!.setAttribute("cx", el.dataset.px!);
+      velocityDot!.setAttribute("cy", el.dataset.py!);
+      velocityDot!.setAttribute("opacity", "1");
+      positionTooltip(velocityContainer!, velocityTooltip!, el);
+    });
+    col.addEventListener("mouseleave", () => {
+      velocityTooltip!.style.opacity = "0";
+      velocityDot!.setAttribute("opacity", "0");
+    });
+  });
+
+  // LoC chart hover
+  const locContainer = document.getElementById("loc-container");
+  const locTooltip = document.getElementById("loc-tooltip");
+  const locDotAdd = document.getElementById("loc-dot-add");
+  const locDotDel = document.getElementById("loc-dot-del");
+  document.querySelectorAll(".loc-col").forEach(col => {
+    col.addEventListener("mouseenter", (e) => {
+      const el = e.target as SVGRectElement;
+      document.getElementById("loc-tooltip-time")!.textContent = fmtHour(el.dataset.hour!);
+      document.getElementById("loc-tooltip-adds")!.textContent = "+" + fmtNum(parseInt(el.dataset.adds!));
+      document.getElementById("loc-tooltip-dels")!.textContent = "-" + fmtNum(parseInt(el.dataset.dels!));
+      locDotAdd!.setAttribute("cx", el.dataset.addPx!);
+      locDotAdd!.setAttribute("cy", el.dataset.addPy!);
+      locDotAdd!.setAttribute("opacity", "1");
+      locDotDel!.setAttribute("cx", el.dataset.delPx!);
+      locDotDel!.setAttribute("cy", el.dataset.delPy!);
+      locDotDel!.setAttribute("opacity", "1");
+      positionTooltip(locContainer!, locTooltip!, el);
+    });
+    col.addEventListener("mouseleave", () => {
+      locTooltip!.style.opacity = "0";
+      locDotAdd!.setAttribute("opacity", "0");
+      locDotDel!.setAttribute("opacity", "0");
+    });
+  });
+</script>

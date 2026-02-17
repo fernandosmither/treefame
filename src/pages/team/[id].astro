@@ -44,8 +44,8 @@ const totalCommits = team.stats.total_commits || 1;
 // Per-member commit timeline
 // Gather each member's activity from the main hacker data
 const hackathonHours: string[] = [];
-const start = new Date("2026-02-14T18:00:00");
-for (let i = 0; i <= 40; i++) {
+const start = new Date("2026-02-13T21:00:00");
+for (let i = 0; i <= 38; i++) {
   const d = new Date(start.getTime() + i * 3600000);
   hackathonHours.push(d.toISOString().replace(":00:00.000Z", ":00:00"));
 }
@@ -163,7 +163,7 @@ const tPlotH = tH - 30;
               }).join(" ");
               return <path d={path} fill="none" stroke={mt.color} stroke-width="2" />;
             })}
-            <text x={tPad} y={tH - 2} fill="#52525b" font-size="9" font-family="var(--font-mono)">Fri 6PM</text>
+            <text x={tPad} y={tH - 2} fill="#52525b" font-size="9" font-family="var(--font-mono)">Fri 9PM</text>
             <text x={tW - tPad} y={tH - 2} text-anchor="end" fill="#52525b" font-size="9" font-family="var(--font-mono)">Sun 11AM</text>
             {/* Legend */}
             {memberTimelines.map((mt, i) => (
@@ -289,7 +289,7 @@ const tPlotH = tH - 30;
   const tH = 160;
 
   if (timelineContainer) {
-    const start = new Date("2026-02-14T18:00:00");
+    const start = new Date("2026-02-13T21:00:00");
 
     document.querySelectorAll(".timeline-col").forEach(col => {
       col.addEventListener("mouseenter", (e) => {

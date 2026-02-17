@@ -20,10 +20,10 @@ function fmt(n: number): string {
 }
 
 // Activity heatmap: 48 cells (hackathon hours)
-// Generate all 41 hours from Fri 6PM to Sun 11AM
+// Generate all 38 hours from Fri 9PM to Sun 11AM
 const hackathonHours: string[] = [];
-const start = new Date("2026-02-14T18:00:00");
-for (let i = 0; i <= 40; i++) {
+const start = new Date("2026-02-13T21:00:00");
+for (let i = 0; i <= 38; i++) {
   const d = new Date(start.getTime() + i * 3600000);
   hackathonHours.push(d.toISOString().replace(":00:00.000Z", ":00:00"));
 }
@@ -187,7 +187,7 @@ const roleColors: Record<string, string> = {
     <section class="mb-10 animate-fade-up stagger-3">
       <h2 class="font-display font-bold text-lg mb-4 text-zinc-200">
         Activity Heatmap
-        <span class="text-xs font-body font-normal text-zinc-500 ml-2">41 hackathon hours</span>
+        <span class="text-xs font-body font-normal text-zinc-500 ml-2">38 hackathon hours</span>
       </h2>
       <div class="rounded-xl bg-surface-2/60 border border-white/[0.06] p-4 overflow-x-auto relative" id="heatmap-container">
         <div class="flex gap-1 min-w-[500px]" role="img" aria-label="Activity heatmap showing commits per hour">
@@ -219,9 +219,9 @@ const roleColors: Record<string, string> = {
           })}
         </div>
         <div class="flex justify-between mt-2 text-[10px] text-zinc-600 font-mono min-w-[500px]">
-          <span>Fri 6PM</span>
-          <span>Sat 12AM</span>
-          <span>Sat 12PM</span>
+          <span>Fri 9PM</span>
+          <span>Sat 6AM</span>
+          <span>Sat 3PM</span>
           <span>Sun 12AM</span>
           <span>Sun 11AM</span>
         </div>
@@ -249,7 +249,7 @@ const roleColors: Record<string, string> = {
           })}
           <path d={buildAreaFromPath(commitPoints)} fill="url(#commitGrad)" />
           <path d={buildPath(commitPoints)} fill="none" stroke="#fbbf24" stroke-width="2" />
-          <text x={cPad} y={cH - 2} fill="#52525b" font-size="9" font-family="var(--font-mono)">Fri 6PM</text>
+          <text x={cPad} y={cH - 2} fill="#52525b" font-size="9" font-family="var(--font-mono)">Fri 9PM</text>
           <text x={cW - cPad} y={cH - 2} text-anchor="end" fill="#52525b" font-size="9" font-family="var(--font-mono)">Sun 11AM</text>
           <text x={cPad - 4} y={cH - 15 - cPlotH + 4} text-anchor="end" fill="#52525b" font-size="9" font-family="var(--font-mono)">{maxCumCommits}</text>
           {/* Hover dot */}
@@ -292,7 +292,7 @@ const roleColors: Record<string, string> = {
           })}
           <path d={buildPath(addPoints)} fill="none" stroke="#34d399" stroke-width="2" />
           <path d={buildPath(delPoints)} fill="none" stroke="#fb7185" stroke-width="1.5" stroke-dasharray="4,3" />
-          <text x={cPad} y={cH - 2} fill="#52525b" font-size="9" font-family="var(--font-mono)">Fri 6PM</text>
+          <text x={cPad} y={cH - 2} fill="#52525b" font-size="9" font-family="var(--font-mono)">Fri 9PM</text>
           <text x={cW - cPad} y={cH - 2} text-anchor="end" fill="#52525b" font-size="9" font-family="var(--font-mono)">Sun 11AM</text>
           {/* Legend */}
           <circle cx={cW - 140} cy={10} r="4" fill="#34d399" />

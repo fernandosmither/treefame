@@ -223,7 +223,7 @@ const tPlotH = tH - 30;
                   {member.name.split(" ").map(n => n[0]).join("").slice(0, 2)}
                 </div>
                 <div>
-                  <a href={`/hacker/${member.hacker_id}`} class="font-medium text-zinc-200 hover:text-gold-400 transition-colors">
+                  <a href={`/hacker/${member.hacker_id}`} class="font-medium text-gold-400/80 hover:text-gold-400 underline decoration-gold-400/30 hover:decoration-gold-400/70 underline-offset-2 transition-colors">
                     {member.name}
                   </a>
                   <div class={`text-xs font-medium ${roleColor}`}>{member.role}</div>

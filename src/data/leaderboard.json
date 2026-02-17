@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-02-16T18:11:22.350773",
+  "generated_at": "2026-02-16T18:16:54.936677",
   "stats": {
-    "total_hackers": 938,
-    "total_commits": 12463,
-    "total_lines_added": 69820987,
-    "total_lines_removed": 29200337,
+    "total_hackers": 939,
+    "total_commits": 12491,
+    "total_lines_added": 69823469,
+    "total_lines_removed": 29200561,
     "peak_hour": "2026-02-14T22:00:00",
     "badge_distribution": {
       "all_nighter_1": 491,
@@ -20,26 +20,26 @@
       "vibe_coder": 480,
       "git_guru": 80,
       "yolo_deployer": 21,
-      "one_person_army": 62,
-      "deadline_warrior": 31,
-      "first_blood": 1
+      "one_person_army": 61,
+      "first_blood": 1,
+      "deadline_warrior": 35
     },
     "language_stats": [
       {
         "language": "JavaScript",
-        "lines": 19882569
+        "lines": 19882573
       },
       {
         "language": "Python",
-        "lines": 13757254
+        "lines": 13757548
       },
       {
         "language": "TypeScript",
-        "lines": 7324309
+        "lines": 7325595
       },
       {
         "language": "React TSX",
-        "lines": 1183916
+        "lines": 1184396
       },
       {
         "language": "C#",
@@ -47,7 +47,7 @@
       },
       {
         "language": "CSS",
-        "lines": 245042
+        "lines": 245056
       },
       {
         "language": "C",
@@ -55,7 +55,7 @@
       },
       {
         "language": "HTML",
-        "lines": 156981
+        "lines": 156982
       },
       {
         "language": "Swift",
@@ -63,7 +63,7 @@
       },
       {
         "language": "React JSX",
-        "lines": 119913
+        "lines": 119917
       },
       {
         "language": "Shell",
@@ -715,16 +715,18 @@
           "repo_url": "https://github.com/rajashekarcs2023/treehacks2026-kinetic",
           "devpost_url": "https://devpost.com/software/kinetic-ai-ilvr9o",
           "role": "Full Stack",
-          "commits": 136,
-          "lines_added": 48336,
-          "team_member_count": 1,
-          "contribution_pct": 100.0,
-          "team_members": []
+          "commits": 137,
+          "lines_added": 48662,
+          "team_member_count": 2,
+          "contribution_pct": 98.6,
+          "team_members": [
+            "rajashekarcs2023"
+          ]
         }
       ],
       "stats": {
-        "total_commits": 136,
-        "total_lines_added": 48336,
+        "total_commits": 137,
+        "total_lines_added": 48662,
         "total_lines_removed": 7686,
         "languages": [
           "Python",
@@ -763,12 +765,6 @@
           "description": "Added 1000+ lines of code"
         },
         {
-          "id": "one_person_army",
-          "name": "One-Person Army",
-          "emoji": "\ud83e\uddb8",
-          "description": "Solo contributor on a project"
-        },
-        {
           "id": "bug_squasher",
           "name": "Bug Squasher",
           "emoji": "\ud83d\udc1b",
@@ -803,9 +799,21 @@
           "name": "Vibe Coder",
           "emoji": "\u2728",
           "description": "Commit messages mention AI coding tools"
+        },
+        {
+          "id": "first_blood",
+          "name": "First Blood",
+          "emoji": "\ud83e\udd47",
+          "description": "Made the earliest hackathon commit"
         }
       ],
       "activity": [
+        {
+          "hour": "2026-02-13T20:00:00",
+          "commits": 1,
+          "additions": 326,
+          "deletions": 0
+        },
         {
           "hour": "2026-02-13T21:00:00",
           "commits": 2,
@@ -1268,8 +1276,8 @@
             "Alexander (Hongyi) Huang",
             "Agniv",
             "Gino",
-            "Gino",
-            "Alex Huang"
+            "Alex Huang",
+            "Gino"
           ]
         }
       ],
@@ -1505,9 +1513,9 @@
             "Hackathon Bot",
             "Pranav-Karra-3301",
             "JaySids",
+            "Ethan Leonard",
             "Vercel",
-            "Pranav Karra",
-            "Ethan Leonard"
+            "Pranav Karra"
           ]
         }
       ],
@@ -2106,22 +2114,22 @@
           "repo_url": "https://github.com/soooooooot/treehacks-agent-repo",
           "devpost_url": "https://devpost.com/software/the-orchestration-company-of-palo-alto",
           "role": "Frontend",
-          "commits": 91,
-          "lines_added": 6344,
+          "commits": 96,
+          "lines_added": 6507,
           "team_member_count": 5,
-          "contribution_pct": 91.0,
+          "contribution_pct": 91.4,
           "team_members": [
-            "FO214",
             "Soot",
+            "FO214",
             "Ian Korovinsky",
             "Theodore"
           ]
         }
       ],
       "stats": {
-        "total_commits": 91,
-        "total_lines_added": 6344,
-        "total_lines_removed": 1313,
+        "total_commits": 96,
+        "total_lines_added": 6507,
+        "total_lines_removed": 1353,
         "languages": [
           "React TSX",
           "CSS",
@@ -2263,6 +2271,12 @@
           "hour": "2026-02-15T10:00:00",
           "commits": 4,
           "additions": 90,
+          "deletions": 40
+        },
+        {
+          "hour": "2026-02-15T11:00:00",
+          "commits": 5,
+          "additions": 163,
           "deletions": 40
         }
       ]
@@ -2425,6 +2439,200 @@
           "commits": 1,
           "additions": 88,
           "deletions": 20
+        }
+      ]
+    },
+    {
+      "id": "andrewca78@gmail.com",
+      "name": "andrew",
+      "projects": [
+        {
+          "name": "Longshot",
+          "repo_url": "https://github.com/andrewcai8/agentswarm",
+          "devpost_url": "https://devpost.com/software/longshot",
+          "role": "AI/ML",
+          "commits": 67,
+          "lines_added": 20356,
+          "team_member_count": 6,
+          "contribution_pct": 63.2,
+          "team_members": [
+            "MatthewChow03",
+            "cslegasse",
+            "Rami Maalouf",
+            "cslegasse",
+            "Matthew Chow"
+          ]
+        },
+        {
+          "name": "Longshot",
+          "repo_url": "https://github.com/andrewcai8/swarm-minecraft",
+          "devpost_url": "https://devpost.com/software/longshot",
+          "role": "Generalist",
+          "commits": 17,
+          "lines_added": 4658,
+          "team_member_count": 1,
+          "contribution_pct": 100.0,
+          "team_members": []
+        }
+      ],
+      "stats": {
+        "total_commits": 84,
+        "total_lines_added": 25014,
+        "total_lines_removed": 6637,
+        "languages": [
+          "TypeScript",
+          "Python",
+          "React TSX",
+          "Shell",
+          "HTML"
+        ]
+      },
+      "badges": [
+        {
+          "id": "all_nighter_1",
+          "name": "All-Nighter I",
+          "emoji": "\ud83c\udf19",
+          "description": "Committed code between 2AM and 6AM"
+        },
+        {
+          "id": "speed_demon",
+          "name": "Speed Demon",
+          "emoji": "\u26a1",
+          "description": "Made 10+ commits in a single hour"
+        },
+        {
+          "id": "code_cannon",
+          "name": "Code Cannon",
+          "emoji": "\ud83d\udca5",
+          "description": "Added 1000+ lines of code"
+        },
+        {
+          "id": "one_person_army",
+          "name": "One-Person Army",
+          "emoji": "\ud83e\uddb8",
+          "description": "Solo contributor on a project"
+        },
+        {
+          "id": "deadline_warrior",
+          "name": "Deadline Warrior",
+          "emoji": "\u23f0",
+          "description": "Committed in the final hour before deadline"
+        },
+        {
+          "id": "feature_factory",
+          "name": "Feature Factory",
+          "emoji": "\ud83c\udfed",
+          "description": "5+ commits with 'feat' or 'add' in the message"
+        },
+        {
+          "id": "polyglot",
+          "name": "Polyglot",
+          "emoji": "\ud83d\udde3\ufe0f",
+          "description": "Touched 4+ programming languages"
+        },
+        {
+          "id": "full_stack",
+          "name": "Full Stack",
+          "emoji": "\ud83e\udd5e",
+          "description": "Changed both frontend and backend code"
+        },
+        {
+          "id": "devops_hero",
+          "name": "DevOps Hero",
+          "emoji": "\ud83d\udc33",
+          "description": "Committed Docker/CI configuration files"
+        },
+        {
+          "id": "docs_hero",
+          "name": "Documentation Hero",
+          "emoji": "\ud83d\udcd6",
+          "description": "3+ commits touching documentation"
+        },
+        {
+          "id": "vibe_coder",
+          "name": "Vibe Coder",
+          "emoji": "\u2728",
+          "description": "Commit messages mention AI coding tools"
+        },
+        {
+          "id": "git_guru",
+          "name": "Git Guru",
+          "emoji": "\ud83e\uddd9",
+          "description": "Uses conventional commit messages"
+        }
+      ],
+      "activity": [
+        {
+          "hour": "2026-02-13T22:00:00",
+          "commits": 1,
+          "additions": 2880,
+          "deletions": 0
+        },
+        {
+          "hour": "2026-02-13T23:00:00",
+          "commits": 3,
+          "additions": 2997,
+          "deletions": 31
+        },
+        {
+          "hour": "2026-02-14T00:00:00",
+          "commits": 3,
+          "additions": 1120,
+          "deletions": 101
+        },
+        {
+          "hour": "2026-02-14T01:00:00",
+          "commits": 6,
+          "additions": 7408,
+          "deletions": 2364
+        },
+        {
+          "hour": "2026-02-14T05:00:00",
+          "commits": 5,
+          "additions": 711,
+          "deletions": 586
+        },
+        {
+          "hour": "2026-02-14T06:00:00",
+          "commits": 3,
+          "additions": 1452,
+          "deletions": 216
+        },
+        {
+          "hour": "2026-02-14T12:00:00",
+          "commits": 3,
+          "additions": 1104,
+          "deletions": 609
+        },
+        {
+          "hour": "2026-02-14T17:00:00",
+          "commits": 15,
+          "additions": 1614,
+          "deletions": 833
+        },
+        {
+          "hour": "2026-02-14T21:00:00",
+          "commits": 9,
+          "additions": 914,
+          "deletions": 767
+        },
+        {
+          "hour": "2026-02-14T22:00:00",
+          "commits": 8,
+          "additions": 1363,
+          "deletions": 467
+        },
+        {
+          "hour": "2026-02-15T00:00:00",
+          "commits": 12,
+          "additions": 1793,
+          "deletions": 613
+        },
+        {
+          "hour": "2026-02-15T11:00:00",
+          "commits": 16,
+          "additions": 1658,
+          "deletions": 50
         }
       ]
     },
@@ -3508,188 +3716,6 @@
       ]
     },
     {
-      "id": "andrewca78@gmail.com",
-      "name": "andrew",
-      "projects": [
-        {
-          "name": "Longshot",
-          "repo_url": "https://github.com/andrewcai8/agentswarm",
-          "devpost_url": "https://devpost.com/software/longshot",
-          "role": "AI/ML",
-          "commits": 67,
-          "lines_added": 20356,
-          "team_member_count": 6,
-          "contribution_pct": 63.2,
-          "team_members": [
-            "MatthewChow03",
-            "Rami Maalouf",
-            "cslegasse",
-            "cslegasse",
-            "Matthew Chow"
-          ]
-        },
-        {
-          "name": "Longshot",
-          "repo_url": "https://github.com/andrewcai8/swarm-minecraft",
-          "devpost_url": "https://devpost.com/software/longshot",
-          "role": "Generalist",
-          "commits": 1,
-          "lines_added": 3000,
-          "team_member_count": 1,
-          "contribution_pct": 100.0,
-          "team_members": []
-        }
-      ],
-      "stats": {
-        "total_commits": 68,
-        "total_lines_added": 23356,
-        "total_lines_removed": 6587,
-        "languages": [
-          "TypeScript",
-          "Python",
-          "Shell",
-          "React TSX",
-          "HTML"
-        ]
-      },
-      "badges": [
-        {
-          "id": "all_nighter_1",
-          "name": "All-Nighter I",
-          "emoji": "\ud83c\udf19",
-          "description": "Committed code between 2AM and 6AM"
-        },
-        {
-          "id": "speed_demon",
-          "name": "Speed Demon",
-          "emoji": "\u26a1",
-          "description": "Made 10+ commits in a single hour"
-        },
-        {
-          "id": "code_cannon",
-          "name": "Code Cannon",
-          "emoji": "\ud83d\udca5",
-          "description": "Added 1000+ lines of code"
-        },
-        {
-          "id": "one_person_army",
-          "name": "One-Person Army",
-          "emoji": "\ud83e\uddb8",
-          "description": "Solo contributor on a project"
-        },
-        {
-          "id": "feature_factory",
-          "name": "Feature Factory",
-          "emoji": "\ud83c\udfed",
-          "description": "5+ commits with 'feat' or 'add' in the message"
-        },
-        {
-          "id": "polyglot",
-          "name": "Polyglot",
-          "emoji": "\ud83d\udde3\ufe0f",
-          "description": "Touched 4+ programming languages"
-        },
-        {
-          "id": "full_stack",
-          "name": "Full Stack",
-          "emoji": "\ud83e\udd5e",
-          "description": "Changed both frontend and backend code"
-        },
-        {
-          "id": "devops_hero",
-          "name": "DevOps Hero",
-          "emoji": "\ud83d\udc33",
-          "description": "Committed Docker/CI configuration files"
-        },
-        {
-          "id": "docs_hero",
-          "name": "Documentation Hero",
-          "emoji": "\ud83d\udcd6",
-          "description": "3+ commits touching documentation"
-        },
-        {
-          "id": "vibe_coder",
-          "name": "Vibe Coder",
-          "emoji": "\u2728",
-          "description": "Commit messages mention AI coding tools"
-        },
-        {
-          "id": "git_guru",
-          "name": "Git Guru",
-          "emoji": "\ud83e\uddd9",
-          "description": "Uses conventional commit messages"
-        }
-      ],
-      "activity": [
-        {
-          "hour": "2026-02-13T22:00:00",
-          "commits": 1,
-          "additions": 2880,
-          "deletions": 0
-        },
-        {
-          "hour": "2026-02-13T23:00:00",
-          "commits": 3,
-          "additions": 2997,
-          "deletions": 31
-        },
-        {
-          "hour": "2026-02-14T00:00:00",
-          "commits": 3,
-          "additions": 1120,
-          "deletions": 101
-        },
-        {
-          "hour": "2026-02-14T01:00:00",
-          "commits": 6,
-          "additions": 7408,
-          "deletions": 2364
-        },
-        {
-          "hour": "2026-02-14T05:00:00",
-          "commits": 5,
-          "additions": 711,
-          "deletions": 586
-        },
-        {
-          "hour": "2026-02-14T06:00:00",
-          "commits": 3,
-          "additions": 1452,
-          "deletions": 216
-        },
-        {
-          "hour": "2026-02-14T12:00:00",
-          "commits": 3,
-          "additions": 1104,
-          "deletions": 609
-        },
-        {
-          "hour": "2026-02-14T17:00:00",
-          "commits": 15,
-          "additions": 1614,
-          "deletions": 833
-        },
-        {
-          "hour": "2026-02-14T21:00:00",
-          "commits": 9,
-          "additions": 914,
-          "deletions": 767
-        },
-        {
-          "hour": "2026-02-14T22:00:00",
-          "commits": 8,
-          "additions": 1363,
-          "deletions": 467
-        },
-        {
-          "hour": "2026-02-15T00:00:00",
-          "commits": 12,
-          "additions": 1793,
-          "deletions": 613
-        }
-      ]
-    },
-    {
       "id": "ved.anand@outlook.com",
       "name": "ChristmasSun",
       "projects": [
@@ -4053,8 +4079,8 @@
             "Yuma Soerianto",
             "Yash Ranjith",
             "shayhacker",
-            "Amy",
-            "Anyone Can Code"
+            "Anyone Can Code",
+            "Amy"
           ]
         }
       ],
@@ -4687,9 +4713,9 @@
             "Ethan Leonard",
             "Pranav-Karra-3301",
             "JaySids",
+            "Ethan Leonard",
             "Vercel",
-            "Pranav Karra",
-            "Ethan Leonard"
+            "Pranav Karra"
           ]
         },
         {
@@ -4717,10 +4743,10 @@
           "contribution_pct": 25.8,
           "team_members": [
             "Grace Housman",
-            "Shardul Marathe",
             "Priyanka K",
-            "Grace Housman",
-            "priyanka-stanf"
+            "Shardul Marathe",
+            "priyanka-stanf",
+            "Grace Housman"
           ]
         }
       ],
@@ -5568,8 +5594,8 @@
           "team_member_count": 4,
           "contribution_pct": 78.7,
           "team_members": [
-            "ryunzz",
             "David Wang",
+            "ryunzz",
             "David Wang"
           ]
         }
@@ -7695,8 +7721,8 @@
           "team_members": [
             "Janet",
             "Annie Wang",
-            "Richard Chen",
             "Janet Guo",
+            "Richard Chen",
             "Annie Wang"
           ]
         }
@@ -7797,8 +7823,8 @@
           "contribution_pct": 60.9,
           "team_members": [
             "Kevin Thomas",
-            "Kyan Yang",
             "adiprasadd",
+            "Kyan Yang",
             "Aditya Prasad",
             "Kyan Yang"
           ]
@@ -8673,8 +8699,8 @@
             "Mohammad Zoraiz",
             "Hemasai Suhas Kurapati",
             "\u8881\u5b87\u7a0b",
-            "\u8881\u5b87\u7a0b",
-            "YuCheng (Tom) Yuan"
+            "YuCheng (Tom) Yuan",
+            "\u8881\u5b87\u7a0b"
           ]
         }
       ],
@@ -9367,8 +9393,8 @@
           "team_member_count": 5,
           "contribution_pct": 50.0,
           "team_members": [
-            "Gabriel Tsai",
             "Peter Zhang",
+            "Gabriel Tsai",
             "Allen Zhang",
             "GabeTsai"
           ]
@@ -9870,8 +9896,8 @@
           "contribution_pct": 21.4,
           "team_members": [
             "waning",
-            "Stephen Kwak",
             "Wonny Kwak",
+            "Stephen Kwak",
             "JJ",
             "vercel[bot]"
           ]
@@ -9886,8 +9912,8 @@
           "team_member_count": 8,
           "contribution_pct": 17.6,
           "team_members": [
-            "Joshua Zhang",
             "AlWo223",
+            "Joshua Zhang",
             "Ryan Co",
             "Daniel Gorbatov",
             "Daniel Gorbatov",
@@ -10242,9 +10268,9 @@
             "Ethan Leonard",
             "Hackathon Bot",
             "JaySids",
+            "Ethan Leonard",
             "Vercel",
-            "Pranav Karra",
-            "Ethan Leonard"
+            "Pranav Karra"
           ]
         }
       ],
@@ -11672,8 +11698,8 @@
           "contribution_pct": 1.0,
           "team_members": [
             "Soot Fix Agent",
-            "FO214",
             "Soot",
+            "FO214",
             "Ian Korovinsky"
           ]
         }
@@ -12321,8 +12347,8 @@
             "Mohammad Zoraiz",
             "Hemasai Suhas Kurapati",
             "\u8881\u5b87\u7a0b",
-            "\u8881\u5b87\u7a0b",
-            "YuCheng (Tom) Yuan"
+            "YuCheng (Tom) Yuan",
+            "\u8881\u5b87\u7a0b"
           ]
         }
       ],
@@ -14798,8 +14824,8 @@
           "team_members": [
             "Noella Kwizera",
             "abao27",
-            "Noella Kwizera",
-            "abao27"
+            "abao27",
+            "Noella Kwizera"
           ]
         }
       ],
@@ -15681,8 +15707,8 @@
           "team_members": [
             "Kenneth Yang",
             "Ishaan Awasthi",
-            "Kenneth Yang",
             "Ishaan Awasthi",
+            "Kenneth Yang",
             "Ishan Sinha",
             "ishan"
           ]
@@ -19022,8 +19048,8 @@
             "Videet Mehta",
             "lalala-e",
             "lalala-e",
-            "Angelina Quan",
-            "James"
+            "James",
+            "Angelina Quan"
           ]
         }
       ],
@@ -19269,8 +19295,8 @@
           "contribution_pct": 65.1,
           "team_members": [
             "dependabot[bot]",
-            "yatharthgohil",
             "mahima3434",
+            "yatharthgohil",
             "Sanjina-Kumari"
           ]
         }
@@ -19600,8 +19626,8 @@
             "Videet Mehta",
             "lalala-e",
             "lalala-e",
-            "Angelina Quan",
-            "James"
+            "James",
+            "Angelina Quan"
           ]
         }
       ],
@@ -19742,8 +19768,8 @@
             "phanny",
             "Jude Partovi",
             "Lavik Jain",
-            "Lavik Jain",
-            "Emmanuel Rassou"
+            "Emmanuel Rassou",
+            "Lavik Jain"
           ]
         }
       ],
@@ -21066,8 +21092,8 @@
           "contribution_pct": 40.3,
           "team_members": [
             "Eli Zerr",
-            "Carolyn He",
             "anika",
+            "Carolyn He",
             "Sindhu",
             "carolynhe"
           ]
@@ -21344,8 +21370,8 @@
           "team_members": [
             "Gaurang Pendharkar",
             "Ishaan Awasthi",
-            "Kenneth Yang",
             "Ishaan Awasthi",
+            "Kenneth Yang",
             "Ishan Sinha",
             "ishan"
           ]
@@ -21797,8 +21823,8 @@
             "Rohan Desai",
             "Jason Gao",
             "LarryPi314",
-            "jasonzgao",
-            "Andy Xu"
+            "Andy Xu",
+            "jasonzgao"
           ]
         }
       ],
@@ -22558,9 +22584,9 @@
             "Yax Patel",
             "aryan-cs",
             "ben",
-            "aryan",
             "Yax Patel",
-            "Aryan Gupta"
+            "Aryan Gupta",
+            "aryan"
           ]
         }
       ],
@@ -23239,11 +23265,11 @@
           "commits": 2,
           "lines_added": 85,
           "team_member_count": 5,
-          "contribution_pct": 2.0,
+          "contribution_pct": 1.9,
           "team_members": [
             "Soot Fix Agent",
-            "FO214",
             "Soot",
+            "FO214",
             "Theodore"
           ]
         }
@@ -26029,8 +26055,8 @@
           "team_members": [
             "Jonathan Lei",
             "kvnyng",
-            "Arjun Melwani",
-            "Kevin Yang"
+            "Kevin Yang",
+            "Arjun Melwani"
           ]
         }
       ],
@@ -26775,8 +26801,8 @@
           "team_member_count": 6,
           "contribution_pct": 44.9,
           "team_members": [
-            "Timur Takhtarov",
             "Tony Li",
+            "Timur Takhtarov",
             "Batyr Zhangabylov",
             "Batyr Zhangabylov",
             "Muzart"
@@ -27201,8 +27227,8 @@
           "team_member_count": 3,
           "contribution_pct": 91.7,
           "team_members": [
-            "Claude",
-            "Jack Herrmann"
+            "Jack Herrmann",
+            "Claude"
           ]
         }
       ],
@@ -27317,6 +27343,125 @@
       ]
     },
     {
+      "id": "anna.aq.wu@gmail.com",
+      "name": "twosodium",
+      "projects": [
+        {
+          "name": "Resonance",
+          "repo_url": "https://github.com/twosodium/resonance",
+          "devpost_url": "https://devpost.com/software/asdf-596pqz",
+          "role": "Full Stack",
+          "commits": 21,
+          "lines_added": 8312,
+          "team_member_count": 3,
+          "contribution_pct": 72.4,
+          "team_members": [
+            "Advay Aravind",
+            "Anna Wu"
+          ]
+        }
+      ],
+      "stats": {
+        "total_commits": 21,
+        "total_lines_added": 8312,
+        "total_lines_removed": 2252,
+        "languages": [
+          "Python",
+          "CSS",
+          "HTML",
+          "JavaScript"
+        ]
+      },
+      "badges": [
+        {
+          "id": "code_cannon",
+          "name": "Code Cannon",
+          "emoji": "\ud83d\udca5",
+          "description": "Added 1000+ lines of code"
+        },
+        {
+          "id": "deadline_warrior",
+          "name": "Deadline Warrior",
+          "emoji": "\u23f0",
+          "description": "Committed in the final hour before deadline"
+        },
+        {
+          "id": "polyglot",
+          "name": "Polyglot",
+          "emoji": "\ud83d\udde3\ufe0f",
+          "description": "Touched 4+ programming languages"
+        },
+        {
+          "id": "full_stack",
+          "name": "Full Stack",
+          "emoji": "\ud83e\udd5e",
+          "description": "Changed both frontend and backend code"
+        },
+        {
+          "id": "vibe_coder",
+          "name": "Vibe Coder",
+          "emoji": "\u2728",
+          "description": "Commit messages mention AI coding tools"
+        }
+      ],
+      "activity": [
+        {
+          "hour": "2026-02-14T11:00:00",
+          "commits": 3,
+          "additions": 902,
+          "deletions": 42
+        },
+        {
+          "hour": "2026-02-14T16:00:00",
+          "commits": 2,
+          "additions": 1902,
+          "deletions": 12
+        },
+        {
+          "hour": "2026-02-14T17:00:00",
+          "commits": 2,
+          "additions": 1880,
+          "deletions": 1350
+        },
+        {
+          "hour": "2026-02-14T18:00:00",
+          "commits": 2,
+          "additions": 3,
+          "deletions": 1
+        },
+        {
+          "hour": "2026-02-14T21:00:00",
+          "commits": 3,
+          "additions": 2375,
+          "deletions": 446
+        },
+        {
+          "hour": "2026-02-15T00:00:00",
+          "commits": 2,
+          "additions": 305,
+          "deletions": 70
+        },
+        {
+          "hour": "2026-02-15T07:00:00",
+          "commits": 1,
+          "additions": 560,
+          "deletions": 167
+        },
+        {
+          "hour": "2026-02-15T09:00:00",
+          "commits": 5,
+          "additions": 56,
+          "deletions": 36
+        },
+        {
+          "hour": "2026-02-15T11:00:00",
+          "commits": 1,
+          "additions": 329,
+          "deletions": 128
+        }
+      ]
+    },
+    {
       "id": "yaxpatel2004@gmail.com",
       "name": "Yax Patel",
       "projects": [
@@ -27333,9 +27478,9 @@
             "Raj Pandya",
             "aryan-cs",
             "ben",
-            "aryan",
             "Yax Patel",
-            "Aryan Gupta"
+            "Aryan Gupta",
+            "aryan"
           ]
         }
       ],
@@ -27904,8 +28049,8 @@
             "Rohan Desai",
             "Jason Gao",
             "LarryPi314",
-            "jasonzgao",
-            "Andy Xu"
+            "Andy Xu",
+            "jasonzgao"
           ]
         }
       ],
@@ -28175,8 +28320,8 @@
             "Amy",
             "Yash Ranjith",
             "shayhacker",
-            "Amy",
-            "Anyone Can Code"
+            "Anyone Can Code",
+            "Amy"
           ]
         }
       ],
@@ -28699,8 +28844,8 @@
             "Emmanuel Kasuti Makau",
             "KIKW12",
             "Fabrizio Vanzani",
-            "Fabrizio Vanzani",
-            "enayala"
+            "enayala",
+            "Fabrizio Vanzani"
           ]
         }
       ],
@@ -29144,113 +29289,6 @@
       ]
     },
     {
-      "id": "anna.aq.wu@gmail.com",
-      "name": "twosodium",
-      "projects": [
-        {
-          "name": "Resonance",
-          "repo_url": "https://github.com/twosodium/resonance",
-          "devpost_url": "https://devpost.com/software/asdf-596pqz",
-          "role": "Full Stack",
-          "commits": 20,
-          "lines_added": 7983,
-          "team_member_count": 3,
-          "contribution_pct": 71.4,
-          "team_members": [
-            "Advay Aravind",
-            "Anna Wu"
-          ]
-        }
-      ],
-      "stats": {
-        "total_commits": 20,
-        "total_lines_added": 7983,
-        "total_lines_removed": 2124,
-        "languages": [
-          "Python",
-          "CSS",
-          "HTML",
-          "JavaScript"
-        ]
-      },
-      "badges": [
-        {
-          "id": "code_cannon",
-          "name": "Code Cannon",
-          "emoji": "\ud83d\udca5",
-          "description": "Added 1000+ lines of code"
-        },
-        {
-          "id": "polyglot",
-          "name": "Polyglot",
-          "emoji": "\ud83d\udde3\ufe0f",
-          "description": "Touched 4+ programming languages"
-        },
-        {
-          "id": "full_stack",
-          "name": "Full Stack",
-          "emoji": "\ud83e\udd5e",
-          "description": "Changed both frontend and backend code"
-        },
-        {
-          "id": "vibe_coder",
-          "name": "Vibe Coder",
-          "emoji": "\u2728",
-          "description": "Commit messages mention AI coding tools"
-        }
-      ],
-      "activity": [
-        {
-          "hour": "2026-02-14T11:00:00",
-          "commits": 3,
-          "additions": 902,
-          "deletions": 42
-        },
-        {
-          "hour": "2026-02-14T16:00:00",
-          "commits": 2,
-          "additions": 1902,
-          "deletions": 12
-        },
-        {
-          "hour": "2026-02-14T17:00:00",
-          "commits": 2,
-          "additions": 1880,
-          "deletions": 1350
-        },
-        {
-          "hour": "2026-02-14T18:00:00",
-          "commits": 2,
-          "additions": 3,
-          "deletions": 1
-        },
-        {
-          "hour": "2026-02-14T21:00:00",
-          "commits": 3,
-          "additions": 2375,
-          "deletions": 446
-        },
-        {
-          "hour": "2026-02-15T00:00:00",
-          "commits": 2,
-          "additions": 305,
-          "deletions": 70
-        },
-        {
-          "hour": "2026-02-15T07:00:00",
-          "commits": 1,
-          "additions": 560,
-          "deletions": 167
-        },
-        {
-          "hour": "2026-02-15T09:00:00",
-          "commits": 5,
-          "additions": 56,
-          "deletions": 36
-        }
-      ]
-    },
-    {
       "id": "roshen.nair39@gmail.com",
       "name": "Roshen Nair",
       "projects": [
@@ -29267,8 +29305,8 @@
             "Poarthan",
             "Justin Xie",
             "Justin Xie",
-            "Mabernibber",
-            "roshen-nair"
+            "roshen-nair",
+            "Mabernibber"
           ]
         }
       ],
@@ -30429,8 +30467,8 @@
             "atrayav",
             "janani",
             "Janani",
-            "sadia14",
             "Zini Chakraborty",
+            "sadia14",
             "atrayav"
           ]
         }
@@ -33001,8 +33039,8 @@
           "team_members": [
             "Swarm Modal Agent",
             "Annie Wang",
-            "Richard Chen",
             "Janet Guo",
+            "Richard Chen",
             "Annie Wang"
           ]
         }
@@ -33116,8 +33154,8 @@
           "team_members": [
             "Aarav Arora",
             "Shreyas Agarwal",
-            "Tagrtagr",
-            "Shreyas Agarwal"
+            "Shreyas Agarwal",
+            "Tagrtagr"
           ]
         }
       ],
@@ -33243,8 +33281,8 @@
             "Zini Chakraborty",
             "janani",
             "Janani",
-            "sadia14",
             "Zini Chakraborty",
+            "sadia14",
             "atrayav"
           ]
         }
@@ -35076,7 +35114,7 @@
           "commits": 3,
           "lines_added": 6411,
           "team_member_count": 5,
-          "contribution_pct": 3.0,
+          "contribution_pct": 2.9,
           "team_members": [
             "Soot Fix Agent",
             "Soot",
@@ -36186,6 +36224,151 @@
       ]
     },
     {
+      "id": "cherylwu834_124432604",
+      "name": "cherylwu834",
+      "projects": [
+        {
+          "name": "RepoRx",
+          "repo_url": "https://github.com/ezou1/tree26",
+          "devpost_url": "https://devpost.com/software/molecule-mcbob",
+          "role": "AI/ML",
+          "commits": 16,
+          "lines_added": 12620,
+          "team_member_count": 5,
+          "contribution_pct": 41.0,
+          "team_members": [
+            "ezou1",
+            "h4nkyn",
+            "Eric Zou",
+            "ragyudy"
+          ]
+        }
+      ],
+      "stats": {
+        "total_commits": 16,
+        "total_lines_added": 12620,
+        "total_lines_removed": 187,
+        "languages": [
+          "React TSX",
+          "Python",
+          "TypeScript",
+          "CSS"
+        ]
+      },
+      "badges": [
+        {
+          "id": "all_nighter_1",
+          "name": "All-Nighter I",
+          "emoji": "\ud83c\udf19",
+          "description": "Committed code between 2AM and 6AM"
+        },
+        {
+          "id": "all_nighter_2",
+          "name": "All-Nighter II",
+          "emoji": "\ud83c\udf11",
+          "description": "Pulled all-nighters on BOTH hackathon nights"
+        },
+        {
+          "id": "code_cannon",
+          "name": "Code Cannon",
+          "emoji": "\ud83d\udca5",
+          "description": "Added 1000+ lines of code"
+        },
+        {
+          "id": "deadline_warrior",
+          "name": "Deadline Warrior",
+          "emoji": "\u23f0",
+          "description": "Committed in the final hour before deadline"
+        },
+        {
+          "id": "polyglot",
+          "name": "Polyglot",
+          "emoji": "\ud83d\udde3\ufe0f",
+          "description": "Touched 4+ programming languages"
+        },
+        {
+          "id": "full_stack",
+          "name": "Full Stack",
+          "emoji": "\ud83e\udd5e",
+          "description": "Changed both frontend and backend code"
+        },
+        {
+          "id": "vibe_coder",
+          "name": "Vibe Coder",
+          "emoji": "\u2728",
+          "description": "Commit messages mention AI coding tools"
+        }
+      ],
+      "activity": [
+        {
+          "hour": "2026-02-14T02:00:00",
+          "commits": 1,
+          "additions": 93,
+          "deletions": 0
+        },
+        {
+          "hour": "2026-02-14T11:00:00",
+          "commits": 2,
+          "additions": 7,
+          "deletions": 1
+        },
+        {
+          "hour": "2026-02-14T18:00:00",
+          "commits": 3,
+          "additions": 11329,
+          "deletions": 0
+        },
+        {
+          "hour": "2026-02-14T19:00:00",
+          "commits": 2,
+          "additions": 227,
+          "deletions": 11
+        },
+        {
+          "hour": "2026-02-15T00:00:00",
+          "commits": 1,
+          "additions": 0,
+          "deletions": 0
+        },
+        {
+          "hour": "2026-02-15T01:00:00",
+          "commits": 1,
+          "additions": 562,
+          "deletions": 0
+        },
+        {
+          "hour": "2026-02-15T02:00:00",
+          "commits": 1,
+          "additions": 0,
+          "deletions": 0
+        },
+        {
+          "hour": "2026-02-15T04:00:00",
+          "commits": 1,
+          "additions": 0,
+          "deletions": 0
+        },
+        {
+          "hour": "2026-02-15T06:00:00",
+          "commits": 1,
+          "additions": 0,
+          "deletions": 0
+        },
+        {
+          "hour": "2026-02-15T10:00:00",
+          "commits": 2,
+          "additions": 402,
+          "deletions": 175
+        },
+        {
+          "hour": "2026-02-15T11:00:00",
+          "commits": 1,
+          "additions": 0,
+          "deletions": 0
+        }
+      ]
+    },
+    {
       "id": "zstjohn@stanford.edu",
       "name": "Zane St. John",
       "projects": [
@@ -36605,8 +36788,8 @@
           "contribution_pct": 57.1,
           "team_members": [
             "v0",
-            "Stephen Kwak",
             "Wonny Kwak",
+            "Stephen Kwak",
             "JJ",
             "vercel[bot]"
           ]
@@ -36814,8 +36997,8 @@
           "team_members": [
             "Gaurang Pendharkar",
             "Kenneth Yang",
-            "Kenneth Yang",
             "Ishaan Awasthi",
+            "Kenneth Yang",
             "Ishan Sinha",
             "ishan"
           ]
@@ -37550,9 +37733,9 @@
             "Raj Pandya",
             "Yax Patel",
             "ben",
-            "aryan",
             "Yax Patel",
-            "Aryan Gupta"
+            "Aryan Gupta",
+            "aryan"
           ]
         }
       ],
@@ -37827,8 +38010,8 @@
             "Andy Xu",
             "Jason Gao",
             "LarryPi314",
-            "jasonzgao",
-            "Andy Xu"
+            "Andy Xu",
+            "jasonzgao"
           ]
         }
       ],
@@ -37909,8 +38092,8 @@
             "Andy Xu",
             "Rohan Desai",
             "LarryPi314",
-            "jasonzgao",
-            "Andy Xu"
+            "Andy Xu",
+            "jasonzgao"
           ]
         }
       ],
@@ -38653,145 +38836,6 @@
           "commits": 1,
           "additions": 46,
           "deletions": 5
-        }
-      ]
-    },
-    {
-      "id": "cherylwu834_124432604",
-      "name": "cherylwu834",
-      "projects": [
-        {
-          "name": "RepoRx",
-          "repo_url": "https://github.com/ezou1/tree26",
-          "devpost_url": "https://devpost.com/software/molecule-mcbob",
-          "role": "AI/ML",
-          "commits": 15,
-          "lines_added": 12620,
-          "team_member_count": 5,
-          "contribution_pct": 39.5,
-          "team_members": [
-            "ezou1",
-            "h4nkyn",
-            "Eric Zou",
-            "ragyudy"
-          ]
-        }
-      ],
-      "stats": {
-        "total_commits": 15,
-        "total_lines_added": 12620,
-        "total_lines_removed": 187,
-        "languages": [
-          "React TSX",
-          "Python",
-          "TypeScript",
-          "CSS"
-        ]
-      },
-      "badges": [
-        {
-          "id": "all_nighter_1",
-          "name": "All-Nighter I",
-          "emoji": "\ud83c\udf19",
-          "description": "Committed code between 2AM and 6AM"
-        },
-        {
-          "id": "all_nighter_2",
-          "name": "All-Nighter II",
-          "emoji": "\ud83c\udf11",
-          "description": "Pulled all-nighters on BOTH hackathon nights"
-        },
-        {
-          "id": "code_cannon",
-          "name": "Code Cannon",
-          "emoji": "\ud83d\udca5",
-          "description": "Added 1000+ lines of code"
-        },
-        {
-          "id": "deadline_warrior",
-          "name": "Deadline Warrior",
-          "emoji": "\u23f0",
-          "description": "Committed in the final hour before deadline"
-        },
-        {
-          "id": "polyglot",
-          "name": "Polyglot",
-          "emoji": "\ud83d\udde3\ufe0f",
-          "description": "Touched 4+ programming languages"
-        },
-        {
-          "id": "full_stack",
-          "name": "Full Stack",
-          "emoji": "\ud83e\udd5e",
-          "description": "Changed both frontend and backend code"
-        },
-        {
-          "id": "vibe_coder",
-          "name": "Vibe Coder",
-          "emoji": "\u2728",
-          "description": "Commit messages mention AI coding tools"
-        }
-      ],
-      "activity": [
-        {
-          "hour": "2026-02-14T02:00:00",
-          "commits": 1,
-          "additions": 93,
-          "deletions": 0
-        },
-        {
-          "hour": "2026-02-14T11:00:00",
-          "commits": 2,
-          "additions": 7,
-          "deletions": 1
-        },
-        {
-          "hour": "2026-02-14T18:00:00",
-          "commits": 3,
-          "additions": 11329,
-          "deletions": 0
-        },
-        {
-          "hour": "2026-02-14T19:00:00",
-          "commits": 2,
-          "additions": 227,
-          "deletions": 11
-        },
-        {
-          "hour": "2026-02-15T00:00:00",
-          "commits": 1,
-          "additions": 0,
-          "deletions": 0
-        },
-        {
-          "hour": "2026-02-15T01:00:00",
-          "commits": 1,
-          "additions": 562,
-          "deletions": 0
-        },
-        {
-          "hour": "2026-02-15T02:00:00",
-          "commits": 1,
-          "additions": 0,
-          "deletions": 0
-        },
-        {
-          "hour": "2026-02-15T04:00:00",
-          "commits": 1,
-          "additions": 0,
-          "deletions": 0
-        },
-        {
-          "hour": "2026-02-15T06:00:00",
-          "commits": 1,
-          "additions": 0,
-          "deletions": 0
-        },
-        {
-          "hour": "2026-02-15T10:00:00",
-          "commits": 2,
-          "additions": 402,
-          "deletions": 175
         }
       ]
     },
@@ -39875,7 +39919,7 @@
           "commits": 14,
           "lines_added": 399,
           "team_member_count": 7,
-          "contribution_pct": 21.5,
+          "contribution_pct": 21.2,
           "team_members": [
             "Roger You",
             "J4Joshua",
@@ -40646,8 +40690,8 @@
           "contribution_pct": 20.9,
           "team_members": [
             "Sindhu Satish",
-            "Carolyn He",
             "anika",
+            "Carolyn He",
             "Sindhu",
             "carolynhe"
           ]
@@ -41672,8 +41716,8 @@
             "phanny",
             "Jude Partovi",
             "Lavik Jain",
-            "Lavik Jain",
-            "Emmanuel Rassou"
+            "Emmanuel Rassou",
+            "Lavik Jain"
           ]
         }
       ],
@@ -41883,8 +41927,8 @@
             "Mohammad Zoraiz",
             "Hemasai Suhas Kurapati",
             "\u8881\u5b87\u7a0b",
-            "\u8881\u5b87\u7a0b",
-            "YuCheng (Tom) Yuan"
+            "YuCheng (Tom) Yuan",
+            "\u8881\u5b87\u7a0b"
           ]
         }
       ],
@@ -42432,8 +42476,8 @@
           "contribution_pct": 38.2,
           "team_members": [
             "Potatoboy9999",
-            "Gurmeher Singh",
             "zhenghchen",
+            "Gurmeher Singh",
             "Will"
           ]
         }
@@ -42570,8 +42614,8 @@
             "Roshen Nair",
             "Poarthan",
             "Justin Xie",
-            "Mabernibber",
-            "roshen-nair"
+            "roshen-nair",
+            "Mabernibber"
           ]
         }
       ],
@@ -42677,8 +42721,8 @@
             "Roshen Nair",
             "Justin Xie",
             "Justin Xie",
-            "Mabernibber",
-            "roshen-nair"
+            "roshen-nair",
+            "Mabernibber"
           ]
         }
       ],
@@ -42875,6 +42919,111 @@
           "commits": 1,
           "additions": 91,
           "deletions": 3
+        }
+      ]
+    },
+    {
+      "id": "rogerziyinyou@gmail.com",
+      "name": "Roger You",
+      "projects": [
+        {
+          "name": "ChromaChord",
+          "repo_url": "https://github.com/J4Joshua/JASS-APP",
+          "devpost_url": "https://devpost.com/software/chromachord",
+          "role": "Frontend",
+          "commits": 13,
+          "lines_added": 2987,
+          "team_member_count": 7,
+          "contribution_pct": 19.7,
+          "team_members": [
+            "joeeliang",
+            "J4Joshua",
+            "joshua",
+            "Lucy Wu",
+            "Lucy Wu",
+            "Roger You"
+          ]
+        }
+      ],
+      "stats": {
+        "total_commits": 13,
+        "total_lines_added": 2987,
+        "total_lines_removed": 752,
+        "languages": [
+          "React TSX",
+          "CSS",
+          "TypeScript",
+          "Python"
+        ]
+      },
+      "badges": [
+        {
+          "id": "code_cannon",
+          "name": "Code Cannon",
+          "emoji": "\ud83d\udca5",
+          "description": "Added 1000+ lines of code"
+        },
+        {
+          "id": "deadline_warrior",
+          "name": "Deadline Warrior",
+          "emoji": "\u23f0",
+          "description": "Committed in the final hour before deadline"
+        },
+        {
+          "id": "polyglot",
+          "name": "Polyglot",
+          "emoji": "\ud83d\udde3\ufe0f",
+          "description": "Touched 4+ programming languages"
+        },
+        {
+          "id": "full_stack",
+          "name": "Full Stack",
+          "emoji": "\ud83e\udd5e",
+          "description": "Changed both frontend and backend code"
+        },
+        {
+          "id": "vibe_coder",
+          "name": "Vibe Coder",
+          "emoji": "\u2728",
+          "description": "Commit messages mention AI coding tools"
+        }
+      ],
+      "activity": [
+        {
+          "hour": "2026-02-14T22:00:00",
+          "commits": 1,
+          "additions": 1618,
+          "deletions": 105
+        },
+        {
+          "hour": "2026-02-14T23:00:00",
+          "commits": 3,
+          "additions": 193,
+          "deletions": 150
+        },
+        {
+          "hour": "2026-02-15T00:00:00",
+          "commits": 5,
+          "additions": 619,
+          "deletions": 320
+        },
+        {
+          "hour": "2026-02-15T01:00:00",
+          "commits": 1,
+          "additions": 175,
+          "deletions": 13
+        },
+        {
+          "hour": "2026-02-15T06:00:00",
+          "commits": 2,
+          "additions": 382,
+          "deletions": 164
+        },
+        {
+          "hour": "2026-02-15T11:00:00",
+          "commits": 1,
+          "additions": 0,
+          "deletions": 0
         }
       ]
     },
@@ -43354,8 +43503,8 @@
           "contribution_pct": 12.3,
           "team_members": [
             "andrew",
-            "Rami Maalouf",
             "cslegasse",
+            "Rami Maalouf",
             "cslegasse",
             "Matthew Chow"
           ]
@@ -43961,8 +44110,8 @@
           "team_member_count": 8,
           "contribution_pct": 19.1,
           "team_members": [
-            "Joshua Zhang",
             "AlWo223",
+            "Joshua Zhang",
             "v0",
             "Daniel Gorbatov",
             "Daniel Gorbatov",
@@ -44367,10 +44516,10 @@
           "contribution_pct": 41.9,
           "team_members": [
             "Hackathon Bot",
-            "Shardul Marathe",
             "Priyanka K",
-            "Grace Housman",
-            "priyanka-stanf"
+            "Shardul Marathe",
+            "priyanka-stanf",
+            "Grace Housman"
           ]
         }
       ],
@@ -45527,8 +45676,8 @@
           "team_members": [
             "Nolawi Teklehaimanot",
             "Ifeoluwa Oyetimehin",
-            "Ifeoluwa Oyetimehin",
-            "Nolawi"
+            "Nolawi",
+            "Ifeoluwa Oyetimehin"
           ]
         }
       ],
@@ -45876,99 +46025,6 @@
           "commits": 1,
           "additions": 1,
           "deletions": 1
-        }
-      ]
-    },
-    {
-      "id": "rogerziyinyou@gmail.com",
-      "name": "Roger You",
-      "projects": [
-        {
-          "name": "ChromaChord",
-          "repo_url": "https://github.com/J4Joshua/JASS-APP",
-          "devpost_url": "https://devpost.com/software/chromachord",
-          "role": "Frontend",
-          "commits": 12,
-          "lines_added": 2987,
-          "team_member_count": 7,
-          "contribution_pct": 18.5,
-          "team_members": [
-            "joeeliang",
-            "J4Joshua",
-            "joshua",
-            "Lucy Wu",
-            "Lucy Wu",
-            "Roger You"
-          ]
-        }
-      ],
-      "stats": {
-        "total_commits": 12,
-        "total_lines_added": 2987,
-        "total_lines_removed": 752,
-        "languages": [
-          "React TSX",
-          "CSS",
-          "TypeScript",
-          "Python"
-        ]
-      },
-      "badges": [
-        {
-          "id": "code_cannon",
-          "name": "Code Cannon",
-          "emoji": "\ud83d\udca5",
-          "description": "Added 1000+ lines of code"
-        },
-        {
-          "id": "polyglot",
-          "name": "Polyglot",
-          "emoji": "\ud83d\udde3\ufe0f",
-          "description": "Touched 4+ programming languages"
-        },
-        {
-          "id": "full_stack",
-          "name": "Full Stack",
-          "emoji": "\ud83e\udd5e",
-          "description": "Changed both frontend and backend code"
-        },
-        {
-          "id": "vibe_coder",
-          "name": "Vibe Coder",
-          "emoji": "\u2728",
-          "description": "Commit messages mention AI coding tools"
-        }
-      ],
-      "activity": [
-        {
-          "hour": "2026-02-14T22:00:00",
-          "commits": 1,
-          "additions": 1618,
-          "deletions": 105
-        },
-        {
-          "hour": "2026-02-14T23:00:00",
-          "commits": 3,
-          "additions": 193,
-          "deletions": 150
-        },
-        {
-          "hour": "2026-02-15T00:00:00",
-          "commits": 5,
-          "additions": 619,
-          "deletions": 320
-        },
-        {
-          "hour": "2026-02-15T01:00:00",
-          "commits": 1,
-          "additions": 175,
-          "deletions": 13
-        },
-        {
-          "hour": "2026-02-15T06:00:00",
-          "commits": 2,
-          "additions": 382,
-          "deletions": 164
         }
       ]
     },
@@ -47244,8 +47300,8 @@
             "Jude Partovi",
             "Jude Partovi",
             "Lavik Jain",
-            "Lavik Jain",
-            "Emmanuel Rassou"
+            "Emmanuel Rassou",
+            "Lavik Jain"
           ]
         }
       ],
@@ -48046,8 +48102,8 @@
           "team_members": [
             "Troy Gunawardene",
             "Ifeoluwa Oyetimehin",
-            "Ifeoluwa Oyetimehin",
-            "Nolawi"
+            "Nolawi",
+            "Ifeoluwa Oyetimehin"
           ]
         }
       ],
@@ -48499,7 +48555,7 @@
           "commits": 11,
           "lines_added": 0,
           "team_member_count": 7,
-          "contribution_pct": 16.9,
+          "contribution_pct": 16.7,
           "team_members": [
             "joeeliang",
             "Roger You",
@@ -49382,7 +49438,7 @@
           "commits": 11,
           "lines_added": 28568,
           "team_member_count": 5,
-          "contribution_pct": 28.9,
+          "contribution_pct": 28.2,
           "team_members": [
             "cherylwu834",
             "h4nkyn",
@@ -49493,8 +49549,8 @@
           "contribution_pct": 50.0,
           "team_members": [
             "Albert Astrom",
-            "Danny Lin",
-            "bsflll"
+            "bsflll",
+            "Danny Lin"
           ]
         }
       ],
@@ -50664,9 +50720,9 @@
           "team_members": [
             "Anirudh Mazumder",
             "Anirudh Mazumder",
+            "VXXWu",
             "Vince Wu",
-            "Vince Wu",
-            "VXXWu"
+            "Vince Wu"
           ]
         }
       ],
@@ -50934,8 +50990,8 @@
           "contribution_pct": 29.4,
           "team_members": [
             "Parth Danve",
-            "Gurmeher Singh",
             "zhenghchen",
+            "Gurmeher Singh",
             "Will"
           ]
         }
@@ -51141,8 +51197,8 @@
           "team_members": [
             "Soham Bafana",
             "kvnyng",
-            "Arjun Melwani",
-            "Kevin Yang"
+            "Kevin Yang",
+            "Arjun Melwani"
           ]
         }
       ],
@@ -51230,7 +51286,7 @@
           "commits": 10,
           "lines_added": 10311,
           "team_member_count": 7,
-          "contribution_pct": 15.4,
+          "contribution_pct": 15.2,
           "team_members": [
             "joeeliang",
             "Roger You",
@@ -52344,8 +52400,8 @@
             "Angelina Quan",
             "lalala-e",
             "lalala-e",
-            "Angelina Quan",
-            "James"
+            "James",
+            "Angelina Quan"
           ]
         }
       ],
@@ -53550,8 +53606,8 @@
           "contribution_pct": 11.5,
           "team_members": [
             "Shrey Birmiwal",
-            "Kyan Yang",
             "adiprasadd",
+            "Kyan Yang",
             "Aditya Prasad",
             "Kyan Yang"
           ]
@@ -54239,7 +54295,7 @@
           "commits": 9,
           "lines_added": 3822,
           "team_member_count": 7,
-          "contribution_pct": 13.8,
+          "contribution_pct": 13.6,
           "team_members": [
             "joeeliang",
             "Roger You",
@@ -55186,8 +55242,8 @@
           "contribution_pct": 40.9,
           "team_members": [
             "hectorastrom",
-            "Danny Lin",
-            "bsflll"
+            "bsflll",
+            "Danny Lin"
           ]
         }
       ],
@@ -55309,8 +55365,8 @@
           "team_member_count": 4,
           "contribution_pct": 26.5,
           "team_members": [
-            "Abhay Bhat",
             "Sriram MK",
+            "Abhay Bhat",
             "Andrew Fong"
           ]
         }
@@ -55985,8 +56041,8 @@
             "google-labs-jules[bot]",
             "KIKW12",
             "Fabrizio Vanzani",
-            "Fabrizio Vanzani",
-            "enayala"
+            "enayala",
+            "Fabrizio Vanzani"
           ]
         }
       ],
@@ -56067,8 +56123,8 @@
             "Emmanuel Kasuti Makau",
             "KIKW12",
             "Fabrizio Vanzani",
-            "Fabrizio Vanzani",
-            "enayala"
+            "enayala",
+            "Fabrizio Vanzani"
           ]
         }
       ],
@@ -56509,8 +56565,8 @@
           "team_members": [
             "Shamit Surana",
             "Shreyas Agarwal",
-            "Tagrtagr",
-            "Shreyas Agarwal"
+            "Shreyas Agarwal",
+            "Tagrtagr"
           ]
         }
       ],
@@ -57109,7 +57165,7 @@
           "commits": 8,
           "lines_added": 0,
           "team_member_count": 7,
-          "contribution_pct": 12.3,
+          "contribution_pct": 12.1,
           "team_members": [
             "joeeliang",
             "Roger You",
@@ -57177,8 +57233,8 @@
           "team_members": [
             "Laurie",
             "BasanthPR",
-            "Devi Aditya Varma Dantuluri",
-            "andrewzylee"
+            "andrewzylee",
+            "Devi Aditya Varma Dantuluri"
           ]
         }
       ],
@@ -57935,8 +57991,8 @@
             "google-labs-jules[bot]",
             "Emmanuel Kasuti Makau",
             "Fabrizio Vanzani",
-            "Fabrizio Vanzani",
-            "enayala"
+            "enayala",
+            "Fabrizio Vanzani"
           ]
         }
       ],
@@ -58455,8 +58511,8 @@
             "Alexander (Hongyi) Huang",
             "Agniv",
             "Gino",
-            "Gino",
-            "Alex Huang"
+            "Alex Huang",
+            "Gino"
           ]
         }
       ],
@@ -58664,8 +58720,8 @@
             "Zini Chakraborty",
             "atrayav",
             "Janani",
-            "sadia14",
             "Zini Chakraborty",
+            "sadia14",
             "atrayav"
           ]
         }
@@ -59318,7 +59374,7 @@
           "commits": 7,
           "lines_added": 4955,
           "team_member_count": 3,
-          "contribution_pct": 25.0,
+          "contribution_pct": 24.1,
           "team_members": [
             "twosodium",
             "Anna Wu"
@@ -60700,7 +60756,7 @@
           "commits": 7,
           "lines_added": 63931,
           "team_member_count": 5,
-          "contribution_pct": 18.4,
+          "contribution_pct": 17.9,
           "team_members": [
             "cherylwu834",
             "ezou1",
@@ -60780,8 +60836,8 @@
           "team_member_count": 8,
           "contribution_pct": 10.3,
           "team_members": [
-            "Joshua Zhang",
             "AlWo223",
+            "Joshua Zhang",
             "Ryan Co",
             "v0",
             "Daniel Gorbatov",
@@ -61577,8 +61633,8 @@
             "Jude Partovi",
             "phanny",
             "Lavik Jain",
-            "Lavik Jain",
-            "Emmanuel Rassou"
+            "Emmanuel Rassou",
+            "Lavik Jain"
           ]
         }
       ],
@@ -61637,8 +61693,8 @@
           "contribution_pct": 58.3,
           "team_members": [
             "Bilalmkhn07",
-            "Kartikeya Goel",
-            "Diego Reyes"
+            "Diego Reyes",
+            "Kartikeya Goel"
           ]
         }
       ],
@@ -62230,8 +62286,8 @@
           "team_members": [
             "ds9-code",
             "Radha",
-            "amogyisabogy1",
-            "Radha Munver"
+            "Radha Munver",
+            "amogyisabogy1"
           ]
         }
       ],
@@ -62403,8 +62459,8 @@
           "team_members": [
             "Soham Bafana",
             "Jonathan Lei",
-            "Arjun Melwani",
-            "Kevin Yang"
+            "Kevin Yang",
+            "Arjun Melwani"
           ]
         }
       ],
@@ -62457,9 +62513,9 @@
             "Raj Pandya",
             "Yax Patel",
             "aryan-cs",
-            "aryan",
             "Yax Patel",
-            "Aryan Gupta"
+            "Aryan Gupta",
+            "aryan"
           ]
         }
       ],
@@ -62553,8 +62609,8 @@
           "team_member_count": 6,
           "contribution_pct": 21.4,
           "team_members": [
-            "Valerie",
             "Katie Wang",
+            "Valerie",
             "jessicang",
             "Gina",
             "Katie Wang"
@@ -63394,9 +63450,9 @@
             "Ethan Leonard",
             "Hackathon Bot",
             "Pranav-Karra-3301",
+            "Ethan Leonard",
             "Vercel",
-            "Pranav Karra",
-            "Ethan Leonard"
+            "Pranav Karra"
           ]
         }
       ],
@@ -64117,8 +64173,8 @@
           "team_members": [
             "angelinawwu",
             "abao27",
-            "Noella Kwizera",
-            "abao27"
+            "abao27",
+            "Noella Kwizera"
           ]
         }
       ],
@@ -64276,8 +64332,8 @@
           "contribution_pct": 12.2,
           "team_members": [
             "ZealSV",
-            "Timur Takhtarov",
             "Tony Li",
+            "Timur Takhtarov",
             "Batyr Zhangabylov",
             "Muzart"
           ]
@@ -64882,8 +64938,8 @@
             "Alexander (Hongyi) Huang",
             "Agniv",
             "Gino",
-            "Gino",
-            "Alex Huang"
+            "Alex Huang",
+            "Gino"
           ]
         }
       ],
@@ -64945,8 +65001,8 @@
             "Zini Chakraborty",
             "atrayav",
             "janani",
-            "sadia14",
             "Zini Chakraborty",
+            "sadia14",
             "atrayav"
           ]
         }
@@ -65622,8 +65678,8 @@
           "team_members": [
             "basanthpr11",
             "BasanthPR",
-            "Devi Aditya Varma Dantuluri",
-            "andrewzylee"
+            "andrewzylee",
+            "Devi Aditya Varma Dantuluri"
           ]
         }
       ],
@@ -65848,8 +65904,8 @@
           "contribution_pct": 11.6,
           "team_members": [
             "vboxuser",
-            "yatharthgohil",
             "mahima3434",
+            "yatharthgohil",
             "Sanjina-Kumari"
           ]
         }
@@ -66896,8 +66952,8 @@
             "Amy",
             "Yuma Soerianto",
             "shayhacker",
-            "Amy",
-            "Anyone Can Code"
+            "Anyone Can Code",
+            "Amy"
           ]
         }
       ],
@@ -67054,8 +67110,8 @@
           "team_member_count": 8,
           "contribution_pct": 7.4,
           "team_members": [
-            "Joshua Zhang",
             "AlWo223",
+            "Joshua Zhang",
             "Ryan Co",
             "v0",
             "Daniel Gorbatov",
@@ -67838,8 +67894,8 @@
           "team_members": [
             "Shrey Birmiwal",
             "Kevin Thomas",
-            "Kyan Yang",
             "adiprasadd",
+            "Kyan Yang",
             "Kyan Yang"
           ]
         }
@@ -67910,8 +67966,8 @@
             "\u8881\u5b87\u7a0b",
             "Hemasai Suhas Kurapati",
             "\u8881\u5b87\u7a0b",
-            "\u8881\u5b87\u7a0b",
-            "YuCheng (Tom) Yuan"
+            "YuCheng (Tom) Yuan",
+            "\u8881\u5b87\u7a0b"
           ]
         }
       ],
@@ -68231,8 +68287,8 @@
           "team_member_count": 5,
           "contribution_pct": 15.6,
           "team_members": [
-            "Eden Brunner",
             "mikulrai",
+            "Eden Brunner",
             "annaaaa19",
             "annaaaa19"
           ]
@@ -68424,9 +68480,9 @@
           "team_members": [
             "Naman Jain",
             "Anirudh Mazumder",
+            "VXXWu",
             "Vince Wu",
-            "Vince Wu",
-            "VXXWu"
+            "Vince Wu"
           ]
         }
       ],
@@ -68865,8 +68921,8 @@
           "team_members": [
             "Diya Sreedhar",
             "Radha",
-            "amogyisabogy1",
-            "Radha Munver"
+            "Radha Munver",
+            "amogyisabogy1"
           ]
         }
       ],
@@ -69206,8 +69262,8 @@
           "team_members": [
             "basanthpr11",
             "Laurie",
-            "Devi Aditya Varma Dantuluri",
-            "andrewzylee"
+            "andrewzylee",
+            "Devi Aditya Varma Dantuluri"
           ]
         }
       ],
@@ -69276,8 +69332,8 @@
             "Andy Xu",
             "Rohan Desai",
             "Jason Gao",
-            "jasonzgao",
-            "Andy Xu"
+            "Andy Xu",
+            "jasonzgao"
           ]
         }
       ],
@@ -69555,8 +69611,8 @@
           "team_members": [
             "waning",
             "v0",
-            "Stephen Kwak",
             "Wonny Kwak",
+            "Stephen Kwak",
             "JJ"
           ]
         },
@@ -69570,8 +69626,8 @@
           "team_member_count": 8,
           "contribution_pct": 2.9,
           "team_members": [
-            "Joshua Zhang",
             "AlWo223",
+            "Joshua Zhang",
             "Ryan Co",
             "v0",
             "Daniel Gorbatov",
@@ -70218,8 +70274,8 @@
           "team_members": [
             "andrew",
             "MatthewChow03",
-            "Rami Maalouf",
             "cslegasse",
+            "Rami Maalouf",
             "Matthew Chow"
           ]
         }
@@ -70412,8 +70468,8 @@
             "Angelina Quan",
             "Videet Mehta",
             "lalala-e",
-            "Angelina Quan",
-            "James"
+            "James",
+            "Angelina Quan"
           ]
         }
       ],
@@ -70541,8 +70597,8 @@
           "team_members": [
             "Sindhu Satish",
             "Eli Zerr",
-            "Carolyn He",
             "anika",
+            "Carolyn He",
             "carolynhe"
           ]
         }
@@ -70628,7 +70684,7 @@
           "commits": 4,
           "lines_added": 234,
           "team_member_count": 5,
-          "contribution_pct": 10.5,
+          "contribution_pct": 10.3,
           "team_members": [
             "cherylwu834",
             "ezou1",
@@ -70803,8 +70859,8 @@
             "Amy",
             "Yuma Soerianto",
             "Yash Ranjith",
-            "Amy",
-            "Anyone Can Code"
+            "Anyone Can Code",
+            "Amy"
           ]
         }
       ],
@@ -71058,6 +71114,95 @@
       ]
     },
     {
+      "id": "jrjavier1414@gmail.com",
+      "name": "Javier Reynoso",
+      "projects": [
+        {
+          "name": "Pare",
+          "repo_url": "https://github.com/javierreyno/treehacks2026",
+          "devpost_url": "https://devpost.com/software/pare-98vjwq",
+          "role": "Generalist",
+          "commits": 4,
+          "lines_added": 42367,
+          "team_member_count": 2,
+          "contribution_pct": 80.0,
+          "team_members": [
+            "Javier Reynoso"
+          ]
+        }
+      ],
+      "stats": {
+        "total_commits": 4,
+        "total_lines_added": 42367,
+        "total_lines_removed": 14602,
+        "languages": [
+          "Python",
+          "React JSX",
+          "Shell",
+          "JavaScript",
+          "HTML"
+        ]
+      },
+      "badges": [
+        {
+          "id": "code_cannon",
+          "name": "Code Cannon",
+          "emoji": "\ud83d\udca5",
+          "description": "Added 1000+ lines of code"
+        },
+        {
+          "id": "deadline_warrior",
+          "name": "Deadline Warrior",
+          "emoji": "\u23f0",
+          "description": "Committed in the final hour before deadline"
+        },
+        {
+          "id": "polyglot",
+          "name": "Polyglot",
+          "emoji": "\ud83d\udde3\ufe0f",
+          "description": "Touched 4+ programming languages"
+        },
+        {
+          "id": "full_stack",
+          "name": "Full Stack",
+          "emoji": "\ud83e\udd5e",
+          "description": "Changed both frontend and backend code"
+        },
+        {
+          "id": "devops_hero",
+          "name": "DevOps Hero",
+          "emoji": "\ud83d\udc33",
+          "description": "Committed Docker/CI configuration files"
+        }
+      ],
+      "activity": [
+        {
+          "hour": "2026-02-14T19:00:00",
+          "commits": 1,
+          "additions": 19811,
+          "deletions": 0
+        },
+        {
+          "hour": "2026-02-15T08:00:00",
+          "commits": 1,
+          "additions": 22483,
+          "deletions": 14595
+        },
+        {
+          "hour": "2026-02-15T10:00:00",
+          "commits": 1,
+          "additions": 69,
+          "deletions": 3
+        },
+        {
+          "hour": "2026-02-15T11:00:00",
+          "commits": 1,
+          "additions": 4,
+          "deletions": 4
+        }
+      ]
+    },
+    {
       "id": "loldeadmemegod@gmail.com",
       "name": "pauldbd",
       "projects": [
@@ -71123,8 +71268,8 @@
             "Grace Housman",
             "Hackathon Bot",
             "Shardul Marathe",
-            "Grace Housman",
-            "priyanka-stanf"
+            "priyanka-stanf",
+            "Grace Housman"
           ]
         }
       ],
@@ -71204,8 +71349,8 @@
             "Grace Housman",
             "Hackathon Bot",
             "Priyanka K",
-            "Grace Housman",
-            "priyanka-stanf"
+            "priyanka-stanf",
+            "Grace Housman"
           ]
         }
       ],
@@ -71933,8 +72078,8 @@
             "google-labs-jules[bot]",
             "Emmanuel Kasuti Makau",
             "KIKW12",
-            "Fabrizio Vanzani",
-            "enayala"
+            "enayala",
+            "Fabrizio Vanzani"
           ]
         }
       ],
@@ -72056,8 +72201,8 @@
           "team_members": [
             "Swarm Modal Agent",
             "Janet",
-            "Richard Chen",
             "Janet Guo",
+            "Richard Chen",
             "Annie Wang"
           ]
         }
@@ -72323,8 +72468,8 @@
             "\u8881\u5b87\u7a0b",
             "Mohammad Zoraiz",
             "\u8881\u5b87\u7a0b",
-            "\u8881\u5b87\u7a0b",
-            "YuCheng (Tom) Yuan"
+            "YuCheng (Tom) Yuan",
+            "\u8881\u5b87\u7a0b"
           ]
         }
       ],
@@ -72680,8 +72825,8 @@
           "team_member_count": 5,
           "contribution_pct": 12.5,
           "team_members": [
-            "Eden Brunner",
             "mikulrai",
+            "Eden Brunner",
             "eden-byte",
             "annaaaa19"
           ]
@@ -73329,8 +73474,8 @@
             "Roshen Nair",
             "Poarthan",
             "Justin Xie",
-            "Mabernibber",
-            "roshen-nair"
+            "roshen-nair",
+            "Mabernibber"
           ]
         }
       ],
@@ -73400,8 +73545,8 @@
           "team_member_count": 6,
           "contribution_pct": 10.7,
           "team_members": [
-            "Valerie",
             "Katie Wang",
+            "Valerie",
             "Gina Choi",
             "Gina",
             "Katie Wang"
@@ -74563,8 +74708,8 @@
           "team_members": [
             "angelinawwu",
             "Noella Kwizera",
-            "Noella Kwizera",
-            "abao27"
+            "abao27",
+            "Noella Kwizera"
           ]
         }
       ],
@@ -74590,89 +74735,6 @@
           "commits": 2,
           "additions": 69,
           "deletions": 54
-        }
-      ]
-    },
-    {
-      "id": "jrjavier1414@gmail.com",
-      "name": "Javier Reynoso",
-      "projects": [
-        {
-          "name": "Pare",
-          "repo_url": "https://github.com/javierreyno/treehacks2026",
-          "devpost_url": "https://devpost.com/software/pare-98vjwq",
-          "role": "Generalist",
-          "commits": 3,
-          "lines_added": 42363,
-          "team_member_count": 2,
-          "contribution_pct": 75.0,
-          "team_members": [
-            "Javier Reynoso"
-          ]
-        }
-      ],
-      "stats": {
-        "total_commits": 3,
-        "total_lines_added": 42363,
-        "total_lines_removed": 14598,
-        "languages": [
-          "Python",
-          "React JSX",
-          "Shell",
-          "JavaScript",
-          "HTML"
-        ]
-      },
-      "badges": [
-        {
-          "id": "code_cannon",
-          "name": "Code Cannon",
-          "emoji": "\ud83d\udca5",
-          "description": "Added 1000+ lines of code"
-        },
-        {
-          "id": "deadline_warrior",
-          "name": "Deadline Warrior",
-          "emoji": "\u23f0",
-          "description": "Committed in the final hour before deadline"
-        },
-        {
-          "id": "polyglot",
-          "name": "Polyglot",
-          "emoji": "\ud83d\udde3\ufe0f",
-          "description": "Touched 4+ programming languages"
-        },
-        {
-          "id": "full_stack",
-          "name": "Full Stack",
-          "emoji": "\ud83e\udd5e",
-          "description": "Changed both frontend and backend code"
-        },
-        {
-          "id": "devops_hero",
-          "name": "DevOps Hero",
-          "emoji": "\ud83d\udc33",
-          "description": "Committed Docker/CI configuration files"
-        }
-      ],
-      "activity": [
-        {
-          "hour": "2026-02-14T19:00:00",
-          "commits": 1,
-          "additions": 19811,
-          "deletions": 0
-        },
-        {
-          "hour": "2026-02-15T08:00:00",
-          "commits": 1,
-          "additions": 22483,
-          "deletions": 14595
-        },
-        {
-          "hour": "2026-02-15T10:00:00",
-          "commits": 1,
-          "additions": 69,
-          "deletions": 3
         }
       ]
     },
@@ -75072,8 +75134,8 @@
           "contribution_pct": 25.0,
           "team_members": [
             "KartikeyaGoel",
-            "Kartikeya Goel",
-            "Diego Reyes"
+            "Diego Reyes",
+            "Kartikeya Goel"
           ]
         }
       ],
@@ -75267,8 +75329,8 @@
             "\u8881\u5b87\u7a0b",
             "Mohammad Zoraiz",
             "Hemasai Suhas Kurapati",
-            "\u8881\u5b87\u7a0b",
-            "YuCheng (Tom) Yuan"
+            "YuCheng (Tom) Yuan",
+            "\u8881\u5b87\u7a0b"
           ]
         }
       ],
@@ -75368,7 +75430,7 @@
           "commits": 3,
           "lines_added": 4,
           "team_member_count": 5,
-          "contribution_pct": 3.0,
+          "contribution_pct": 2.9,
           "team_members": [
             "Soot Fix Agent",
             "FO214",
@@ -75425,8 +75487,8 @@
             "agniv sarkar",
             "Agniv",
             "Gino",
-            "Gino",
-            "Alex Huang"
+            "Alex Huang",
+            "Gino"
           ]
         }
       ],
@@ -76017,8 +76079,8 @@
           "team_members": [
             "Diya Sreedhar",
             "ds9-code",
-            "amogyisabogy1",
-            "Radha Munver"
+            "Radha Munver",
+            "amogyisabogy1"
           ]
         }
       ],
@@ -76147,8 +76209,8 @@
           "team_member_count": 6,
           "contribution_pct": 7.1,
           "team_members": [
-            "Valerie",
             "Katie Wang",
+            "Valerie",
             "Gina Choi",
             "jessicang",
             "Katie Wang"
@@ -76368,8 +76430,8 @@
           "contribution_pct": 2.7,
           "team_members": [
             "qtzx06",
-            "ryunzz",
-            "David Wang"
+            "David Wang",
+            "ryunzz"
           ]
         }
       ],
@@ -77024,8 +77086,8 @@
           "team_members": [
             "vboxuser",
             "dependabot[bot]",
-            "yatharthgohil",
-            "mahima3434"
+            "mahima3434",
+            "yatharthgohil"
           ]
         }
       ],
@@ -77345,6 +77407,47 @@
       ]
     },
     {
+      "id": "rajashekarcs2023_114786116",
+      "name": "rajashekarcs2023",
+      "projects": [
+        {
+          "name": "Kinetic AI",
+          "repo_url": "https://github.com/rajashekarcs2023/treehacks2026-kinetic",
+          "devpost_url": "https://devpost.com/software/kinetic-ai-ilvr9o",
+          "role": "Generalist",
+          "commits": 2,
+          "lines_added": 2,
+          "team_member_count": 2,
+          "contribution_pct": 1.4,
+          "team_members": [
+            "rajashekarcs2023"
+          ]
+        }
+      ],
+      "stats": {
+        "total_commits": 2,
+        "total_lines_added": 2,
+        "total_lines_removed": 2,
+        "languages": []
+      },
+      "badges": [
+        {
+          "id": "deadline_warrior",
+          "name": "Deadline Warrior",
+          "emoji": "\u23f0",
+          "description": "Committed in the final hour before deadline"
+        }
+      ],
+      "activity": [
+        {
+          "hour": "2026-02-15T11:00:00",
+          "commits": 2,
+          "additions": 2,
+          "deletions": 2
+        }
+      ]
+    },
+    {
       "id": "mythicalcow_62105787",
       "name": "Raghav Tirumale",
       "projects": [
@@ -77403,8 +77506,8 @@
           "team_members": [
             "andrew",
             "MatthewChow03",
-            "Rami Maalouf",
             "cslegasse",
+            "Rami Maalouf",
             "cslegasse"
           ]
         }
@@ -77510,8 +77613,8 @@
             "Angelina Quan",
             "Videet Mehta",
             "lalala-e",
-            "Angelina Quan",
-            "James"
+            "James",
+            "Angelina Quan"
           ]
         }
       ],
@@ -77656,8 +77759,8 @@
           "team_members": [
             "Sindhu Satish",
             "Eli Zerr",
-            "Carolyn He",
             "anika",
+            "Carolyn He",
             "Sindhu"
           ]
         }
@@ -78302,8 +78405,8 @@
           "team_member_count": 5,
           "contribution_pct": 16.7,
           "team_members": [
-            "Nicholas L",
             "Ananya Purwar",
+            "Nicholas L",
             "Nina Geng",
             "Vanshika Digania"
           ]
@@ -78450,8 +78553,8 @@
           "contribution_pct": 2.1,
           "team_members": [
             "floatingtrees",
-            "Gabriel Tsai",
             "Peter Zhang",
+            "Gabriel Tsai",
             "GabeTsai"
           ]
         }
@@ -78660,8 +78763,8 @@
           "contribution_pct": 4.1,
           "team_members": [
             "ZealSV",
-            "Timur Takhtarov",
             "Tony Li",
+            "Timur Takhtarov",
             "Batyr Zhangabylov",
             "Muzart"
           ]
@@ -78714,8 +78817,8 @@
             "Jude Partovi",
             "phanny",
             "Jude Partovi",
-            "Lavik Jain",
-            "Emmanuel Rassou"
+            "Emmanuel Rassou",
+            "Lavik Jain"
           ]
         }
       ],
@@ -78923,8 +79026,8 @@
           "team_member_count": 4,
           "contribution_pct": 10.5,
           "team_members": [
-            "Raj Chinagundi",
             "raj-chinagundi",
+            "Raj Chinagundi",
             "Andrea"
           ]
         }
@@ -79168,8 +79271,8 @@
             "agniv sarkar",
             "Alexander (Hongyi) Huang",
             "Gino",
-            "Gino",
-            "Alex Huang"
+            "Alex Huang",
+            "Gino"
           ]
         }
       ],
@@ -79218,8 +79321,8 @@
             "agniv sarkar",
             "Alexander (Hongyi) Huang",
             "Agniv",
-            "Gino",
-            "Alex Huang"
+            "Alex Huang",
+            "Gino"
           ]
         }
       ],
@@ -79407,9 +79510,9 @@
           "team_members": [
             "Naman Jain",
             "Anirudh Mazumder",
+            "VXXWu",
             "Vince Wu",
-            "Vince Wu",
-            "VXXWu"
+            "Vince Wu"
           ]
         }
       ],
@@ -79783,7 +79886,7 @@
           "commits": 1,
           "lines_added": 0,
           "team_member_count": 3,
-          "contribution_pct": 3.6,
+          "contribution_pct": 3.4,
           "team_members": [
             "twosodium",
             "Advay Aravind"
@@ -79976,8 +80079,8 @@
           "team_members": [
             "Parth Danve",
             "Potatoboy9999",
-            "Gurmeher Singh",
-            "zhenghchen"
+            "zhenghchen",
+            "Gurmeher Singh"
           ]
         }
       ],
@@ -80501,8 +80604,8 @@
             "Yax Patel",
             "aryan-cs",
             "ben",
-            "aryan",
-            "Aryan Gupta"
+            "Aryan Gupta",
+            "aryan"
           ]
         }
       ],
@@ -80547,8 +80650,8 @@
             "Yax Patel",
             "aryan-cs",
             "ben",
-            "aryan",
-            "Yax Patel"
+            "Yax Patel",
+            "aryan"
           ]
         }
       ],
@@ -80694,8 +80797,8 @@
           "team_member_count": 6,
           "contribution_pct": 3.6,
           "team_members": [
-            "Valerie",
             "Katie Wang",
+            "Valerie",
             "Gina Choi",
             "jessicang",
             "Gina"
@@ -81943,8 +82046,8 @@
             "Hackathon Bot",
             "Pranav-Karra-3301",
             "JaySids",
-            "Vercel",
-            "Ethan Leonard"
+            "Ethan Leonard",
+            "Vercel"
           ]
         }
       ],
@@ -81982,8 +82085,8 @@
             "Hackathon Bot",
             "Pranav-Karra-3301",
             "JaySids",
-            "Pranav Karra",
-            "Ethan Leonard"
+            "Ethan Leonard",
+            "Pranav Karra"
           ]
         }
       ],
@@ -82611,8 +82714,8 @@
           "team_member_count": 8,
           "contribution_pct": 1.5,
           "team_members": [
-            "Joshua Zhang",
             "AlWo223",
+            "Joshua Zhang",
             "Ryan Co",
             "v0",
             "Daniel Gorbatov",
@@ -83061,7 +83164,7 @@
           "commits": 1,
           "lines_added": 1,
           "team_member_count": 2,
-          "contribution_pct": 25.0,
+          "contribution_pct": 20.0,
           "team_members": [
             "Javier Reynoso"
           ]
@@ -83215,8 +83318,8 @@
           "team_members": [
             "Grace Housman",
             "Hackathon Bot",
-            "Shardul Marathe",
             "Priyanka K",
+            "Shardul Marathe",
             "priyanka-stanf"
           ]
         }
@@ -83262,8 +83365,8 @@
           "team_members": [
             "Grace Housman",
             "Hackathon Bot",
-            "Shardul Marathe",
             "Priyanka K",
+            "Shardul Marathe",
             "Grace Housman"
           ]
         }
@@ -83462,8 +83565,8 @@
           "team_members": [
             "waning",
             "v0",
-            "Stephen Kwak",
             "Wonny Kwak",
+            "Stephen Kwak",
             "vercel[bot]"
           ]
         }
@@ -83508,8 +83611,8 @@
           "team_member_count": 4,
           "contribution_pct": 2.9,
           "team_members": [
-            "Abhay Bhat",
             "Sriram MK",
+            "Abhay Bhat",
             "Andrew Fong"
           ]
         }
@@ -83840,8 +83943,8 @@
           "team_member_count": 5,
           "contribution_pct": 8.3,
           "team_members": [
-            "Nicholas L",
             "Ananya Purwar",
+            "Nicholas L",
             "Donglomur",
             "Nina Geng"
           ]
@@ -83886,8 +83989,8 @@
           "team_member_count": 5,
           "contribution_pct": 8.3,
           "team_members": [
-            "Nicholas L",
             "Ananya Purwar",
+            "Nicholas L",
             "Donglomur",
             "Vanshika Digania"
           ]
@@ -84000,12 +84103,6 @@
           "name": "Vibe Coder",
           "emoji": "\u2728",
           "description": "Commit messages mention AI coding tools"
-        },
-        {
-          "id": "first_blood",
-          "name": "First Blood",
-          "emoji": "\ud83e\udd47",
-          "description": "Made the earliest hackathon commit"
         }
       ],
       "activity": [
@@ -84114,8 +84211,8 @@
             "Gaurang Pendharkar",
             "Kenneth Yang",
             "Ishaan Awasthi",
-            "Kenneth Yang",
             "Ishaan Awasthi",
+            "Kenneth Yang",
             "ishan"
           ]
         }
@@ -84163,8 +84260,8 @@
             "Gaurang Pendharkar",
             "Kenneth Yang",
             "Ishaan Awasthi",
-            "Kenneth Yang",
             "Ishaan Awasthi",
+            "Kenneth Yang",
             "Ishan Sinha"
           ]
         }
@@ -84379,8 +84476,8 @@
           "contribution_pct": 1.1,
           "team_members": [
             "floatingtrees",
-            "Gabriel Tsai",
             "Peter Zhang",
+            "Gabriel Tsai",
             "Allen Zhang"
           ]
         }
@@ -84553,8 +84650,8 @@
           "contribution_pct": 2.0,
           "team_members": [
             "ZealSV",
-            "Timur Takhtarov",
             "Tony Li",
+            "Timur Takhtarov",
             "Batyr Zhangabylov",
             "Batyr Zhangabylov"
           ]
@@ -84787,8 +84884,8 @@
           "team_member_count": 4,
           "contribution_pct": 5.3,
           "team_members": [
-            "Raj Chinagundi",
             "raj-chinagundi",
+            "Raj Chinagundi",
             "Aabhas Senapati"
           ]
         }
@@ -84916,8 +85013,8 @@
             "Swarm Modal Agent",
             "Janet",
             "Annie Wang",
-            "Richard Chen",
-            "Janet Guo"
+            "Janet Guo",
+            "Richard Chen"
           ]
         }
       ],
@@ -85185,8 +85282,8 @@
           "team_members": [
             "Shrey Birmiwal",
             "Kevin Thomas",
-            "Kyan Yang",
             "adiprasadd",
+            "Kyan Yang",
             "Aditya Prasad"
           ]
         }
@@ -85711,8 +85808,8 @@
           "team_members": [
             "Shamit Surana",
             "Aarav Arora",
-            "Tagrtagr",
-            "Shreyas Agarwal"
+            "Shreyas Agarwal",
+            "Tagrtagr"
           ]
         }
       ],
@@ -86025,8 +86122,8 @@
           "team_member_count": 5,
           "contribution_pct": 3.1,
           "team_members": [
-            "Eden Brunner",
             "mikulrai",
+            "Eden Brunner",
             "eden-byte",
             "annaaaa19"
           ]
@@ -86077,8 +86174,8 @@
             "atrayav",
             "janani",
             "Janani",
-            "sadia14",
-            "Zini Chakraborty"
+            "Zini Chakraborty",
+            "sadia14"
           ]
         }
       ],
@@ -86312,8 +86409,8 @@
             "Naman Jain",
             "Anirudh Mazumder",
             "Anirudh Mazumder",
-            "Vince Wu",
-            "VXXWu"
+            "VXXWu",
+            "Vince Wu"
           ]
         }
       ],
@@ -86350,8 +86447,8 @@
             "Naman Jain",
             "Anirudh Mazumder",
             "Anirudh Mazumder",
-            "Vince Wu",
-            "VXXWu"
+            "VXXWu",
+            "Vince Wu"
           ]
         }
       ],
@@ -86426,8 +86523,8 @@
           "team_members": [
             "Troy Gunawardene",
             "Nolawi Teklehaimanot",
-            "Ifeoluwa Oyetimehin",
-            "Nolawi"
+            "Nolawi",
+            "Ifeoluwa Oyetimehin"
           ]
         }
       ],
@@ -86764,6 +86861,14 @@
           "contribution_pct": 2.9
         },
         {
+          "hacker_id": "ethan-leonard_109249951",
+          "name": "Ethan Leonard",
+          "role": "Generalist",
+          "commits": 1,
+          "lines_added": 0,
+          "contribution_pct": 0.5
+        },
+        {
           "hacker_id": "vercel[bot]@users.noreply.github.com",
           "name": "Vercel",
           "role": "Frontend",
@@ -86774,14 +86879,6 @@
         {
           "hacker_id": "pranav-karra-3301_141121582",
           "name": "Pranav Karra",
-          "role": "Generalist",
-          "commits": 1,
-          "lines_added": 0,
-          "contribution_pct": 0.5
-        },
-        {
-          "hacker_id": "ethan-leonard_109249951",
-          "name": "Ethan Leonard",
           "role": "Generalist",
           "commits": 1,
           "lines_added": 0,
@@ -86930,6 +87027,35 @@
       }
     },
     {
+      "id": "kinetic-ai",
+      "project_name": "Kinetic AI",
+      "repo_url": "https://github.com/rajashekarcs2023/treehacks2026-kinetic",
+      "devpost_url": "https://devpost.com/software/kinetic-ai-ilvr9o",
+      "members": [
+        {
+          "hacker_id": "vrajashekar2022mscs@gmail.com",
+          "name": "rajashekarcs2023",
+          "role": "Full Stack",
+          "commits": 137,
+          "lines_added": 48662,
+          "contribution_pct": 98.6
+        },
+        {
+          "hacker_id": "rajashekarcs2023_114786116",
+          "name": "rajashekarcs2023",
+          "role": "Generalist",
+          "commits": 2,
+          "lines_added": 2,
+          "contribution_pct": 1.4
+        }
+      ],
+      "stats": {
+        "total_commits": 139,
+        "team_size": 2,
+        "is_solo": false
+      }
+    },
+    {
       "id": "sniff",
       "project_name": "Sniff",
       "repo_url": "https://github.com/thenerd31/sniff",
@@ -87029,19 +87155,19 @@
           "contribution_pct": 1.4
         },
         {
-          "hacker_id": "gino@ginos-macbook-pro.local",
-          "name": "Gino",
-          "role": "Frontend",
-          "commits": 1,
-          "lines_added": 798,
-          "contribution_pct": 0.7
-        },
-        {
           "hacker_id": "hongyihuang2006@gmail.com",
           "name": "Alex Huang",
           "role": "Frontend",
           "commits": 1,
           "lines_added": 550,
+          "contribution_pct": 0.7
+        },
+        {
+          "hacker_id": "gino@ginos-macbook-pro.local",
+          "name": "Gino",
+          "role": "Frontend",
+          "commits": 1,
+          "lines_added": 798,
           "contribution_pct": 0.7
         }
       ],
@@ -87049,27 +87175,6 @@
         "total_commits": 138,
         "team_size": 8,
         "is_solo": false
-      }
-    },
-    {
-      "id": "kinetic-ai",
-      "project_name": "Kinetic AI",
-      "repo_url": "https://github.com/rajashekarcs2023/treehacks2026-kinetic",
-      "devpost_url": "https://devpost.com/software/kinetic-ai-ilvr9o",
-      "members": [
-        {
-          "hacker_id": "vrajashekar2022mscs@gmail.com",
-          "name": "rajashekarcs2023",
-          "role": "Full Stack",
-          "commits": 136,
-          "lines_added": 48336,
-          "contribution_pct": 100.0
-        }
-      ],
-      "stats": {
-        "total_commits": 136,
-        "team_size": 1,
-        "is_solo": true
       }
     },
     {
@@ -87233,19 +87338,19 @@
           "contribution_pct": 2.5
         },
         {
-          "hacker_id": "yuansir@dn0a1fc9bc.sunet",
-          "name": "\u8881\u5b87\u7a0b",
-          "role": "Backend",
-          "commits": 1,
-          "lines_added": 219212,
-          "contribution_pct": 0.8
-        },
-        {
           "hacker_id": "tomtommyyuan_168704442",
           "name": "YuCheng (Tom) Yuan",
           "role": "Generalist",
           "commits": 1,
           "lines_added": 0,
+          "contribution_pct": 0.8
+        },
+        {
+          "hacker_id": "yuansir@dn0a1fc9bc.sunet",
+          "name": "\u8881\u5b87\u7a0b",
+          "role": "Backend",
+          "commits": 1,
+          "lines_added": 219212,
           "contribution_pct": 0.8
         }
       ],
@@ -87442,19 +87547,19 @@
           "contribution_pct": 12.3
         },
         {
-          "hacker_id": "ramim66809@gmail.com",
-          "name": "Rami Maalouf",
-          "role": "AI/ML",
-          "commits": 10,
-          "lines_added": 19424,
-          "contribution_pct": 9.4
-        },
-        {
           "hacker_id": "legasseahs1@gmail.com",
           "name": "cslegasse",
           "role": "AI/ML",
           "commits": 10,
           "lines_added": 41137,
+          "contribution_pct": 9.4
+        },
+        {
+          "hacker_id": "ramim66809@gmail.com",
+          "name": "Rami Maalouf",
+          "role": "AI/ML",
+          "commits": 10,
+          "lines_added": 19424,
           "contribution_pct": 9.4
         },
         {
@@ -87567,6 +87672,59 @@
       "stats": {
         "total_commits": 105,
         "team_size": 4,
+        "is_solo": false
+      }
+    },
+    {
+      "id": "the-orchestration-company-of-palo-alto-treehacks-agent-repo",
+      "project_name": "The Orchestration Company of Palo Alto",
+      "repo_url": "https://github.com/soooooooot/treehacks-agent-repo",
+      "devpost_url": "https://devpost.com/software/the-orchestration-company-of-palo-alto",
+      "members": [
+        {
+          "hacker_id": "agent@treehacks.dev",
+          "name": "Soot Fix Agent",
+          "role": "Frontend",
+          "commits": 96,
+          "lines_added": 6507,
+          "contribution_pct": 91.4
+        },
+        {
+          "hacker_id": "fahmiomertreehacks@gmail.com",
+          "name": "Soot",
+          "role": "Generalist",
+          "commits": 3,
+          "lines_added": 4,
+          "contribution_pct": 2.9
+        },
+        {
+          "hacker_id": "fahmiomer02@gmail.com",
+          "name": "FO214",
+          "role": "Frontend",
+          "commits": 3,
+          "lines_added": 6411,
+          "contribution_pct": 2.9
+        },
+        {
+          "hacker_id": "ian.korovinsky@gmail.com",
+          "name": "Ian Korovinsky",
+          "role": "Frontend",
+          "commits": 2,
+          "lines_added": 85,
+          "contribution_pct": 1.9
+        },
+        {
+          "hacker_id": "theodorez888@gmail.com",
+          "name": "Theodore",
+          "role": "Frontend",
+          "commits": 1,
+          "lines_added": 294,
+          "contribution_pct": 1.0
+        }
+      ],
+      "stats": {
+        "total_commits": 105,
+        "team_size": 5,
         "is_solo": false
       }
     },
@@ -87698,59 +87856,6 @@
       }
     },
     {
-      "id": "the-orchestration-company-of-palo-alto-treehacks-agent-repo",
-      "project_name": "The Orchestration Company of Palo Alto",
-      "repo_url": "https://github.com/soooooooot/treehacks-agent-repo",
-      "devpost_url": "https://devpost.com/software/the-orchestration-company-of-palo-alto",
-      "members": [
-        {
-          "hacker_id": "agent@treehacks.dev",
-          "name": "Soot Fix Agent",
-          "role": "Frontend",
-          "commits": 91,
-          "lines_added": 6344,
-          "contribution_pct": 91.0
-        },
-        {
-          "hacker_id": "fahmiomer02@gmail.com",
-          "name": "FO214",
-          "role": "Frontend",
-          "commits": 3,
-          "lines_added": 6411,
-          "contribution_pct": 3.0
-        },
-        {
-          "hacker_id": "fahmiomertreehacks@gmail.com",
-          "name": "Soot",
-          "role": "Generalist",
-          "commits": 3,
-          "lines_added": 4,
-          "contribution_pct": 3.0
-        },
-        {
-          "hacker_id": "ian.korovinsky@gmail.com",
-          "name": "Ian Korovinsky",
-          "role": "Frontend",
-          "commits": 2,
-          "lines_added": 85,
-          "contribution_pct": 2.0
-        },
-        {
-          "hacker_id": "theodorez888@gmail.com",
-          "name": "Theodore",
-          "role": "Frontend",
-          "commits": 1,
-          "lines_added": 294,
-          "contribution_pct": 1.0
-        }
-      ],
-      "stats": {
-        "total_commits": 100,
-        "team_size": 5,
-        "is_solo": false
-      }
-    },
-    {
       "id": "myko",
       "project_name": "Myko",
       "repo_url": "https://github.com/Yammmma/myko-treehacks",
@@ -87789,19 +87894,19 @@
           "contribution_pct": 4.0
         },
         {
-          "hacker_id": "ameesun_111530748",
-          "name": "Amy",
-          "role": "Mobile",
-          "commits": 1,
-          "lines_added": 6,
-          "contribution_pct": 1.0
-        },
-        {
           "hacker_id": "yammmma@users.noreply.github.com",
           "name": "Anyone Can Code",
           "role": "Generalist",
           "commits": 1,
           "lines_added": 63,
+          "contribution_pct": 1.0
+        },
+        {
+          "hacker_id": "ameesun_111530748",
+          "name": "Amy",
+          "role": "Mobile",
+          "commits": 1,
+          "lines_added": 6,
           "contribution_pct": 1.0
         }
       ],
@@ -88099,19 +88204,19 @@
           "contribution_pct": 50.0
         },
         {
-          "hacker_id": "gabrielhtsai@gmail.com",
-          "name": "Gabriel Tsai",
-          "role": "Backend",
-          "commits": 22,
-          "lines_added": 2355,
-          "contribution_pct": 23.4
-        },
-        {
           "hacker_id": "pzhang1124@gmail.com",
           "name": "Peter Zhang",
           "role": "Frontend",
           "commits": 22,
           "lines_added": 6541,
+          "contribution_pct": 23.4
+        },
+        {
+          "hacker_id": "gabrielhtsai@gmail.com",
+          "name": "Gabriel Tsai",
+          "role": "Backend",
+          "commits": 22,
+          "lines_added": 2355,
           "contribution_pct": 23.4
         },
         {
@@ -88348,19 +88453,19 @@
           "contribution_pct": 11.5
         },
         {
-          "hacker_id": "kyan.b.yang@gmail.com",
-          "name": "Kyan Yang",
-          "role": "AI/ML",
-          "commits": 9,
-          "lines_added": 181,
-          "contribution_pct": 10.3
-        },
-        {
           "hacker_id": "aditya712569@gmail.com",
           "name": "adiprasadd",
           "role": "Frontend",
           "commits": 9,
           "lines_added": 8667,
+          "contribution_pct": 10.3
+        },
+        {
+          "hacker_id": "kyan.b.yang@gmail.com",
+          "name": "Kyan Yang",
+          "role": "AI/ML",
+          "commits": 9,
+          "lines_added": 181,
           "contribution_pct": 10.3
         },
         {
@@ -88528,16 +88633,16 @@
           "contribution_pct": 4.8
         },
         {
-          "hacker_id": "jasonzgao_110579382",
-          "name": "jasonzgao",
+          "hacker_id": "andaero_68248599",
+          "name": "Andy Xu",
           "role": "Generalist",
           "commits": 1,
           "lines_added": 0,
           "contribution_pct": 1.2
         },
         {
-          "hacker_id": "andaero_68248599",
-          "name": "Andy Xu",
+          "hacker_id": "jasonzgao_110579382",
+          "name": "jasonzgao",
           "role": "Generalist",
           "commits": 1,
           "lines_added": 0,
@@ -88581,16 +88686,16 @@
           "contribution_pct": 19.3
         },
         {
-          "hacker_id": "kjy5_82800265",
-          "name": "Kenneth Yang",
+          "hacker_id": "ishaan-awasthi_136520517",
+          "name": "Ishaan Awasthi",
           "role": "Generalist",
           "commits": 2,
           "lines_added": 0,
           "contribution_pct": 2.4
         },
         {
-          "hacker_id": "ishaan-awasthi_136520517",
-          "name": "Ishaan Awasthi",
+          "hacker_id": "kjy5_82800265",
+          "name": "Kenneth Yang",
           "role": "Generalist",
           "commits": 2,
           "lines_added": 0,
@@ -88695,19 +88800,19 @@
           "contribution_pct": 4.9
         },
         {
-          "hacker_id": "ricchen_86638955",
-          "name": "Richard Chen",
-          "role": "Backend",
-          "commits": 3,
-          "lines_added": 445,
-          "contribution_pct": 3.7
-        },
-        {
           "hacker_id": "janetguo_122072913",
           "name": "Janet Guo",
           "role": "Generalist",
           "commits": 3,
           "lines_added": 0,
+          "contribution_pct": 3.7
+        },
+        {
+          "hacker_id": "ricchen_86638955",
+          "name": "Richard Chen",
+          "role": "Backend",
+          "commits": 3,
+          "lines_added": 445,
           "contribution_pct": 3.7
         },
         {
@@ -89400,19 +89505,19 @@
           "contribution_pct": 78.7
         },
         {
-          "hacker_id": "ryan.alexander.ni@gmail.com",
-          "name": "ryunzz",
-          "role": "AI/ML",
-          "commits": 7,
-          "lines_added": 876,
-          "contribution_pct": 9.3
-        },
-        {
           "hacker_id": "davidwang334@gmail.com",
           "name": "David Wang",
           "role": "AI/ML",
           "commits": 7,
           "lines_added": 2722,
+          "contribution_pct": 9.3
+        },
+        {
+          "hacker_id": "ryan.alexander.ni@gmail.com",
+          "name": "ryunzz",
+          "role": "AI/ML",
+          "commits": 7,
+          "lines_added": 876,
           "contribution_pct": 9.3
         },
         {
@@ -89477,19 +89582,19 @@
           "contribution_pct": 2.7
         },
         {
-          "hacker_id": "angelinaquan_82616112",
-          "name": "Angelina Quan",
-          "role": "Generalist",
-          "commits": 1,
-          "lines_added": 1,
-          "contribution_pct": 1.3
-        },
-        {
           "hacker_id": "denfujita_125626059",
           "name": "James",
           "role": "Generalist",
           "commits": 1,
           "lines_added": 0,
+          "contribution_pct": 1.3
+        },
+        {
+          "hacker_id": "angelinaquan_82616112",
+          "name": "Angelina Quan",
+          "role": "Generalist",
+          "commits": 1,
+          "lines_added": 1,
           "contribution_pct": 1.3
         }
       ],
@@ -89673,14 +89778,6 @@
           "contribution_pct": 8.6
         },
         {
-          "hacker_id": "aryan-cs_64030782",
-          "name": "aryan",
-          "role": "Generalist",
-          "commits": 1,
-          "lines_added": 0,
-          "contribution_pct": 1.4
-        },
-        {
           "hacker_id": "ypatel2022_74978532",
           "name": "Yax Patel",
           "role": "Generalist",
@@ -89694,6 +89791,14 @@
           "role": "Generalist",
           "commits": 1,
           "lines_added": 7035,
+          "contribution_pct": 1.4
+        },
+        {
+          "hacker_id": "aryan-cs_64030782",
+          "name": "aryan",
+          "role": "Generalist",
+          "commits": 1,
+          "lines_added": 0,
           "contribution_pct": 1.4
         }
       ],
@@ -89930,19 +90035,19 @@
       "devpost_url": "https://devpost.com/software/nexus-nqpb8m",
       "members": [
         {
-          "hacker_id": "zhy0224@gmail.com",
-          "name": "Joshua Zhang",
-          "role": "Backend",
-          "commits": 14,
-          "lines_added": 5356,
-          "contribution_pct": 20.6
-        },
-        {
           "hacker_id": "alexander.wolters@tum.de",
           "name": "AlWo223",
           "role": "Full Stack",
           "commits": 14,
           "lines_added": 4346,
+          "contribution_pct": 20.6
+        },
+        {
+          "hacker_id": "zhy0224@gmail.com",
+          "name": "Joshua Zhang",
+          "role": "Backend",
+          "commits": 14,
+          "lines_added": 5356,
           "contribution_pct": 20.6
         },
         {
@@ -90084,19 +90189,19 @@
           "contribution_pct": 20.9
         },
         {
-          "hacker_id": "carolynhe@carolyns-macbook-air-2.local",
-          "name": "Carolyn He",
-          "role": "Frontend",
-          "commits": 10,
-          "lines_added": 25713,
-          "contribution_pct": 14.9
-        },
-        {
           "hacker_id": "anika.agrawal@berkeley.edu",
           "name": "anika",
           "role": "Frontend",
           "commits": 10,
           "lines_added": 10818,
+          "contribution_pct": 14.9
+        },
+        {
+          "hacker_id": "carolynhe@carolyns-macbook-air-2.local",
+          "name": "Carolyn He",
+          "role": "Frontend",
+          "commits": 10,
+          "lines_added": 25713,
           "contribution_pct": 14.9
         },
         {
@@ -90182,14 +90287,6 @@
           "contribution_pct": 10.4
         },
         {
-          "hacker_id": "lavikjain@gmail.com",
-          "name": "Lavik Jain",
-          "role": "Frontend",
-          "commits": 2,
-          "lines_added": 2044,
-          "contribution_pct": 3.0
-        },
-        {
           "hacker_id": "lavikj_67026809",
           "name": "Lavik Jain",
           "role": "Generalist",
@@ -90204,10 +90301,87 @@
           "commits": 2,
           "lines_added": 0,
           "contribution_pct": 3.0
+        },
+        {
+          "hacker_id": "lavikjain@gmail.com",
+          "name": "Lavik Jain",
+          "role": "Frontend",
+          "commits": 2,
+          "lines_added": 2044,
+          "contribution_pct": 3.0
         }
       ],
       "stats": {
         "total_commits": 67,
+        "team_size": 7,
+        "is_solo": false
+      }
+    },
+    {
+      "id": "chromachord",
+      "project_name": "ChromaChord",
+      "repo_url": "https://github.com/J4Joshua/JASS-APP",
+      "devpost_url": "https://devpost.com/software/chromachord",
+      "members": [
+        {
+          "hacker_id": "joeeliang_103452146",
+          "name": "joeeliang",
+          "role": "AI/ML",
+          "commits": 14,
+          "lines_added": 399,
+          "contribution_pct": 21.2
+        },
+        {
+          "hacker_id": "rogerziyinyou@gmail.com",
+          "name": "Roger You",
+          "role": "Frontend",
+          "commits": 13,
+          "lines_added": 2987,
+          "contribution_pct": 19.7
+        },
+        {
+          "hacker_id": "j4joshua_110956058",
+          "name": "J4Joshua",
+          "role": "Generalist",
+          "commits": 11,
+          "lines_added": 0,
+          "contribution_pct": 16.7
+        },
+        {
+          "hacker_id": "joshhhht002@gmail.com",
+          "name": "joshua",
+          "role": "Backend",
+          "commits": 10,
+          "lines_added": 10311,
+          "contribution_pct": 15.2
+        },
+        {
+          "hacker_id": "lucy.wu012@gmail.com",
+          "name": "Lucy Wu",
+          "role": "Full Stack",
+          "commits": 9,
+          "lines_added": 3822,
+          "contribution_pct": 13.6
+        },
+        {
+          "hacker_id": "lucywu12_51028333",
+          "name": "Lucy Wu",
+          "role": "Generalist",
+          "commits": 8,
+          "lines_added": 0,
+          "contribution_pct": 12.1
+        },
+        {
+          "hacker_id": "rogeru13_185573976",
+          "name": "Roger You",
+          "role": "Generalist",
+          "commits": 1,
+          "lines_added": 0,
+          "contribution_pct": 1.5
+        }
+      ],
+      "stats": {
+        "total_commits": 66,
         "team_size": 7,
         "is_solo": false
       }
@@ -90398,75 +90572,6 @@
         "total_commits": 65,
         "team_size": 1,
         "is_solo": true
-      }
-    },
-    {
-      "id": "chromachord",
-      "project_name": "ChromaChord",
-      "repo_url": "https://github.com/J4Joshua/JASS-APP",
-      "devpost_url": "https://devpost.com/software/chromachord",
-      "members": [
-        {
-          "hacker_id": "joeeliang_103452146",
-          "name": "joeeliang",
-          "role": "AI/ML",
-          "commits": 14,
-          "lines_added": 399,
-          "contribution_pct": 21.5
-        },
-        {
-          "hacker_id": "rogerziyinyou@gmail.com",
-          "name": "Roger You",
-          "role": "Frontend",
-          "commits": 12,
-          "lines_added": 2987,
-          "contribution_pct": 18.5
-        },
-        {
-          "hacker_id": "j4joshua_110956058",
-          "name": "J4Joshua",
-          "role": "Generalist",
-          "commits": 11,
-          "lines_added": 0,
-          "contribution_pct": 16.9
-        },
-        {
-          "hacker_id": "joshhhht002@gmail.com",
-          "name": "joshua",
-          "role": "Backend",
-          "commits": 10,
-          "lines_added": 10311,
-          "contribution_pct": 15.4
-        },
-        {
-          "hacker_id": "lucy.wu012@gmail.com",
-          "name": "Lucy Wu",
-          "role": "Full Stack",
-          "commits": 9,
-          "lines_added": 3822,
-          "contribution_pct": 13.8
-        },
-        {
-          "hacker_id": "lucywu12_51028333",
-          "name": "Lucy Wu",
-          "role": "Generalist",
-          "commits": 8,
-          "lines_added": 0,
-          "contribution_pct": 12.3
-        },
-        {
-          "hacker_id": "rogeru13_185573976",
-          "name": "Roger You",
-          "role": "Generalist",
-          "commits": 1,
-          "lines_added": 0,
-          "contribution_pct": 1.5
-        }
-      ],
-      "stats": {
-        "total_commits": 65,
-        "team_size": 7,
-        "is_solo": false
       }
     },
     {
@@ -91038,19 +91143,19 @@
           "contribution_pct": 10.5
         },
         {
-          "hacker_id": "sadia14_37854856",
-          "name": "sadia14",
-          "role": "Generalist",
-          "commits": 2,
-          "lines_added": 1,
-          "contribution_pct": 3.5
-        },
-        {
           "hacker_id": "zinichakraborty_113480497",
           "name": "Zini Chakraborty",
           "role": "Generalist",
           "commits": 2,
           "lines_added": 0,
+          "contribution_pct": 3.5
+        },
+        {
+          "hacker_id": "sadia14_37854856",
+          "name": "sadia14",
+          "role": "Generalist",
+          "commits": 2,
+          "lines_added": 1,
           "contribution_pct": 3.5
         },
         {
@@ -91361,16 +91466,16 @@
           "contribution_pct": 7.5
         },
         {
-          "hacker_id": "fvs21_84160780",
-          "name": "Fabrizio Vanzani",
+          "hacker_id": "kikw12_142268928",
+          "name": "enayala",
           "role": "Generalist",
           "commits": 1,
           "lines_added": 0,
           "contribution_pct": 1.9
         },
         {
-          "hacker_id": "kikw12_142268928",
-          "name": "enayala",
+          "hacker_id": "fvs21_84160780",
+          "name": "Fabrizio Vanzani",
           "role": "Generalist",
           "commits": 1,
           "lines_added": 0,
@@ -91774,19 +91879,19 @@
           "contribution_pct": 44.9
         },
         {
-          "hacker_id": "timtaktamu@tamu.edu",
-          "name": "Timur Takhtarov",
-          "role": "Backend",
-          "commits": 9,
-          "lines_added": 1878,
-          "contribution_pct": 18.4
-        },
-        {
           "hacker_id": "tony.li4722@gmail.com",
           "name": "Tony Li",
           "role": "Backend",
           "commits": 9,
           "lines_added": 4670,
+          "contribution_pct": 18.4
+        },
+        {
+          "hacker_id": "timtaktamu@tamu.edu",
+          "name": "Timur Takhtarov",
+          "role": "Backend",
+          "commits": 9,
+          "lines_added": 1878,
           "contribution_pct": 18.4
         },
         {
@@ -92219,16 +92324,16 @@
           "contribution_pct": 6.5
         },
         {
-          "hacker_id": "noellakwizera@dn0a22a52d.sunet",
-          "name": "Noella Kwizera",
+          "hacker_id": "abao27_122949563",
+          "name": "abao27",
           "role": "Generalist",
           "commits": 1,
           "lines_added": 0,
           "contribution_pct": 2.2
         },
         {
-          "hacker_id": "abao27_122949563",
-          "name": "abao27",
+          "hacker_id": "noellakwizera@dn0a22a52d.sunet",
+          "name": "Noella Kwizera",
           "role": "Generalist",
           "commits": 1,
           "lines_added": 0,
@@ -92550,19 +92655,19 @@
           "contribution_pct": 11.6
         },
         {
-          "hacker_id": "yatharth.gohil@gmail.com",
-          "name": "yatharthgohil",
-          "role": "Generalist",
-          "commits": 4,
-          "lines_added": 9253,
-          "contribution_pct": 9.3
-        },
-        {
           "hacker_id": "mahima333@tamu.edu",
           "name": "mahima3434",
           "role": "AI/ML",
           "commits": 4,
           "lines_added": 2050,
+          "contribution_pct": 9.3
+        },
+        {
+          "hacker_id": "yatharth.gohil@gmail.com",
+          "name": "yatharthgohil",
+          "role": "Generalist",
+          "commits": 4,
+          "lines_added": 9253,
           "contribution_pct": 9.3
         },
         {
@@ -92656,14 +92761,6 @@
           "contribution_pct": 31.7
         },
         {
-          "hacker_id": "jj-xie_59150519",
-          "name": "Justin Xie",
-          "role": "Generalist",
-          "commits": 3,
-          "lines_added": 3475,
-          "contribution_pct": 7.3
-        },
-        {
           "hacker_id": "justinjxie@gmail.com",
           "name": "Justin Xie",
           "role": "Generalist",
@@ -92672,12 +92769,12 @@
           "contribution_pct": 7.3
         },
         {
-          "hacker_id": "mabernibber_39677213",
-          "name": "Mabernibber",
-          "role": "Backend",
-          "commits": 1,
-          "lines_added": 5148,
-          "contribution_pct": 2.4
+          "hacker_id": "jj-xie_59150519",
+          "name": "Justin Xie",
+          "role": "Generalist",
+          "commits": 3,
+          "lines_added": 3475,
+          "contribution_pct": 7.3
         },
         {
           "hacker_id": "roshen-nair_66095345",
@@ -92685,6 +92782,14 @@
           "role": "Backend",
           "commits": 1,
           "lines_added": 1055,
+          "contribution_pct": 2.4
+        },
+        {
+          "hacker_id": "mabernibber_39677213",
+          "name": "Mabernibber",
+          "role": "Backend",
+          "commits": 1,
+          "lines_added": 5148,
           "contribution_pct": 2.4
         }
       ],
@@ -92881,19 +92986,19 @@
           "contribution_pct": 15.0
         },
         {
-          "hacker_id": "arjunmelwani@gmail.com",
-          "name": "Arjun Melwani",
-          "role": "Mobile",
-          "commits": 1,
-          "lines_added": 3979,
-          "contribution_pct": 2.5
-        },
-        {
           "hacker_id": "kvnyng_45344788",
           "name": "Kevin Yang",
           "role": "Generalist",
           "commits": 1,
           "lines_added": 0,
+          "contribution_pct": 2.5
+        },
+        {
+          "hacker_id": "arjunmelwani@gmail.com",
+          "name": "Arjun Melwani",
+          "role": "Mobile",
+          "commits": 1,
+          "lines_added": 3979,
           "contribution_pct": 2.5
         }
       ],
@@ -93010,6 +93115,59 @@
       }
     },
     {
+      "id": "reporx",
+      "project_name": "RepoRx",
+      "repo_url": "https://github.com/ezou1/tree26",
+      "devpost_url": "https://devpost.com/software/molecule-mcbob",
+      "members": [
+        {
+          "hacker_id": "cherylwu834_124432604",
+          "name": "cherylwu834",
+          "role": "AI/ML",
+          "commits": 16,
+          "lines_added": 12620,
+          "contribution_pct": 41.0
+        },
+        {
+          "hacker_id": "eric.m.zou.2007@gmail.com",
+          "name": "ezou1",
+          "role": "AI/ML",
+          "commits": 11,
+          "lines_added": 28568,
+          "contribution_pct": 28.2
+        },
+        {
+          "hacker_id": "hdwarren@usc.edu",
+          "name": "h4nkyn",
+          "role": "AI/ML",
+          "commits": 7,
+          "lines_added": 63931,
+          "contribution_pct": 17.9
+        },
+        {
+          "hacker_id": "ezou1_65246540",
+          "name": "Eric Zou",
+          "role": "Backend",
+          "commits": 4,
+          "lines_added": 234,
+          "contribution_pct": 10.3
+        },
+        {
+          "hacker_id": "gradyzyu@gmail.com",
+          "name": "ragyudy",
+          "role": "Generalist",
+          "commits": 1,
+          "lines_added": 3,
+          "contribution_pct": 2.6
+        }
+      ],
+      "stats": {
+        "total_commits": 39,
+        "team_size": 5,
+        "is_solo": false
+      }
+    },
+    {
       "id": "bye-buy",
       "project_name": "Bye! Buy!",
       "repo_url": "https://github.com/jpsingaraju/bye-buy",
@@ -93072,59 +93230,6 @@
       "stats": {
         "total_commits": 38,
         "team_size": 3,
-        "is_solo": false
-      }
-    },
-    {
-      "id": "reporx",
-      "project_name": "RepoRx",
-      "repo_url": "https://github.com/ezou1/tree26",
-      "devpost_url": "https://devpost.com/software/molecule-mcbob",
-      "members": [
-        {
-          "hacker_id": "cherylwu834_124432604",
-          "name": "cherylwu834",
-          "role": "AI/ML",
-          "commits": 15,
-          "lines_added": 12620,
-          "contribution_pct": 39.5
-        },
-        {
-          "hacker_id": "eric.m.zou.2007@gmail.com",
-          "name": "ezou1",
-          "role": "AI/ML",
-          "commits": 11,
-          "lines_added": 28568,
-          "contribution_pct": 28.9
-        },
-        {
-          "hacker_id": "hdwarren@usc.edu",
-          "name": "h4nkyn",
-          "role": "AI/ML",
-          "commits": 7,
-          "lines_added": 63931,
-          "contribution_pct": 18.4
-        },
-        {
-          "hacker_id": "ezou1_65246540",
-          "name": "Eric Zou",
-          "role": "Backend",
-          "commits": 4,
-          "lines_added": 234,
-          "contribution_pct": 10.5
-        },
-        {
-          "hacker_id": "gradyzyu@gmail.com",
-          "name": "ragyudy",
-          "role": "Generalist",
-          "commits": 1,
-          "lines_added": 3,
-          "contribution_pct": 2.6
-        }
-      ],
-      "stats": {
-        "total_commits": 38,
-        "team_size": 5,
         "is_solo": false
       }
     },
@@ -93439,19 +93544,19 @@
           "contribution_pct": 29.4
         },
         {
-          "hacker_id": "gurumehersingh1706@gmail.com",
-          "name": "Gurmeher Singh",
-          "role": "Full Stack",
-          "commits": 5,
-          "lines_added": 2372,
-          "contribution_pct": 14.7
-        },
-        {
           "hacker_id": "zhenghchen2024@gmail.com",
           "name": "zhenghchen",
           "role": "AI/ML",
           "commits": 5,
           "lines_added": 6083,
+          "contribution_pct": 14.7
+        },
+        {
+          "hacker_id": "gurumehersingh1706@gmail.com",
+          "name": "Gurmeher Singh",
+          "role": "Full Stack",
+          "commits": 5,
+          "lines_added": 2372,
           "contribution_pct": 14.7
         },
         {
@@ -93476,19 +93581,19 @@
       "devpost_url": "https://devpost.com/software/procure-jafrn0",
       "members": [
         {
-          "hacker_id": "abhay7dev_80220229",
-          "name": "Abhay Bhat",
-          "role": "Generalist",
-          "commits": 12,
-          "lines_added": 81473,
-          "contribution_pct": 35.3
-        },
-        {
           "hacker_id": "mksriram@umich.edu",
           "name": "Sriram MK",
           "role": "AI/ML",
           "commits": 12,
           "lines_added": 24013,
+          "contribution_pct": 35.3
+        },
+        {
+          "hacker_id": "abhay7dev_80220229",
+          "name": "Abhay Bhat",
+          "role": "Generalist",
+          "commits": 12,
+          "lines_added": 81473,
           "contribution_pct": 35.3
         },
         {
@@ -93767,19 +93872,19 @@
       "devpost_url": "https://devpost.com/software/vera-xsbhj0",
       "members": [
         {
-          "hacker_id": "eden.brunner@gmail.com",
-          "name": "Eden Brunner",
-          "role": "Full Stack",
-          "commits": 11,
-          "lines_added": 11798,
-          "contribution_pct": 34.4
-        },
-        {
           "hacker_id": "themikulrai_152346781",
           "name": "mikulrai",
           "role": "Backend",
           "commits": 11,
           "lines_added": 3507131,
+          "contribution_pct": 34.4
+        },
+        {
+          "hacker_id": "eden.brunner@gmail.com",
+          "name": "Eden Brunner",
+          "role": "Full Stack",
+          "commits": 11,
+          "lines_added": 11798,
           "contribution_pct": 34.4
         },
         {
@@ -93873,14 +93978,6 @@
           "contribution_pct": 25.8
         },
         {
-          "hacker_id": "shardulmarathe9@gmail.com",
-          "name": "Shardul Marathe",
-          "role": "Full Stack",
-          "commits": 4,
-          "lines_added": 6848,
-          "contribution_pct": 12.9
-        },
-        {
           "hacker_id": "priyanka@priyankas-macbook-air.local",
           "name": "Priyanka K",
           "role": "Generalist",
@@ -93889,12 +93986,12 @@
           "contribution_pct": 12.9
         },
         {
-          "hacker_id": "gracehousman@graces-macbook-pro-2.local",
-          "name": "Grace Housman",
-          "role": "AI/ML",
-          "commits": 1,
-          "lines_added": 4,
-          "contribution_pct": 3.2
+          "hacker_id": "shardulmarathe9@gmail.com",
+          "name": "Shardul Marathe",
+          "role": "Full Stack",
+          "commits": 4,
+          "lines_added": 6848,
+          "contribution_pct": 12.9
         },
         {
           "hacker_id": "pr1yanka@stanford.edu",
@@ -93902,6 +93999,14 @@
           "role": "Generalist",
           "commits": 1,
           "lines_added": 228,
+          "contribution_pct": 3.2
+        },
+        {
+          "hacker_id": "gracehousman@graces-macbook-pro-2.local",
+          "name": "Grace Housman",
+          "role": "AI/ML",
+          "commits": 1,
+          "lines_added": 4,
           "contribution_pct": 3.2
         }
       ],
@@ -94087,25 +94192,62 @@
           "contribution_pct": 3.3
         },
         {
-          "hacker_id": "grovertaarush@gmail.com",
-          "name": "Tagrtagr",
-          "role": "Generalist",
-          "commits": 1,
-          "lines_added": 3188,
-          "contribution_pct": 3.3
-        },
-        {
           "hacker_id": "shreyas@dn0a1ea106.sunet",
           "name": "Shreyas Agarwal",
           "role": "AI/ML",
           "commits": 1,
           "lines_added": 588,
           "contribution_pct": 3.3
+        },
+        {
+          "hacker_id": "grovertaarush@gmail.com",
+          "name": "Tagrtagr",
+          "role": "Generalist",
+          "commits": 1,
+          "lines_added": 3188,
+          "contribution_pct": 3.3
         }
       ],
       "stats": {
         "total_commits": 30,
         "team_size": 5,
+        "is_solo": false
+      }
+    },
+    {
+      "id": "resonance",
+      "project_name": "Resonance",
+      "repo_url": "https://github.com/twosodium/resonance",
+      "devpost_url": "https://devpost.com/software/asdf-596pqz",
+      "members": [
+        {
+          "hacker_id": "anna.aq.wu@gmail.com",
+          "name": "twosodium",
+          "role": "Full Stack",
+          "commits": 21,
+          "lines_added": 8312,
+          "contribution_pct": 72.4
+        },
+        {
+          "hacker_id": "advay.aravind@gmail.com",
+          "name": "Advay Aravind",
+          "role": "Backend",
+          "commits": 7,
+          "lines_added": 4955,
+          "contribution_pct": 24.1
+        },
+        {
+          "hacker_id": "twosodium_129000615",
+          "name": "Anna Wu",
+          "role": "Generalist",
+          "commits": 1,
+          "lines_added": 0,
+          "contribution_pct": 3.4
+        }
+      ],
+      "stats": {
+        "total_commits": 29,
+        "team_size": 3,
         "is_solo": false
       }
     },
@@ -94245,62 +94387,25 @@
       }
     },
     {
-      "id": "resonance",
-      "project_name": "Resonance",
-      "repo_url": "https://github.com/twosodium/resonance",
-      "devpost_url": "https://devpost.com/software/asdf-596pqz",
-      "members": [
-        {
-          "hacker_id": "anna.aq.wu@gmail.com",
-          "name": "twosodium",
-          "role": "Full Stack",
-          "commits": 20,
-          "lines_added": 7983,
-          "contribution_pct": 71.4
-        },
-        {
-          "hacker_id": "advay.aravind@gmail.com",
-          "name": "Advay Aravind",
-          "role": "Backend",
-          "commits": 7,
-          "lines_added": 4955,
-          "contribution_pct": 25.0
-        },
-        {
-          "hacker_id": "twosodium_129000615",
-          "name": "Anna Wu",
-          "role": "Generalist",
-          "commits": 1,
-          "lines_added": 0,
-          "contribution_pct": 3.6
-        }
-      ],
-      "stats": {
-        "total_commits": 28,
-        "team_size": 3,
-        "is_solo": false
-      }
-    },
-    {
       "id": "symbio",
       "project_name": "Symbio",
       "repo_url": "https://github.com/kwangel/care-ai",
       "devpost_url": "https://devpost.com/software/care-ai-4i3scy",
       "members": [
         {
-          "hacker_id": "valeriehe@berkeley.edu",
-          "name": "Valerie",
-          "role": "Backend",
-          "commits": 8,
-          "lines_added": 2836,
-          "contribution_pct": 28.6
-        },
-        {
           "hacker_id": "katiewang@berkeley.edu",
           "name": "Katie Wang",
           "role": "Backend",
           "commits": 8,
           "lines_added": 16306,
+          "contribution_pct": 28.6
+        },
+        {
+          "hacker_id": "valeriehe@berkeley.edu",
+          "name": "Valerie",
+          "role": "Backend",
+          "commits": 8,
+          "lines_added": 2836,
           "contribution_pct": 28.6
         },
         {
@@ -94349,19 +94454,19 @@
       "devpost_url": "https://devpost.com/software/dough-s-and-don-ts-the-game",
       "members": [
         {
-          "hacker_id": "ashays06@umd.edu",
-          "name": "ashay-sriv-06",
-          "role": "Generalist",
-          "commits": 14,
-          "lines_added": 1606046,
-          "contribution_pct": 50.0
-        },
-        {
           "hacker_id": "swastikagrawal3@gmail.com",
           "name": "Swastik Agrawal",
           "role": "AI/ML",
           "commits": 14,
           "lines_added": 980771,
+          "contribution_pct": 50.0
+        },
+        {
+          "hacker_id": "ashays06@umd.edu",
+          "name": "ashay-sriv-06",
+          "role": "Generalist",
+          "commits": 14,
+          "lines_added": 1606046,
           "contribution_pct": 50.0
         }
       ],
@@ -94439,19 +94544,19 @@
           "contribution_pct": 21.4
         },
         {
-          "hacker_id": "wonnykwak_52718127",
-          "name": "Stephen Kwak",
-          "role": "Generalist",
-          "commits": 2,
-          "lines_added": 3,
-          "contribution_pct": 7.1
-        },
-        {
           "hacker_id": "wonnykwak@macbook-pro-242.local",
           "name": "Wonny Kwak",
           "role": "Frontend",
           "commits": 2,
           "lines_added": 7660,
+          "contribution_pct": 7.1
+        },
+        {
+          "hacker_id": "wonnykwak_52718127",
+          "name": "Stephen Kwak",
+          "role": "Generalist",
+          "commits": 2,
+          "lines_added": 3,
           "contribution_pct": 7.1
         },
         {
@@ -94508,19 +94613,19 @@
           "contribution_pct": 3.6
         },
         {
-          "hacker_id": "ifeoluwa.oyetimehin@gmail.com",
-          "name": "Ifeoluwa Oyetimehin",
-          "role": "AI/ML",
-          "commits": 1,
-          "lines_added": 175,
-          "contribution_pct": 3.6
-        },
-        {
           "hacker_id": "nolawiteklehaimanot@gmail.com",
           "name": "Nolawi",
           "role": "Generalist",
           "commits": 1,
           "lines_added": 0,
+          "contribution_pct": 3.6
+        },
+        {
+          "hacker_id": "ifeoluwa.oyetimehin@gmail.com",
+          "name": "Ifeoluwa Oyetimehin",
+          "role": "AI/ML",
+          "commits": 1,
+          "lines_added": 175,
           "contribution_pct": 3.6
         }
       ],
@@ -94984,19 +95089,19 @@
           "contribution_pct": 91.7
         },
         {
-          "hacker_id": "noreply@anthropic.com",
-          "name": "Claude",
-          "role": "AI/ML",
-          "commits": 1,
-          "lines_added": 32,
-          "contribution_pct": 4.2
-        },
-        {
           "hacker_id": "jack-herrmann_70063971",
           "name": "Jack Herrmann",
           "role": "Generalist",
           "commits": 1,
           "lines_added": 0,
+          "contribution_pct": 4.2
+        },
+        {
+          "hacker_id": "noreply@anthropic.com",
+          "name": "Claude",
+          "role": "AI/ML",
+          "commits": 1,
+          "lines_added": 32,
           "contribution_pct": 4.2
         }
       ],
@@ -95240,19 +95345,19 @@
           "contribution_pct": 40.9
         },
         {
-          "hacker_id": "danny@kdrag0n.dev",
-          "name": "Danny Lin",
-          "role": "Generalist",
-          "commits": 1,
-          "lines_added": 0,
-          "contribution_pct": 4.5
-        },
-        {
           "hacker_id": "christinaluoluoli@gmail.com",
           "name": "bsflll",
           "role": "Backend",
           "commits": 1,
           "lines_added": 4553,
+          "contribution_pct": 4.5
+        },
+        {
+          "hacker_id": "danny@kdrag0n.dev",
+          "name": "Danny Lin",
+          "role": "Generalist",
+          "commits": 1,
+          "lines_added": 0,
           "contribution_pct": 4.5
         }
       ],
@@ -95367,19 +95472,19 @@
           "contribution_pct": 19.0
         },
         {
-          "hacker_id": "ddantuluri@aggies.ncat.edu",
-          "name": "Devi Aditya Varma Dantuluri",
-          "role": "Backend",
-          "commits": 2,
-          "lines_added": 446,
-          "contribution_pct": 9.5
-        },
-        {
           "hacker_id": "andrewlee952006@gmail.com",
           "name": "andrewzylee",
           "role": "Generalist",
           "commits": 2,
           "lines_added": 11576,
+          "contribution_pct": 9.5
+        },
+        {
+          "hacker_id": "ddantuluri@aggies.ncat.edu",
+          "name": "Devi Aditya Varma Dantuluri",
+          "role": "Backend",
+          "commits": 2,
+          "lines_added": 446,
           "contribution_pct": 9.5
         }
       ],
@@ -95470,6 +95575,14 @@
           "contribution_pct": 9.5
         },
         {
+          "hacker_id": "vincexxwu@gmail.com",
+          "name": "VXXWu",
+          "role": "Generalist",
+          "commits": 1,
+          "lines_added": 0,
+          "contribution_pct": 4.8
+        },
+        {
           "hacker_id": "vincewu@dn51ul6j.sunet",
           "name": "Vince Wu",
           "role": "Generalist",
@@ -95483,14 +95596,6 @@
           "role": "Backend",
           "commits": 1,
           "lines_added": 554,
-          "contribution_pct": 4.8
-        },
-        {
-          "hacker_id": "vincexxwu@gmail.com",
-          "name": "VXXWu",
-          "role": "Generalist",
-          "commits": 1,
-          "lines_added": 0,
           "contribution_pct": 4.8
         }
       ],
@@ -95610,19 +95715,19 @@
       "devpost_url": "https://devpost.com/software/sleepsense-h52ma3",
       "members": [
         {
-          "hacker_id": "raj-chinagundi_75333151",
-          "name": "Raj Chinagundi",
-          "role": "Generalist",
-          "commits": 8,
-          "lines_added": 9,
-          "contribution_pct": 42.1
-        },
-        {
           "hacker_id": "rajchinagundi07@gmail.com",
           "name": "raj-chinagundi",
           "role": "Frontend",
           "commits": 8,
           "lines_added": 51694,
+          "contribution_pct": 42.1
+        },
+        {
+          "hacker_id": "raj-chinagundi_75333151",
+          "name": "Raj Chinagundi",
+          "role": "Generalist",
+          "commits": 8,
+          "lines_added": 9,
           "contribution_pct": 42.1
         },
         {
@@ -95728,6 +95833,27 @@
         "total_commits": 18,
         "team_size": 3,
         "is_solo": false
+      }
+    },
+    {
+      "id": "longshot-swarm-minecraft",
+      "project_name": "Longshot",
+      "repo_url": "https://github.com/andrewcai8/swarm-minecraft",
+      "devpost_url": "https://devpost.com/software/longshot",
+      "members": [
+        {
+          "hacker_id": "andrewca78@gmail.com",
+          "name": "andrew",
+          "role": "Generalist",
+          "commits": 17,
+          "lines_added": 4658,
+          "contribution_pct": 100.0
+        }
+      ],
+      "stats": {
+        "total_commits": 17,
+        "team_size": 1,
+        "is_solo": true
       }
     },
     {
@@ -96062,19 +96188,19 @@
           "contribution_pct": 14.3
         },
         {
-          "hacker_id": "amogyisabogycs50@gmail.com",
-          "name": "amogyisabogy1",
-          "role": "Generalist",
-          "commits": 1,
-          "lines_added": 1,
-          "contribution_pct": 7.1
-        },
-        {
           "hacker_id": "radha.munver@gmail.com",
           "name": "Radha Munver",
           "role": "Generalist",
           "commits": 1,
           "lines_added": 472837,
+          "contribution_pct": 7.1
+        },
+        {
+          "hacker_id": "amogyisabogycs50@gmail.com",
+          "name": "amogyisabogy1",
+          "role": "Generalist",
+          "commits": 1,
+          "lines_added": 1,
           "contribution_pct": 7.1
         }
       ],
@@ -96220,19 +96346,19 @@
       "devpost_url": "https://devpost.com/software/rescuerx",
       "members": [
         {
-          "hacker_id": "donglomur@gmail.com",
-          "name": "Nicholas L",
-          "role": "Generalist",
-          "commits": 4,
-          "lines_added": 297658,
-          "contribution_pct": 33.3
-        },
-        {
           "hacker_id": "apurwar@hmc.edu",
           "name": "Ananya Purwar",
           "role": "Generalist",
           "commits": 4,
           "lines_added": 3624,
+          "contribution_pct": 33.3
+        },
+        {
+          "hacker_id": "donglomur@gmail.com",
+          "name": "Nicholas L",
+          "role": "Generalist",
+          "commits": 4,
+          "lines_added": 297658,
           "contribution_pct": 33.3
         },
         {
@@ -96326,19 +96452,19 @@
           "contribution_pct": 25.0
         },
         {
-          "hacker_id": "kg070225@gmail.com",
-          "name": "Kartikeya Goel",
-          "role": "Generalist",
-          "commits": 1,
-          "lines_added": 1,
-          "contribution_pct": 8.3
-        },
-        {
           "hacker_id": "quantummeta6@gmail.com",
           "name": "Diego Reyes",
           "role": "Backend",
           "commits": 1,
           "lines_added": 13,
+          "contribution_pct": 8.3
+        },
+        {
+          "hacker_id": "kg070225@gmail.com",
+          "name": "Kartikeya Goel",
+          "role": "Generalist",
+          "commits": 1,
+          "lines_added": 1,
           "contribution_pct": 8.3
         }
       ],
@@ -96921,19 +97047,19 @@
           "contribution_pct": 40.0
         },
         {
-          "hacker_id": "blessitac_73405200",
-          "name": "blessitac",
-          "role": "Generalist",
-          "commits": 1,
-          "lines_added": 1,
-          "contribution_pct": 20.0
-        },
-        {
           "hacker_id": "blessitac@gmail.com",
           "name": "blessitac",
           "role": "Generalist",
           "commits": 1,
           "lines_added": 114,
+          "contribution_pct": 20.0
+        },
+        {
+          "hacker_id": "blessitac_73405200",
+          "name": "blessitac",
+          "role": "Generalist",
+          "commits": 1,
+          "lines_added": 1,
           "contribution_pct": 20.0
         },
         {
@@ -97002,6 +97128,35 @@
       }
     },
     {
+      "id": "pare",
+      "project_name": "Pare",
+      "repo_url": "https://github.com/javierreyno/treehacks2026",
+      "devpost_url": "https://devpost.com/software/pare-98vjwq",
+      "members": [
+        {
+          "hacker_id": "jrjavier1414@gmail.com",
+          "name": "Javier Reynoso",
+          "role": "Generalist",
+          "commits": 4,
+          "lines_added": 42367,
+          "contribution_pct": 80.0
+        },
+        {
+          "hacker_id": "javierreyno_39866592",
+          "name": "Javier Reynoso",
+          "role": "Generalist",
+          "commits": 1,
+          "lines_added": 1,
+          "contribution_pct": 20.0
+        }
+      ],
+      "stats": {
+        "total_commits": 5,
+        "team_size": 2,
+        "is_solo": false
+      }
+    },
+    {
       "id": "reasonable-graphs",
       "project_name": "Reasonable Graphs",
       "repo_url": "https://github.com/assasin2gamer/treehacks",
@@ -97050,19 +97205,19 @@
       "devpost_url": "https://devpost.com/software/aethernode",
       "members": [
         {
-          "hacker_id": "sidhantsinghvi_130006438",
-          "name": "sidhantsinghvi",
-          "role": "AI/ML",
-          "commits": 2,
-          "lines_added": 3338354,
-          "contribution_pct": 50.0
-        },
-        {
           "hacker_id": "anonymousterminator_108626224",
           "name": "AnonymousTerminator",
           "role": "Generalist",
           "commits": 2,
           "lines_added": 1,
+          "contribution_pct": 50.0
+        },
+        {
+          "hacker_id": "sidhantsinghvi_130006438",
+          "name": "sidhantsinghvi",
+          "role": "AI/ML",
+          "commits": 2,
+          "lines_added": 3338354,
           "contribution_pct": 50.0
         }
       ],
@@ -97241,35 +97396,6 @@
         "total_commits": 4,
         "team_size": 1,
         "is_solo": true
-      }
-    },
-    {
-      "id": "pare",
-      "project_name": "Pare",
-      "repo_url": "https://github.com/javierreyno/treehacks2026",
-      "devpost_url": "https://devpost.com/software/pare-98vjwq",
-      "members": [
-        {
-          "hacker_id": "jrjavier1414@gmail.com",
-          "name": "Javier Reynoso",
-          "role": "Generalist",
-          "commits": 3,
-          "lines_added": 42363,
-          "contribution_pct": 75.0
-        },
-        {
-          "hacker_id": "javierreyno_39866592",
-          "name": "Javier Reynoso",
-          "role": "Generalist",
-          "commits": 1,
-          "lines_added": 1,
-          "contribution_pct": 25.0
-        }
-      ],
-      "stats": {
-        "total_commits": 4,
-        "team_size": 2,
-        "is_solo": false
       }
     },
     {
@@ -97484,19 +97610,19 @@
       "devpost_url": "https://devpost.com/software/aion-n75vj3",
       "members": [
         {
-          "hacker_id": "07shikharpandey@gmail.com",
-          "name": "Shikharpandey07",
-          "role": "Full Stack",
-          "commits": 1,
-          "lines_added": 19487,
-          "contribution_pct": 50.0
-        },
-        {
           "hacker_id": "smart.shikhar07@gmail.com",
           "name": "Shikhar Pandey",
           "role": "Generalist",
           "commits": 1,
           "lines_added": 2,
+          "contribution_pct": 50.0
+        },
+        {
+          "hacker_id": "07shikharpandey@gmail.com",
+          "name": "Shikharpandey07",
+          "role": "Full Stack",
+          "commits": 1,
+          "lines_added": 19487,
           "contribution_pct": 50.0
         }
       ],
@@ -97689,19 +97815,19 @@
       "devpost_url": "https://devpost.com/software/saferoute-ye7zgr",
       "members": [
         {
-          "hacker_id": "as5322@ic.ac.uk",
-          "name": "Aryan",
-          "role": "Full Stack",
-          "commits": 1,
-          "lines_added": 9026,
-          "contribution_pct": 50.0
-        },
-        {
           "hacker_id": "as5322_114351635",
           "name": "as5322",
           "role": "Generalist",
           "commits": 1,
           "lines_added": 113,
+          "contribution_pct": 50.0
+        },
+        {
+          "hacker_id": "as5322@ic.ac.uk",
+          "name": "Aryan",
+          "role": "Full Stack",
+          "commits": 1,
+          "lines_added": 9026,
           "contribution_pct": 50.0
         }
       ],
@@ -97765,27 +97891,6 @@
           "role": "AI/ML",
           "commits": 1,
           "lines_added": 1816709,
-          "contribution_pct": 100.0
-        }
-      ],
-      "stats": {
-        "total_commits": 1,
-        "team_size": 1,
-        "is_solo": true
-      }
-    },
-    {
-      "id": "longshot-swarm-minecraft",
-      "project_name": "Longshot",
-      "repo_url": "https://github.com/andrewcai8/swarm-minecraft",
-      "devpost_url": "https://devpost.com/software/longshot",
-      "members": [
-        {
-          "hacker_id": "andrewca78@gmail.com",
-          "name": "andrew",
-          "role": "Generalist",
-          "commits": 1,
-          "lines_added": 3000,
           "contribution_pct": 100.0
         }
       ],
@@ -97944,6 +98049,12 @@
     }
   ],
   "global_activity": [
+    {
+      "hour": "2026-02-13T20:00:00",
+      "commits": 1,
+      "additions": 326,
+      "deletions": 0
+    },
     {
       "hour": "2026-02-13T21:00:00",
       "commits": 77,
@@ -98171,6 +98282,12 @@
       "commits": 54,
       "additions": 658058,
       "deletions": 6092
+    },
+    {
+      "hour": "2026-02-15T11:00:00",
+      "commits": 27,
+      "additions": 2156,
+      "deletions": 224
     }
   ]
 }
